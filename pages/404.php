@@ -7,7 +7,7 @@ require __DIR__ . '/partials/header.php';
   <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Pagina no encontrada</h1>
   <p class="mt-4 text-slate-600">La ruta que buscas no existe. Regresa al inicio.</p>
   <?php
-  $baseUrl = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+  $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
   if ($baseUrl === '/') {
       $baseUrl = '';
   }

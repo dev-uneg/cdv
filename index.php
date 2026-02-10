@@ -7,6 +7,7 @@ if ($basePath === '/') {
     $basePath = '';
 }
 $router->setBasePath($basePath);
+define('BASE_URL', $basePath);
 
 $router->map('GET', '/', 'pages/home.php', 'home');
 $router->map('GET', '/nosotros', 'pages/nosotros.php', 'nosotros');

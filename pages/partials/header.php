@@ -1,7 +1,7 @@
 <?php
 $pageTitle = $pageTitle ?? 'Colegio del Valle';
 $activePage = $activePage ?? '';
-$baseUrl = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+$baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 if ($baseUrl === '/') {
     $baseUrl = '';
 }
