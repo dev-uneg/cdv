@@ -1,6 +1,10 @@
 <?php
 $pageTitle = $pageTitle ?? 'Colegio del Valle';
 $activePage = $activePage ?? '';
+$baseUrl = rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+if ($baseUrl === '/') {
+    $baseUrl = '';
+}
 $navClass = function (string $key) use ($activePage): string {
     if ($key === $activePage) {
         return 'text-slate-900 font-semibold';
@@ -27,10 +31,10 @@ $navClass = function (string $key) use ($activePage): string {
     <div class="max-w-5xl mx-auto px-6 py-5 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
       <div class="text-xl font-semibold tracking-tight">Colegio del Valle</div>
       <nav class="flex gap-6 text-sm">
-        <a class="<?= $navClass('home') ?>" href="/">Inicio</a>
-        <a class="<?= $navClass('nosotros') ?>" href="/nosotros">Nosotros</a>
-        <a class="<?= $navClass('servicios') ?>" href="/servicios">Servicios</a>
-        <a class="<?= $navClass('contacto') ?>" href="/contacto">Contacto</a>
+        <a class="<?= $navClass('home') ?>" href="<?= $baseUrl ?>/">Inicio</a>
+        <a class="<?= $navClass('nosotros') ?>" href="<?= $baseUrl ?>/nosotros">Nosotros</a>
+        <a class="<?= $navClass('servicios') ?>" href="<?= $baseUrl ?>/servicios">Servicios</a>
+        <a class="<?= $navClass('contacto') ?>" href="<?= $baseUrl ?>/contacto">Contacto</a>
       </nav>
     </div>
   </header>
