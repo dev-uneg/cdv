@@ -1,0 +1,5 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/cdv/public_html/2026.coldelvalle.edu.mx
+    - /bin/cp -R * $DEPLOYPATH
