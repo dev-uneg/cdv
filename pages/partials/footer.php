@@ -1,0 +1,8 @@
+  </main>
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="max-w-5xl mx-auto px-6 py-6 text-sm text-slate-500">
+      © <?= date('Y') ?> Colegio del Valle. Todos los derechos reservados.
+    </div>
+  </footer>
+</body>
+</html>

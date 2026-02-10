@@ -1,23 +1,30 @@
-<!doctype html>
-<html lang="es">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Colegio del Valle</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
-  <style>
-    html, body {
-      font-family: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
-    }
-  </style>
-</head>
-<body class="min-h-screen bg-slate-50 text-slate-900">
-  <main class="min-h-screen flex flex-col items-center justify-center text-center px-6">
-    <h1 class="text-4xl md:text-5xl font-bold tracking-tight">Colegio del Valle</h1>
-    <p class="mt-3 text-lg md:text-xl font-normal">Primer test de CI/CD</p>
-  </main>
-</body>
-</html>
+<?php
+$path = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH) ?? '/';
+$path = '/' . trim($path, '/');
+if ($path === '//') {
+    $path = '/';
+}
+
+$routes = [
+    '/' => 'pages/home.php',
+    '/nosotros' => 'pages/nosotros.php',
+    '/servicios' => 'pages/servicios.php',
+    '/contacto' => 'pages/contacto.php',
+];
+
+if (isset($routes[$path])) {
+    require __DIR__ . '/' . $routes[$path];
+    exit;
+}
+
+http_response_code(404);
+$pageTitle = '404 | Colegio del Valle';
+$activePage = '';
+require __DIR__ . '/pages/partials/header.php';
+?>
+<section class="text-center">
+  <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Pagina no encontrada</h1>
+  <p class="mt-4 text-slate-600">La ruta que buscas no existe. Regresa al inicio.</p>
+  <a class="mt-6 inline-block rounded-lg bg-slate-900 text-white px-4 py-2 text-sm font-semibold" href="/">Ir al inicio</a>
+</section>
+<?php require __DIR__ . '/pages/partials/footer.php'; ?>
