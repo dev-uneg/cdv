@@ -3,7 +3,7 @@ $pageTitle = '404 | Colegio del Valle';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
-<section class="text-center">
+<section class="max-w-[1300px] mx-auto px-6 py-16 text-center">
   <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Pagina no encontrada</h1>
   <p class="mt-4 text-slate-600">La ruta que buscas no existe. Regresa al inicio.</p>
   <?php

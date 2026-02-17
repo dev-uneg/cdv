@@ -3,7 +3,7 @@ $pageTitle = 'Servicios | Colegio del Valle';
 $activePage = 'servicios';
 require __DIR__ . '/partials/header.php';
 ?>
-<section>
+<section class="max-w-[1300px] mx-auto px-6 py-16">
   <h1 class="text-3xl md:text-4xl font-bold tracking-tight">Servicios</h1>
   <p class="mt-4 text-slate-600">Ofrecemos programas y servicios para acompañar a cada familia.</p>
   <div class="mt-8 grid gap-4 sm:grid-cols-2">
