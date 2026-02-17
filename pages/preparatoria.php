@@ -472,7 +472,7 @@ require __DIR__ . '/partials/header.php';
         <i class="ri-file-text-line text-base"></i>
         Reglamento
       </a>
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/IMGS/preparatoria/Calendario-preparatoria.webp" target="_blank" rel="noopener">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/imgs/preparatoria/Calendario-preparatoria.webp" target="_blank" rel="noopener">
         <i class="ri-calendar-event-line text-base"></i>
         Calendario academico
       </a>

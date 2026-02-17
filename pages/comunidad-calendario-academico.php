@@ -35,25 +35,25 @@ require __DIR__ . '/partials/header.php';
       <div data-panel="kinder">
         <h3 class="text-3xl font-semibold text-slate-800">Kinder</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/IMGS/kinder/Calendario-kinder.jpg" alt="Calendario Kinder" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/imgs/kinder/Calendario-kinder.jpg" alt="Calendario Kinder" loading="lazy" />
         </div>
       </div>
       <div class="hidden" data-panel="primaria">
         <h3 class="text-3xl font-semibold text-slate-800">Primaria</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/IMGS/primaria/Calendario-primaria.jpg" alt="Calendario Primaria" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/imgs/primaria/Calendario-primaria.jpg" alt="Calendario Primaria" loading="lazy" />
         </div>
       </div>
       <div class="hidden" data-panel="secundaria">
         <h3 class="text-3xl font-semibold text-slate-800">Secundaria</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/IMGS/secundaria/Calendario-secundaria-com.webp" alt="Calendario Secundaria" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/imgs/secundaria/Calendario-secundaria-com.webp" alt="Calendario Secundaria" loading="lazy" />
         </div>
       </div>
       <div class="hidden" data-panel="preparatoria">
         <h3 class="text-3xl font-semibold text-slate-800">Preparatoria</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/IMGS/preparatoria/Calendario-preparatoria.webp" alt="Calendario Preparatoria" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/imgs/preparatoria/Calendario-preparatoria.webp" alt="Calendario Preparatoria" loading="lazy" />
         </div>
       </div>
     </div>
