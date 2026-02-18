@@ -10,7 +10,7 @@ if ($baseUrl === '/') {
 <section class="pt-0 pb-0 bg-white">
   <div class="w-full mx-auto px-0">
     <div class="relative" data-hero-slider>
-      <div class="relative h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
+      <div class="relative h-[160px] md:h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/hero-1.png" alt="Colegio del Valle" loading="lazy" />
         </div>
@@ -49,67 +49,67 @@ if ($baseUrl === '/') {
     </div>
     <div class="mt-12 space-y-0">
       <div class="grid gap-0 lg:grid-cols-2">
-        <div class="grid h-[560px] grid-cols-2 grid-rows-2 gap-0 overflow-hidden rounded-tl-3xl">
-          <div class="relative">
+        <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-tl-3xl">
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/kinder">
             <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/kinder.jpg" alt="Kinder" loading="lazy" />
-          </div>
-          <div class="flex h-full flex-col justify-center gap-6 bg-[#3E436C] p-10 text-white">
-            <h3 class="text-3xl font-semibold">Kinder</h3>
+          </a>
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/kinder">
+            <h3 class="text-2xl font-semibold sm:text-3xl">Kinder</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/70">RVOE SEP 09060319/07/2006</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
-          </div>
-          <div class="relative">
+          </a>
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/pre-first">
             <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/pre-first.jpg" alt="Pre-first" loading="lazy" />
             <div class="absolute left-6 bottom-6 text-white">
-              <p class="text-xl font-semibold">Pre-First</p>
+              <p class="text-lg font-semibold sm:text-xl">Pre-First</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-[0.2em]">Más información</p>
             </div>
-          </div>
-          <div class="relative">
+          </a>
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/primaria">
             <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/primaria.jpg" alt="Primaria" loading="lazy" />
             <div class="absolute left-6 bottom-6 text-white">
-              <p class="text-xl font-semibold">Primaria</p>
+              <p class="text-lg font-semibold sm:text-xl">Primaria</p>
               <p class="mt-3 text-xs uppercase tracking-[0.2em] text-white/80">RVOE SEP 09050086/06/2005</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-[0.2em]">Más información</p>
             </div>
-          </div>
+          </a>
         </div>
-        <div class="relative h-[560px] overflow-hidden rounded-tr-3xl">
+        <div class="relative h-[260px] overflow-hidden rounded-none sm:h-[560px] sm:rounded-tr-3xl">
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/colegio-del-valle.jpg" alt="Colegio del Valle" loading="lazy" />
           <div class="absolute inset-0 bg-slate-900/50"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-6 px-10 text-center text-white">
-            <h3 class="text-3xl font-semibold">Contáctanos o visita nuestras instalaciones</h3>
+            <h3 class="text-2xl font-semibold sm:text-3xl">Contáctanos o visita nuestras instalaciones</h3>
             <a class="inline-flex rounded-full bg-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-900" href="#contacto-home">Contactar</a>
           </div>
         </div>
       </div>
       <div class="grid gap-0 lg:grid-cols-2">
-        <div class="relative h-[560px] overflow-hidden rounded-bl-3xl">
+        <div class="relative h-[260px] overflow-hidden rounded-none sm:h-[560px] sm:rounded-bl-3xl">
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/contactanos.jpg" alt="Colegio del Valle" loading="lazy" />
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 px-10 text-center text-white">
             <p class="text-sm uppercase tracking-[0.2em] text-white/70">Colegio Del Valle</p>
-            <h3 class="text-3xl font-semibold">Conoce más acerca de nosotros</h3>
+            <h3 class="text-2xl font-semibold sm:text-3xl">Conoce más acerca de nosotros</h3>
             <span class="text-xs font-semibold uppercase tracking-[0.2em]">Más información</span>
           </div>
         </div>
-        <div class="grid h-[560px] grid-cols-2 grid-rows-2 gap-0 overflow-hidden rounded-br-3xl">
-          <div class="relative">
+        <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-br-3xl">
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/secundaria">
             <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/secundaria.jpg" alt="Secundaria" loading="lazy" />
-          </div>
-          <div class="flex h-full flex-col justify-center gap-6 bg-orange-500 p-10 text-white">
-            <h3 class="text-3xl font-semibold">Secundaria</h3>
+          </a>
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-orange-500 p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/secundaria">
+            <h3 class="text-2xl font-semibold sm:text-3xl">Secundaria</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">RVOE SEP 0900053/22/06/2000</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
-          </div>
-          <div class="flex h-full flex-col justify-center gap-6 bg-[#3E436C] p-10 text-white">
-            <h3 class="text-3xl font-semibold">Preparatoria</h3>
+          </a>
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/preparatoria">
+            <h3 class="text-2xl font-semibold sm:text-3xl">Preparatoria</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">CLAVE UNAM 1172</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
-          </div>
-          <div class="relative">
+          </a>
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/preparatoria">
             <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/imgs/home/preparatoria.jpg" alt="Preparatoria" loading="lazy" />
-          </div>
+          </a>
         </div>
       </div>
     </div>

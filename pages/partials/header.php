@@ -59,20 +59,87 @@ $navClass = function (string $key) use ($activePage): string {
       background: rgba(255, 255, 255, 0.82);
       backdrop-filter: blur(10px);
     }
+    .mobile-menu summary {
+      list-style: none;
+    }
+    .mobile-menu summary::-webkit-details-marker {
+      display: none;
+    }
+    .topbar-marquee {
+      overflow: hidden;
+      flex: 1 1 auto;
+      min-width: 0;
+    }
+    .topbar-marquee__inner {
+      display: flex;
+      width: max-content;
+      animation: topbar-marquee 20s linear infinite;
+    }
+    .topbar-marquee__group {
+      display: inline-flex;
+      align-items: center;
+      gap: 1rem;
+      padding-right: 1.5rem;
+      white-space: nowrap;
+    }
+    .topbar-marquee__group--duplicate {
+      display: inline-flex;
+    }
+    .topbar-icons {
+      flex-shrink: 0;
+    }
+    @keyframes topbar-marquee {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+    @media (min-width: 640px) {
+      .topbar-marquee {
+        overflow: visible;
+      }
+      .topbar-marquee__inner {
+        width: 100%;
+        animation: none;
+      }
+      .topbar-marquee__group {
+        white-space: normal;
+        padding-right: 0;
+        flex-wrap: wrap;
+      }
+      .topbar-marquee__group--duplicate {
+        display: none;
+      }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .topbar-marquee__inner {
+        animation: none;
+        transform: translateX(0);
+      }
+    }
   </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
   <header class="bg-white">
     <div class="bg-slate-900 text-slate-100 text-xs">
-      <div class="max-w-[1300px] mx-auto px-6 py-2 flex flex-col gap-2 sm:flex-row sm:items-center sm:justify-between">
-        <div class="flex flex-wrap gap-4">
-          <span>ADMISIONES: 55 5063 1500 - Opcion 1</span>
-          <span class="hidden sm:inline">|</span>
-          <span>WHATSAPP: 55 7113 7882</span>
-          <span class="hidden sm:inline">|</span>
-          <span>CREDITO Y COBRANZA WHATSAPP: 55 1700 9348 - 56 6747 7007</span>
+      <div class="max-w-[1300px] mx-auto px-6 py-2 flex items-center justify-between gap-3">
+        <div class="topbar-marquee">
+          <div class="topbar-marquee__inner">
+            <div class="topbar-marquee__group">
+              <span>ADMISIONES: 55 5063 1500 - Opcion 1</span>
+              <span class="text-slate-400">|</span>
+              <span>WHATSAPP: 55 7113 7882</span>
+              <span class="text-slate-400">|</span>
+              <span>CREDITO Y COBRANZA WHATSAPP: 55 1700 9348 - 56 6747 7007</span>
+            </div>
+            <div class="topbar-marquee__group topbar-marquee__group--duplicate" aria-hidden="true">
+              <span>ADMISIONES: 55 5063 1500 - Opcion 1</span>
+              <span class="text-slate-400">|</span>
+              <span>WHATSAPP: 55 7113 7882</span>
+              <span class="text-slate-400">|</span>
+              <span>CREDITO Y COBRANZA WHATSAPP: 55 1700 9348 - 56 6747 7007</span>
+            </div>
+          </div>
         </div>
-        <div class="flex items-center gap-2 text-sm">
+        <div class="topbar-icons flex items-center gap-2 text-sm">
           <a class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40" href="https://www.facebook.com/ColegioDelValleCDMX/" target="_blank" rel="noopener" aria-label="Facebook">
             <i class="ri-facebook-fill"></i>
           </a>
@@ -87,10 +154,16 @@ $navClass = function (string $key) use ($activePage): string {
     </div>
     <div class="border-b border-slate-200">
       <div class="max-w-[1300px] mx-auto px-6 py-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
-        <a class="flex items-center gap-4" href="<?= $baseUrl ?>/">
-          <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/imgs/Colegio-del-Valle-Logo-342x206.png" alt="Colegio del Valle" />
-        </a>
-        <nav class="flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] lg:ml-auto lg:justify-end">
+        <div class="flex items-center justify-between">
+          <a class="flex items-center gap-4" href="<?= $baseUrl ?>/">
+            <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/imgs/Colegio-del-Valle-Logo-342x206.png" alt="Colegio del Valle" />
+          </a>
+          <button id="mobile-menu-open" class="lg:hidden inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 hover:bg-slate-50" type="button" aria-controls="mobile-menu" aria-expanded="false">
+            <i class="ri-menu-3-line text-lg"></i>
+            Menu
+          </button>
+        </div>
+        <nav class="hidden lg:flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] lg:ml-auto lg:justify-end">
           <a class="<?= $navClass('home') ?>" href="<?= $baseUrl ?>/">Inicio</a>
           <a class="<?= $navClass('nosotros') ?>" href="<?= $baseUrl ?>/nosotros">Nosotros</a>
           <div class="relative group">
@@ -126,5 +199,99 @@ $navClass = function (string $key) use ($activePage): string {
         </nav>
       </div>
     </div>
+    <div id="mobile-menu" class="mobile-menu fixed inset-0 z-50 hidden lg:hidden" aria-hidden="true">
+      <button class="absolute inset-0 bg-slate-900/40 backdrop-blur-sm opacity-0 transition-opacity duration-300" type="button" data-mobile-close aria-label="Cerrar menu"></button>
+      <aside class="absolute right-0 top-0 flex h-full w-[85vw] max-w-sm flex-col bg-white shadow-2xl translate-x-full transition-transform duration-300 ease-out" data-mobile-panel>
+        <div class="flex items-center justify-between border-b border-slate-200 px-6 py-5">
+          <span class="text-[11px] font-semibold uppercase tracking-[0.2em] text-slate-500">Menu</span>
+          <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-slate-200 text-slate-600 hover:bg-slate-50" type="button" data-mobile-close aria-label="Cerrar menu">
+            <i class="ri-close-line text-lg"></i>
+          </button>
+        </div>
+        <nav class="flex-1 overflow-y-auto px-6 py-6 space-y-3 text-xs font-semibold uppercase tracking-[0.15em]">
+          <a class="block rounded-lg px-3 py-3 <?= $navClass('home') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/" data-mobile-close>Inicio</a>
+          <a class="block rounded-lg px-3 py-3 <?= $navClass('nosotros') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/nosotros" data-mobile-close>Nosotros</a>
+          <details class="group rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 open:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between text-slate-700">
+              <span>Oferta Academica</span>
+              <i class="ri-arrow-down-s-line text-lg"></i>
+            </summary>
+            <div class="mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/servicios" data-mobile-close>Ver todo</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/kinder" data-mobile-close>Kinder</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/pre-first" data-mobile-close>Pre First</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/primaria" data-mobile-close>Primaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/secundaria" data-mobile-close>Secundaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/preparatoria" data-mobile-close>Preparatoria</a>
+            </div>
+          </details>
+          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/noticias" data-mobile-close>Noticias</a>
+          <details class="group rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 open:shadow-sm">
+            <summary class="flex cursor-pointer list-none items-center justify-between text-slate-700">
+              <span>Comunidad</span>
+              <i class="ri-arrow-down-s-line text-lg"></i>
+            </summary>
+            <div class="mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/alumnos" data-mobile-close>Alumnos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/egresados" data-mobile-close>Egresados</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/docentes" data-mobile-close>Docentes</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/talleres" data-mobile-close>Talleres Vespertinos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/calendario-academico" data-mobile-close>Calendarios Academicos</a>
+            </div>
+          </details>
+          <a class="block rounded-lg px-3 py-3 <?= $navClass('contacto') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/contacto" data-mobile-close>Contacto</a>
+          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/blog" data-mobile-close>Blog</a>
+          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/ixu" data-mobile-close>IXU</a>
+        </nav>
+      </aside>
+    </div>
+
+    <script>
+      (() => {
+        const menu = document.getElementById('mobile-menu');
+        const openBtn = document.getElementById('mobile-menu-open');
+        if (!menu || !openBtn) return;
+
+        const panel = menu.querySelector('[data-mobile-panel]');
+        const backdrop = menu.querySelector('[data-mobile-close]');
+        const closeBtns = menu.querySelectorAll('[data-mobile-close]');
+
+        const openMenu = () => {
+          menu.classList.remove('hidden');
+          menu.setAttribute('aria-hidden', 'false');
+          openBtn.setAttribute('aria-expanded', 'true');
+          document.body.classList.add('overflow-hidden');
+          requestAnimationFrame(() => {
+            panel.classList.remove('translate-x-full');
+            panel.classList.add('translate-x-0');
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+          });
+        };
+
+        const closeMenu = () => {
+          panel.classList.add('translate-x-full');
+          panel.classList.remove('translate-x-0');
+          backdrop.classList.add('opacity-0');
+          backdrop.classList.remove('opacity-100');
+          menu.setAttribute('aria-hidden', 'true');
+          openBtn.setAttribute('aria-expanded', 'false');
+          document.body.classList.remove('overflow-hidden');
+          setTimeout(() => {
+            if (panel.classList.contains('translate-x-full')) {
+              menu.classList.add('hidden');
+            }
+          }, 300);
+        };
+
+        openBtn.addEventListener('click', openMenu);
+        closeBtns.forEach((btn) => btn.addEventListener('click', closeMenu));
+        menu.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape') {
+            closeMenu();
+          }
+        });
+      })();
+    </script>
   </header>
   <main class="w-full">
