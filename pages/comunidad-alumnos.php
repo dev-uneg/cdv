@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Alumnos';
+$pageDescription = 'Recursos y servicios para alumnos del Colegio del Valle: informacion, avisos y apoyo escolar.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

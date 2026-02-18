@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Preparatoria | Colegio del Valle';
+$pageDescription = 'Preparatoria en Colegio del Valle: clave UNAM, excelencia academica y orientacion vocacional.';
 $activePage = 'preparatoria';
 require __DIR__ . '/partials/header.php';
 ?>

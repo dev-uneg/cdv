@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Kinder | Colegio del Valle';
+$pageDescription = 'Kinder en Colonia del Valle: atencion, cuidados y educacion preescolar con valores y aprendizaje activo.';
 $activePage = 'kinder';
 require __DIR__ . '/partials/header.php';
 ?>

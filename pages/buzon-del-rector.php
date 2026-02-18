@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Buzon del Rector | Colegio del Valle';
+$pageDescription = 'Buzon del rector: comparte sugerencias, comentarios o inquietudes con el Colegio del Valle.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

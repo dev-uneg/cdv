@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Talleres Vespertinos';
+$pageDescription = 'Talleres vespertinos del Colegio del Valle: actividades, horarios y opciones para alumnos.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

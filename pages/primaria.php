@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Primaria | Colegio del Valle';
+$pageDescription = 'Primaria en Colegio del Valle: formacion integral, ingles, tecnologia y valores para un aprendizaje solido.';
 $activePage = 'primaria';
 require __DIR__ . '/partials/header.php';
 ?>

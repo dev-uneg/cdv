@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Pre-First | Colegio del Valle';
+$pageDescription = 'Pre First en Colegio del Valle: transicion a primaria con bases academicas, ingles y habilidades socioemocionales.';
 $activePage = 'pre-first';
 require __DIR__ . '/partials/header.php';
 ?>

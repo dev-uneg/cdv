@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Inicio | Colegio del Valle';
+$pageDescription = 'Colegio del Valle en CDMX: formacion bilingue, valores y excelencia academica desde preescolar hasta preparatoria.';
 $activePage = 'home';
 require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
@@ -132,7 +133,12 @@ if ($baseUrl === '/') {
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="max-w-[1100px] mx-auto rounded-3xl border border-slate-200 bg-white overflow-hidden">
       <div class="aspect-[16/9] w-full">
-        <iframe class="h-full w-full" allowfullscreen src="https://tourmkr.com/F1pt9LMxiq"></iframe>
+        <iframe
+          class="h-full w-full"
+          title="Recorrido virtual del Colegio del Valle"
+          allowfullscreen
+          src="https://tourmkr.com/F1pt9LMxiq"
+        ></iframe>
       </div>
     </div>
   </div>
@@ -149,23 +155,23 @@ if ($baseUrl === '/') {
     </div>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="<?= $baseUrl ?>/formas-de-pago">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_13_ISEC_Forma-de-pago_172x154.png" alt="Formas de pago" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_13_ISEC_Forma-de-pago_172x154.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Formas de pago</p>
       </a>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="https://uneg.academic.lat/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_14_ISEC_Portal_172x154.png" alt="Portal escolar" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_14_ISEC_Portal_172x154.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Portal escolar</p>
       </a>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="https://login.microsoftonline.com/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_15_ISEC_Office-365_172x154.png" alt="Office 365" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_15_ISEC_Office-365_172x154.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Office 365</p>
       </a>
       <div class="rounded-2xl bg-white/5 p-5 text-center">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.png" alt="Mesa de ayuda" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Mesa de ayuda</p>
       </div>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="http://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_17_ISEC_Kiosko_172x154.png" alt="Kiosko" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/imgs/home/imgi_17_ISEC_Kiosko_172x154.png" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Kiosko</p>
       </a>
     </div>

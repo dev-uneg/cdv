@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Reglamentos | Colegio del Valle';
+$pageDescription = 'Reglamentos escolares del Colegio del Valle: lineamientos, convivencia y responsabilidades.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

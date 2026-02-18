@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'IXU | Colegio del Valle';
+$pageDescription = 'IXU en Colegio del Valle: cursos y diplomados para formacion y desarrollo profesional.';
 $activePage = 'ixu';
 require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');

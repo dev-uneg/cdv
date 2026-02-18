@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Servicios | Colegio del Valle';
+$pageDescription = 'Oferta academica del Colegio del Valle: niveles, programas y enfoque formativo para cada etapa escolar.';
 $activePage = 'servicios';
 require __DIR__ . '/partials/header.php';
 ?>

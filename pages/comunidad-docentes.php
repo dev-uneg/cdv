@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Docentes';
+$pageDescription = 'Recursos para docentes del Colegio del Valle: comunicados, herramientas y apoyo academico.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

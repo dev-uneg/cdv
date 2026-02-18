@@ -1,5 +1,6 @@
 <?php
 $pageTitle = $pageTitle ?? 'Colegio del Valle';
+$pageDescription = isset($pageDescription) ? trim($pageDescription) : '';
 $activePage = $activePage ?? '';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 if ($baseUrl === '/') {
@@ -18,6 +19,9 @@ $navClass = function (string $key) use ($activePage): string {
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title><?= htmlspecialchars($pageTitle, ENT_QUOTES, 'UTF-8') ?></title>
+  <?php if ($pageDescription !== ''): ?>
+    <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8') ?>" />
+  <?php endif; ?>
   <link rel="stylesheet" href="<?= $baseUrl ?>/assets/output.css" />
   <!--
     Tailwind CDN (solo desarrollo/urgencias). Para usarlo:

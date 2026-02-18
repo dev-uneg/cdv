@@ -1,5 +1,6 @@
 <?php
 $pageTitle = '404 | Colegio del Valle';
+$pageDescription = 'Pagina no encontrada. Vuelve al inicio del Colegio del Valle o visita nuestras secciones principales.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

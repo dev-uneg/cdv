@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Beneficios | Colegio del Valle';
+$pageDescription = 'Beneficios de estudiar en Colegio del Valle: excelencia academica, comunidad y servicios para familias.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

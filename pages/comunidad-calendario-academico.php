@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Calendario Academico';
+$pageDescription = 'Calendarios academicos por nivel: kinder, primaria, secundaria y preparatoria.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

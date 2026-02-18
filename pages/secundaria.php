@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Secundaria | Colegio del Valle';
+$pageDescription = 'Secundaria en Colegio del Valle: pensamiento critico, ingles y acompanamiento academico.';
 $activePage = 'secundaria';
 require __DIR__ . '/partials/header.php';
 ?>

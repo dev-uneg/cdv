@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Contacto | Colegio del Valle';
+$pageDescription = 'Contacta al Colegio del Valle en CDMX: ubicacion, telefono, admisiones y visita nuestras instalaciones.';
 $activePage = 'contacto';
 require __DIR__ . '/partials/header.php';
 ?>
@@ -76,7 +77,12 @@ require __DIR__ . '/partials/header.php';
     <p class="mt-3 text-slate-600">Conoce a Colegio Del Valle de forma virtual mediante este recorrido.</p>
     <div class="mt-8 rounded-3xl border border-slate-200 bg-white overflow-hidden">
       <div class="aspect-[16/9] w-full">
-        <iframe class="h-full w-full" allowfullscreen src="https://tourmkr.com/F1pt9LMxiq"></iframe>
+        <iframe
+          class="h-full w-full"
+          title="Recorrido virtual del Colegio del Valle"
+          allowfullscreen
+          src="https://tourmkr.com/F1pt9LMxiq"
+        ></iframe>
       </div>
     </div>
   </div>

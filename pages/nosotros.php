@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Nosotros | Colegio del Valle';
+$pageDescription = 'Conoce la historia, mision y valores del Colegio del Valle, nuestras instalaciones y modelo educativo.';
 $activePage = 'nosotros';
 require __DIR__ . '/partials/header.php';
 ?>

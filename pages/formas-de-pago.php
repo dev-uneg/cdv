@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Formas de Pago | Colegio del Valle';
+$pageDescription = 'Opciones y formas de pago del Colegio del Valle: colegiaturas, procesos y medios disponibles.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

@@ -1,5 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Egresados';
+$pageDescription = 'Comunidad de egresados del Colegio del Valle: noticias, vinculos y oportunidades.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
