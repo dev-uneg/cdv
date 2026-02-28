@@ -87,8 +87,8 @@ $isError = isset($_GET['error']) && $_GET['error'] === '1';
         <input type="hidden" name="channel" value="Web" />
         <input type="hidden" name="medium" value="Sitio web" />
         <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
-        <label class="inline-flex items-start gap-2 text-xs text-slate-600">
-          <input type="checkbox" name="privacy" value="1" required class="mt-0.5" />
+        <label class="inline-flex items-center gap-3 text-xs text-slate-600">
+          <input type="checkbox" name="privacy" value="1" required class="h-5 w-5 accent-emerald-600" />
           <span>Acepto el aviso de privacidad y el uso de mis datos para contacto.</span>
         </label>
         <button type="submit" class="rounded-full bg-emerald-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white w-fit">Enviar</button>
