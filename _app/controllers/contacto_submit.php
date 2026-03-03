@@ -15,10 +15,13 @@ function contacto_expects_html(): bool
     return strpos($accept, 'text/html') !== false;
 }
 
-function contacto_redirect(bool $ok): void
+function contacto_redirect(bool $ok, string $errorMessage = ''): void
 {
     $baseUrl = defined('BASE_URL') ? BASE_URL : '';
     $target = $ok ? '/gracias' : '/contacto?error=1';
+    if (!$ok && $errorMessage !== '') {
+        $target .= '&error_msg=' . rawurlencode($errorMessage);
+    }
     header('Location: ' . $baseUrl . $target, true, 302);
     exit;
 }
@@ -26,7 +29,7 @@ function contacto_redirect(bool $ok): void
 function contacto_fail(string $message, int $status = 400): void
 {
     if (contacto_expects_html()) {
-        contacto_redirect(false);
+        contacto_redirect(false, $message);
     }
 
     contacto_respond_json($status, [
@@ -156,6 +159,10 @@ if ($turnstileResponse === '') {
 
 $turnstileResult = contacto_turnstile_verify($turnstileSecret, $turnstileResponse, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
 if (!($turnstileResult['success'] ?? false)) {
+    $codes = $turnstileResult['error-codes'] ?? [];
+    if (is_array($codes) && $codes !== []) {
+        contacto_fail('Turnstile rechazo la validacion: ' . implode(', ', $codes));
+    }
     contacto_fail('No se pudo validar tu solicitud. Intenta nuevamente.');
 }
 

@@ -18,6 +18,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 
 $isSent = isset($_GET['sent']) && $_GET['sent'] === '1';
 $isError = isset($_GET['error']) && $_GET['error'] === '1';
+$errorMessage = trim((string) ($_GET['error_msg'] ?? ''));
+if ($errorMessage === '') {
+    $errorMessage = 'No se pudo enviar tu solicitud. Intenta nuevamente.';
+}
 ?>
 <?php if ($turnstileEnabled): ?>
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -72,7 +76,7 @@ $isError = isset($_GET['error']) && $_GET['error'] === '1';
       <?php endif; ?>
       <?php if ($isError): ?>
         <div class="mt-5 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
-          No se pudo enviar tu solicitud. Intenta nuevamente.
+          <?= htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8') ?>
         </div>
       <?php endif; ?>
       <form class="mt-6 grid gap-4" method="post" action="<?= $baseUrl ?>/api/contacto">
