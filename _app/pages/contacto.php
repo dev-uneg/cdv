@@ -7,9 +7,21 @@ $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname
 if ($baseUrl === '/') {
     $baseUrl = '';
 }
+
+$turnstileConfig = [];
+$turnstileConfigPath = __DIR__ . '/../config/turnstile.local.php';
+if (file_exists($turnstileConfigPath)) {
+    $turnstileConfig = require $turnstileConfigPath;
+}
+$turnstileSiteKey = (string) ($turnstileConfig['site_key'] ?? getenv('TURNSTILE_SITE_KEY') ?? '');
+$turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_TU_TURNSTILE_SITE_KEY';
+
 $isSent = isset($_GET['sent']) && $_GET['sent'] === '1';
 $isError = isset($_GET['error']) && $_GET['error'] === '1';
 ?>
+<?php if ($turnstileEnabled): ?>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 <section class="py-12 bg-white">
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="rounded-3xl border border-slate-200 bg-slate-50 p-10 text-center">
@@ -86,7 +98,9 @@ $isError = isset($_GET['error']) && $_GET['error'] === '1';
         <input type="hidden" name="source" value="Pagina contacto CDV" />
         <input type="hidden" name="channel" value="Web" />
         <input type="hidden" name="medium" value="Sitio web" />
-        <input type="text" name="company_website" class="hidden" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <?php if ($turnstileEnabled): ?>
+          <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
+        <?php endif; ?>
         <label class="inline-flex items-center gap-3 text-xs text-slate-600">
           <input type="checkbox" name="privacy" value="1" required class="h-5 w-5 accent-emerald-600" />
           <span>Acepto el aviso de privacidad y el uso de mis datos para contacto.</span>
