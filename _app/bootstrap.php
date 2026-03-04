@@ -17,6 +17,7 @@ $router->map('GET', '/contacto/', '_app/pages/contacto.php', 'contacto');
 $router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy');
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
+$router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
 
 $router->map('GET', '/oferta-educativa/kinder', '_app/pages/kinder.php', 'kinder');
 $router->map('GET', '/oferta-academica/kinder', '_app/pages/kinder.php', 'kinder-alias');
@@ -52,6 +53,7 @@ $router->map('GET', '/formas-de-pago', '_app/pages/formas-de-pago.php', 'formas-
 $router->map('GET', '/beneficios', '_app/pages/beneficios.php', 'beneficios');
 $router->map('GET', '/reglamentos', '_app/pages/reglamentos.php', 'reglamentos');
 $router->map('GET', '/buzon-del-rector', '_app/pages/buzon-del-rector.php', 'buzon-del-rector');
+$router->map('GET', '/buzon-del-rector/gracias', '_app/pages/buzon-del-rector-gracias.php', 'buzon-del-rector-gracias');
 $router->map('GET', '/dejanos-saber-de-ti', '_app/pages/dejanos-saber-de-ti.php', 'dejanos-saber-de-ti');
 $router->map('GET', '/comunidad/alumnos', '_app/pages/comunidad-alumnos.php', 'comunidad-alumnos');
 $router->map('GET', '/comunidad/alumnos/', ['redirect' => '/comunidad/alumnos'], 'comunidad-alumnos-legacy');

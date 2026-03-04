@@ -3,6 +3,17 @@ $pageTitle = 'Buzon del Rector | Colegio del Valle';
 $pageDescription = 'Buzon del rector: comparte sugerencias, comentarios o inquietudes con el Colegio del Valle.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
+
+$baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
+if ($baseUrl === '/') {
+    $baseUrl = '';
+}
+
+$isError = isset($_GET['error']) && $_GET['error'] === '1';
+$errorMessage = trim((string) ($_GET['error_msg'] ?? ''));
+if ($errorMessage === '') {
+    $errorMessage = 'No se pudo enviar tu solicitud. Intenta nuevamente.';
+}
 ?>
 
 <section class="py-16 bg-white">
@@ -14,7 +25,12 @@ require __DIR__ . '/partials/header.php';
       </p>
     </div>
 
-    <form class="mt-10 rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm" action="#" method="post">
+    <form class="mt-10 rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm" action="<?= $baseUrl ?>/api/buzon-del-rector" method="post">
+      <?php if ($isError): ?>
+        <div class="mb-6 rounded-xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">
+          <?= htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8') ?>
+        </div>
+      <?php endif; ?>
       <div class="grid gap-6 md:grid-cols-2">
         <label class="text-sm text-slate-600">
           Nombre completo
