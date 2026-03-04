@@ -12,21 +12,20 @@ if ($baseUrl === '/') {
   <div class="w-full mx-auto px-0">
     <div class="relative" data-hero-slider>
       <div class="relative h-[160px] md:h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
-        <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
+        <div class="absolute inset-0 opacity-100 transition-opacity duration-700" data-slide>
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="eager" fetchpriority="high" />
         </div>
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.webp" alt="Colegio del Valle" loading="lazy" />
         </div>
-        <div class="absolute inset-0 opacity-100 transition-opacity duration-700" data-slide>
-          <iframe
-            class="h-full w-full"
-            src="https://www.youtube-nocookie.com/embed/eP8lgG3nUM4?rel=0"
-            title="Video Colegio del Valle"
-            frameborder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            allowfullscreen
-          ></iframe>
+        <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
+          <div class="relative h-full w-full" data-youtube-lite data-video-id="eP8lgG3nUM4" data-video-title="Video Colegio del Valle">
+            <button class="relative block h-full w-full" type="button" data-youtube-play aria-label="Reproducir video Colegio del Valle">
+              <img class="h-full w-full object-cover" src="https://i.ytimg.com/vi/eP8lgG3nUM4/hqdefault.jpg" alt="" aria-hidden="true" loading="lazy" />
+              <span class="absolute inset-0 bg-slate-900/35"></span>
+              <span class="absolute left-1/2 top-1/2 inline-flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-slate-900 shadow">&#9658;</span>
+            </button>
+          </div>
         </div>
       </div>
       <div class="absolute inset-x-0 bottom-4 z-10 flex items-center justify-between px-6">

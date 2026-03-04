@@ -48,5 +48,28 @@
   >
     <i class="text-2xl" data-lucide="message-circle"></i>
   </a>
+  <script>
+    (() => {
+      const blocks = document.querySelectorAll('[data-youtube-lite]');
+      blocks.forEach((block) => {
+        const button = block.querySelector('[data-youtube-play]');
+        const videoId = block.getAttribute('data-video-id');
+        const videoTitle = block.getAttribute('data-video-title') || 'Video';
+        if (!button || !videoId) {
+          return;
+        }
+        button.addEventListener('click', () => {
+          const iframe = document.createElement('iframe');
+          iframe.className = 'h-full w-full';
+          iframe.src = `https://www.youtube-nocookie.com/embed/${videoId}?rel=0&autoplay=1`;
+          iframe.title = videoTitle;
+          iframe.setAttribute('frameborder', '0');
+          iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+          iframe.setAttribute('allowfullscreen', '');
+          block.replaceChildren(iframe);
+        }, { once: true });
+      });
+    })();
+  </script>
 </body>
 </html>
