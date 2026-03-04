@@ -1,8 +1,7 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/cdv/public_html/2026.coldelvalle.edu.mx
-    - /bin/mkdir -p $DEPLOYPATH
+    - export DEPLOYPATH=/home/cdv/public_html
     - /bin/cp -R _app $DEPLOYPATH
     - /bin/cp -R _assets $DEPLOYPATH
     - /bin/cp -R _imgs $DEPLOYPATH
