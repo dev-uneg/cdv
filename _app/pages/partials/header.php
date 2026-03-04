@@ -221,7 +221,7 @@ $navClass = function (string $key) use ($activePage): string {
       <div class="max-w-[1300px] mx-auto px-6 py-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
         <div class="flex items-center justify-between">
           <a class="flex items-center gap-4" href="<?= $baseUrl ?>/">
-            <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/_imgs/Colegio-del-Valle-Logo-342x206.webp" alt="Colegio del Valle" />
+            <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/_imgs/Colegio-del-Valle-Logo-342x206.webp" alt="Colegio del Valle" width="342" height="206" />
           </a>
           <button id="mobile-menu-open" class="lg:hidden inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 hover:bg-slate-50" type="button" aria-controls="mobile-menu" aria-expanded="false">
             <i class="text-lg" data-lucide="menu"></i>

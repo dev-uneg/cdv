@@ -9,7 +9,7 @@ require __DIR__ . '/partials/header.php';
     <div class="h-[480px] w-full overflow-hidden rounded-none border border-slate-200 bg-white">
       <iframe
         class="h-full w-full"
-        src="https://www.youtube.com/embed/83nEDQ2AMgc?rel=0"
+        src="https://www.youtube-nocookie.com/embed/83nEDQ2AMgc?rel=0"
         title="Preparatoria - Colegio del Valle"
         frameborder="0"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"

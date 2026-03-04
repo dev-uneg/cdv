@@ -13,7 +13,7 @@ if ($baseUrl === '/') {
     <div class="relative" data-hero-slider>
       <div class="relative h-[160px] md:h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="lazy" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="eager" fetchpriority="high" />
         </div>
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.webp" alt="Colegio del Valle" loading="lazy" />
@@ -21,7 +21,7 @@ if ($baseUrl === '/') {
         <div class="absolute inset-0 opacity-100 transition-opacity duration-700" data-slide>
           <iframe
             class="h-full w-full"
-            src="https://www.youtube.com/embed/eP8lgG3nUM4?rel=0"
+            src="https://www.youtube-nocookie.com/embed/eP8lgG3nUM4?rel=0"
             title="Video Colegio del Valle"
             frameborder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
@@ -32,9 +32,9 @@ if ($baseUrl === '/') {
       <div class="absolute inset-x-0 bottom-4 z-10 flex items-center justify-between px-6">
         <button class="rounded-full bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-900 shadow" type="button" data-prev>Anterior</button>
         <div class="flex items-center gap-2">
-          <button class="h-2 w-2 rounded-full bg-white" type="button" data-dot></button>
-          <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot></button>
-          <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot></button>
+          <button class="h-2 w-2 rounded-full bg-white" type="button" data-dot aria-label="Ir al slide 1" aria-current="true"></button>
+          <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot aria-label="Ir al slide 2" aria-current="false"></button>
+          <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot aria-label="Ir al slide 3" aria-current="false"></button>
         </div>
         <button class="rounded-full bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-900 shadow" type="button" data-next>Siguiente</button>
       </div>
@@ -52,7 +52,7 @@ if ($baseUrl === '/') {
       <div class="grid gap-0 lg:grid-cols-2">
         <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-tl-3xl">
           <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/kinder">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/kinder.webp" alt="Kinder" loading="lazy" />
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/kinder.webp" alt="Kinder" loading="eager" fetchpriority="high" />
           </a>
           <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/oferta-educativa/kinder">
             <h3 class="text-2xl font-semibold sm:text-3xl">Kinder</h3>
@@ -232,6 +232,7 @@ if ($baseUrl === '/') {
         dots.forEach((dot, i) => {
           dot.classList.toggle('bg-white', i === nextIndex);
           dot.classList.toggle('bg-white/50', i !== nextIndex);
+          dot.setAttribute('aria-current', i === nextIndex ? 'true' : 'false');
         });
         index = nextIndex;
       };
