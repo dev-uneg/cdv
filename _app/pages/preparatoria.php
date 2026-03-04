@@ -7,13 +7,14 @@ require __DIR__ . '/partials/header.php';
 <section class="pt-0 pb-0 bg-white">
   <div class="w-full mx-auto px-0">
     <div class="h-[480px] w-full overflow-hidden rounded-none border border-slate-200 bg-white">
-      <div class="relative h-full w-full" data-youtube-lite data-video-id="83nEDQ2AMgc" data-video-title="Preparatoria - Colegio del Valle">
-        <button class="relative block h-full w-full" type="button" data-youtube-play aria-label="Reproducir video de Preparatoria">
-          <img class="h-full w-full object-cover" src="https://i.ytimg.com/vi/83nEDQ2AMgc/hqdefault.jpg" alt="" aria-hidden="true" loading="lazy" />
-          <span class="absolute inset-0 bg-slate-900/35"></span>
-          <span class="absolute left-1/2 top-1/2 inline-flex h-16 w-16 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-white/90 text-2xl text-slate-900 shadow">&#9658;</span>
-        </button>
-      </div>
+      <iframe
+        class="h-full w-full"
+        src="https://www.youtube-nocookie.com/embed/83nEDQ2AMgc?rel=0"
+        title="Preparatoria - Colegio del Valle"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
     </div>
   </div>
 </section>
