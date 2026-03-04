@@ -90,7 +90,7 @@ require __DIR__ . '/partials/header.php';
       </details>
     </div>
     <div class="flex flex-col gap-4">
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
         <i class="text-base" data-lucide="info"></i>
         Mas informacion
       </a>
@@ -212,7 +212,12 @@ require __DIR__ . '/partials/header.php';
           <i class="text-base" data-lucide="palette"></i>
           Talleres vespertinos
         </button>
-        <button class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50" type="button" data-tab="plan">
+        <button
+          id="1770310067830-e1c51981-886c"
+          class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50"
+          type="button"
+          data-tab="plan"
+        >
           <i class="text-base" data-lucide="list"></i>
           Plan de estudios
         </button>
@@ -313,7 +318,7 @@ require __DIR__ . '/partials/header.php';
         <i class="text-base" data-lucide="file-text"></i>
         Reglamento
       </a>
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/primaria/Calendario-primaria.jpg" target="_blank" rel="noopener">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/primaria/Calendario-primaria.webp" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="calendar-days"></i>
         Calendario academico
       </a>
@@ -397,6 +402,12 @@ require __DIR__ . '/partials/header.php';
 
 <script>
   (() => {
+    const hashValue = decodeURIComponent((window.location.hash || '').replace(/^#/, ''));
+    const planAnchors = new Set([
+      '1770310067830-e1c51981-886c',
+      'plan-estudios-primaria',
+    ]);
+
     const scopes = document.querySelectorAll('[data-tabscope]');
     scopes.forEach((scope) => {
       const tabs = scope.querySelectorAll('[data-tab]');
@@ -417,7 +428,20 @@ require __DIR__ . '/partials/header.php';
         tab.addEventListener('click', () => setActive(tab.getAttribute('data-tab')));
       });
       setActive(scope.getAttribute('data-default') || tabs[0]?.getAttribute('data-tab'));
+
+      if (planAnchors.has(hashValue) && scope.querySelector('[data-tab="plan"]')) {
+        setActive('plan');
+      }
     });
+
+    if (planAnchors.has(hashValue)) {
+      const planAnchor = document.getElementById('1770310067830-e1c51981-886c');
+      if (planAnchor) {
+        requestAnimationFrame(() => {
+          planAnchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+    }
   })();
 </script>
 <?php require __DIR__ . '/partials/footer.php'; ?>

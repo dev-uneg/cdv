@@ -5,7 +5,7 @@ if (!isset($posts)) {
 $recent = $posts;
 usort($recent, fn($a, $b) => ($b['date_ts'] ?? 0) <=> ($a['date_ts'] ?? 0));
 $recent = array_slice($recent, 0, 5);
-$searchAction = $sectionBase ?? ($baseUrl . '/noticias');
+$searchAction = $sectionBase ?? ($baseUrl . '/noticias/');
 $currentQuery = $query ?? '';
 ?>
 

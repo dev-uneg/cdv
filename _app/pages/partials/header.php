@@ -35,15 +35,61 @@ $navClass = function (string $key) use ($activePage): string {
     2) descomenta el script CDN
   -->
   <!-- <script src="https://cdn.tailwindcss.com"></script> -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
   <script
     defer
     src="<?= $baseUrl ?>/_assets/lucide-loader.js?v=<?= htmlspecialchars($lucideLoaderVersion, ENT_QUOTES, 'UTF-8') ?>"
     data-lucide-sprite="<?= htmlspecialchars($lucideSpriteHref, ENT_QUOTES, 'UTF-8') ?>"
   ></script>
   <style>
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-300.ttf") format("truetype");
+      font-weight: 300;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-400.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-500.ttf") format("truetype");
+      font-weight: 500;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-600.ttf") format("truetype");
+      font-weight: 600;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-700.ttf") format("truetype");
+      font-weight: 700;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-800.ttf") format("truetype");
+      font-weight: 800;
+      font-style: normal;
+      font-display: swap;
+    }
+    @font-face {
+      font-family: "Figtree";
+      src: url("<?= $baseUrl ?>/_assets/fonts/Figtree-900.ttf") format("truetype");
+      font-weight: 900;
+      font-style: normal;
+      font-display: swap;
+    }
     :root {
       --cdv-orange: #f97316;
       --cdv-orange-deep: #ea580c;
@@ -175,7 +221,7 @@ $navClass = function (string $key) use ($activePage): string {
       <div class="max-w-[1300px] mx-auto px-6 py-5 flex flex-col gap-4 lg:flex-row lg:items-center lg:gap-10">
         <div class="flex items-center justify-between">
           <a class="flex items-center gap-4" href="<?= $baseUrl ?>/">
-            <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/_imgs/Colegio-del-Valle-Logo-342x206.png" alt="Colegio del Valle" />
+            <img class="h-16 md:h-20 w-auto" src="<?= $baseUrl ?>/_imgs/Colegio-del-Valle-Logo-342x206.webp" alt="Colegio del Valle" />
           </a>
           <button id="mobile-menu-open" class="lg:hidden inline-flex items-center gap-2 rounded-full border border-slate-200 px-4 py-2 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-700 hover:bg-slate-50" type="button" aria-controls="mobile-menu" aria-expanded="false">
             <i class="text-lg" data-lucide="menu"></i>
@@ -184,21 +230,21 @@ $navClass = function (string $key) use ($activePage): string {
         </div>
         <nav class="hidden lg:flex flex-wrap items-center gap-4 text-xs font-semibold uppercase tracking-[0.15em] lg:ml-auto lg:justify-end">
           <a class="<?= $navClass('home') ?>" href="<?= $baseUrl ?>/">Inicio</a>
-          <a class="<?= $navClass('nosotros') ?>" href="<?= $baseUrl ?>/nosotros">Nosotros</a>
+          <a class="<?= $navClass('nosotros') ?>" href="<?= $baseUrl ?>/nosotros/">Nosotros</a>
           <div class="relative group">
             <a class="<?= $navClass('servicios') ?> inline-flex items-center gap-1" href="<?= $baseUrl ?>/servicios">
               Oferta Academica
               <i class="text-sm" data-lucide="chevron-down"></i>
             </a>
             <div class="pointer-events-none absolute left-0 top-full z-20 mt-3 w-56 rounded-2xl border border-slate-200 bg-white p-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-700 shadow-lg opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100 before:absolute before:-top-3 before:left-0 before:h-3 before:w-full before:content-['']">
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/kinder">Kinder</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/pre-first">Pre First</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/primaria">Primaria</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/secundaria">Secundaria</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/preparatoria">Preparatoria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/oferta-educativa/kinder">Kinder</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/oferta-educativa/pre-first">Pre First</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/oferta-educativa/primaria">Primaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/oferta-educativa/secundaria">Secundaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/oferta-educativa/preparatoria">Preparatoria</a>
             </div>
           </div>
-          <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/noticias">Noticias</a>
+          <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/noticias/">Noticias</a>
           <div class="relative group">
             <a class="text-slate-600 hover:text-slate-900 inline-flex items-center gap-1" href="#comunidad">
               Comunidad
@@ -206,15 +252,15 @@ $navClass = function (string $key) use ($activePage): string {
             </a>
             <div class="pointer-events-none absolute left-0 top-full z-20 mt-3 w-56 rounded-2xl border border-slate-200 bg-white p-3 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-700 shadow-lg opacity-0 transition group-hover:pointer-events-auto group-hover:opacity-100 before:absolute before:-top-3 before:left-0 before:h-3 before:w-full before:content-['']">
               <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/alumnos">Alumnos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/egresados">Egresados</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/docentes">Docentes</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/talleres">Talleres Vespertinos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/calendario-academico">Calendarios Academicos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/egresados/">Egresados</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/docentes/">Docentes</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/talleres-vespertinos/">Talleres Vespertinos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/">Calendarios Academicos</a>
             </div>
           </div>
-          <a class="<?= $navClass('contacto') ?>" href="<?= $baseUrl ?>/contacto">Contacto</a>
+          <a class="<?= $navClass('contacto') ?>" href="<?= $baseUrl ?>/contacto/">Contacto</a>
           <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/blog">Blog</a>
-          <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/ixu">IXU</a>
+          <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/ixu/">IXU</a>
         </nav>
       </div>
     </div>
@@ -229,7 +275,7 @@ $navClass = function (string $key) use ($activePage): string {
         </div>
         <nav class="flex-1 overflow-y-auto px-6 py-6 space-y-3 text-xs font-semibold uppercase tracking-[0.15em]">
           <a class="block rounded-lg px-3 py-3 <?= $navClass('home') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/" data-mobile-close>Inicio</a>
-          <a class="block rounded-lg px-3 py-3 <?= $navClass('nosotros') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/nosotros" data-mobile-close>Nosotros</a>
+          <a class="block rounded-lg px-3 py-3 <?= $navClass('nosotros') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/nosotros/" data-mobile-close>Nosotros</a>
           <details class="group rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 open:shadow-sm">
             <summary class="flex cursor-pointer list-none items-center justify-between text-slate-700">
               <span>Oferta Academica</span>
@@ -237,14 +283,14 @@ $navClass = function (string $key) use ($activePage): string {
             </summary>
             <div class="mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">
               <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/servicios" data-mobile-close>Ver todo</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/kinder" data-mobile-close>Kinder</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/pre-first" data-mobile-close>Pre First</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/primaria" data-mobile-close>Primaria</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/secundaria" data-mobile-close>Secundaria</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/preparatoria" data-mobile-close>Preparatoria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/oferta-educativa/kinder" data-mobile-close>Kinder</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/oferta-educativa/pre-first" data-mobile-close>Pre First</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/oferta-educativa/primaria" data-mobile-close>Primaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/oferta-educativa/secundaria" data-mobile-close>Secundaria</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/oferta-educativa/preparatoria" data-mobile-close>Preparatoria</a>
             </div>
           </details>
-          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/noticias" data-mobile-close>Noticias</a>
+          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/noticias/" data-mobile-close>Noticias</a>
           <details class="group rounded-xl border border-slate-200 bg-slate-50 px-3 py-3 open:shadow-sm">
             <summary class="flex cursor-pointer list-none items-center justify-between text-slate-700">
               <span>Comunidad</span>
@@ -252,15 +298,15 @@ $navClass = function (string $key) use ($activePage): string {
             </summary>
             <div class="mt-3 space-y-2 text-[11px] font-semibold uppercase tracking-[0.15em] text-slate-600">
               <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/alumnos" data-mobile-close>Alumnos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/egresados" data-mobile-close>Egresados</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/docentes" data-mobile-close>Docentes</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/talleres" data-mobile-close>Talleres Vespertinos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/calendario-academico" data-mobile-close>Calendarios Academicos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/egresados/" data-mobile-close>Egresados</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/docentes/" data-mobile-close>Docentes</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/talleres-vespertinos/" data-mobile-close>Talleres Vespertinos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/" data-mobile-close>Calendarios Academicos</a>
             </div>
           </details>
-          <a class="block rounded-lg px-3 py-3 <?= $navClass('contacto') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/contacto" data-mobile-close>Contacto</a>
+          <a class="block rounded-lg px-3 py-3 <?= $navClass('contacto') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/contacto/" data-mobile-close>Contacto</a>
           <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/blog" data-mobile-close>Blog</a>
-          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/ixu" data-mobile-close>IXU</a>
+          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/ixu/" data-mobile-close>IXU</a>
         </nav>
       </aside>
     </div>

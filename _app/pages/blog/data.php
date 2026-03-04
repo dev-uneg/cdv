@@ -7,7 +7,7 @@ return [
     'date' => '10 febrero 2026',
     'date_ts' => strtotime('2026-02-10'),
     'category' => 'Educacion Integral',
-    'hero' => 'post-1.jpg',
+    'hero' => 'post-1.webp',
   ],
   [
     'slug' => 'actividades-de-artes-para-fomentar-la-creatividad-y-el-aprendizaje',
@@ -16,7 +16,7 @@ return [
     'date' => '6 febrero 2026',
     'date_ts' => strtotime('2026-02-06'),
     'category' => 'Arte, música y creatividad',
-    'hero' => 'post-2.jpg',
+    'hero' => 'post-2.webp',
   ],
   [
     'slug' => 'papel-del-docente-en-la-nueva-escuela-mexicana',
@@ -25,6 +25,6 @@ return [
     'date' => '12 febrero 2026',
     'date_ts' => strtotime('2026-02-12'),
     'category' => 'Educacion Integral',
-    'hero' => 'post-3.jpg',
+    'hero' => 'post-3.webp',
   ],
 ];

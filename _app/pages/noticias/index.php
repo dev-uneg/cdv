@@ -88,7 +88,7 @@ $pagedPosts = array_slice($posts, $offset, $perPage);
 
     <?php
       $currentSlug = null;
-      $sectionBase = $baseUrl . '/noticias';
+      $sectionBase = $baseUrl . '/noticias/';
       include __DIR__ . '/sidebar.php';
     ?>
   </div>

@@ -20,20 +20,20 @@ if ($baseUrl === '/') {
   <div class="max-w-[1300px] mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 text-center">Cursos IXU</h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-repse.png">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-repse.png" alt="Curso REPSE" loading="lazy" />
+      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-repse.webp">
+        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-repse.webp" alt="Curso REPSE" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-coaching-creatividad-empresarial.png">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-coaching-creatividad-empresarial.png" alt="Curso Coaching y creatividad empresarial" loading="lazy" />
+      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-coaching-creatividad-empresarial.webp">
+        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-coaching-creatividad-empresarial.webp" alt="Curso Coaching y creatividad empresarial" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-tendencias-mercadotecnia-siglo-xxi.png">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-tendencias-mercadotecnia-siglo-xxi.png" alt="Curso Tendencias para mercadotecnia del siglo XXI" loading="lazy" />
+      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-tendencias-mercadotecnia-siglo-xxi.webp">
+        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-tendencias-mercadotecnia-siglo-xxi.webp" alt="Curso Tendencias para mercadotecnia del siglo XXI" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.png">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.png" alt="Curso Desarrollo de habilidades para un liderazgo efectivo" loading="lazy" />
+      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.webp">
+        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.webp" alt="Curso Desarrollo de habilidades para un liderazgo efectivo" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
     </div>
@@ -44,8 +44,8 @@ if ($baseUrl === '/') {
   <div class="max-w-[1300px] mx-auto px-6">
     <h2 class="text-2xl md:text-3xl font-semibold text-slate-800 text-center">Diplomados IXU</h2>
     <div class="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/diplomado-normas-informacion-financiera.png">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/diplomado-normas-informacion-financiera.png" alt="Diplomado en Normas de Informacion Financiera" loading="lazy" />
+      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/diplomado-normas-informacion-financiera.webp">
+        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/diplomado-normas-informacion-financiera.webp" alt="Diplomado en Normas de Informacion Financiera" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
     </div>

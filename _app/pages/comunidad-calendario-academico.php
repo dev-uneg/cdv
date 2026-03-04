@@ -36,13 +36,13 @@ require __DIR__ . '/partials/header.php';
       <div data-panel="kinder">
         <h3 class="text-3xl font-semibold text-slate-800">Kinder</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/kinder/Calendario-kinder.jpg" alt="Calendario Kinder" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/kinder/Calendario-kinder.webp" alt="Calendario Kinder" loading="lazy" />
         </div>
       </div>
       <div class="hidden" data-panel="primaria">
         <h3 class="text-3xl font-semibold text-slate-800">Primaria</h3>
         <div class="mt-4 overflow-hidden rounded-2xl border border-slate-200 bg-white">
-          <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/primaria/Calendario-primaria.jpg" alt="Calendario Primaria" loading="lazy" />
+          <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/primaria/Calendario-primaria.webp" alt="Calendario Primaria" loading="lazy" />
         </div>
       </div>
       <div class="hidden" data-panel="secundaria">

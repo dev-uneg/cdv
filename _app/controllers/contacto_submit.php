@@ -18,7 +18,7 @@ function contacto_expects_html(): bool
 function contacto_redirect(bool $ok, string $errorMessage = ''): void
 {
     $baseUrl = defined('BASE_URL') ? BASE_URL : '';
-    $target = $ok ? '/gracias' : '/contacto?error=1';
+    $target = $ok ? '/gracias' : '/contacto/?error=1';
     if (!$ok && $errorMessage !== '') {
         $target .= '&error_msg=' . rawurlencode($errorMessage);
     }

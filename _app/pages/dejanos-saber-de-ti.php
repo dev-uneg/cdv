@@ -11,7 +11,7 @@ require __DIR__ . '/partials/header.php';
     <p class="mt-4 text-slate-600">
       Queremos conocer tu historia como egresado de Colegio del Valle. Comparte tus datos y logros con nosotros.
     </p>
-    <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto">
+    <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
       <i class="text-base" data-lucide="message-circle"></i>
       Contacto
     </a>

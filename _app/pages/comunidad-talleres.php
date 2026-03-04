@@ -19,7 +19,7 @@ require __DIR__ . '/partials/header.php';
       y concursos mas relevantes de toda nuestra comunidad. ¡Aprovechalas!
     </p>
     <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white max-w-[50%] mx-auto">
-      <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/talleres/talleres.png" alt="Talleres vespertinos Colegio del Valle" loading="lazy" />
+      <img class="w-full h-auto" src="<?= $baseUrl ?>/_imgs/talleres/talleres.webp" alt="Talleres vespertinos Colegio del Valle" loading="lazy" />
     </div>
   </div>
 </section>

@@ -13,10 +13,10 @@ if ($baseUrl === '/') {
     <div class="relative" data-hero-slider>
       <div class="relative h-[160px] md:h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.png" alt="Colegio del Valle" loading="lazy" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="lazy" />
         </div>
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.png" alt="Colegio del Valle" loading="lazy" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.webp" alt="Colegio del Valle" loading="lazy" />
         </div>
         <div class="absolute inset-0 opacity-100 transition-opacity duration-700" data-slide>
           <iframe
@@ -51,23 +51,23 @@ if ($baseUrl === '/') {
     <div class="mt-12 space-y-0">
       <div class="grid gap-0 lg:grid-cols-2">
         <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-tl-3xl">
-          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/kinder">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/kinder.jpg" alt="Kinder" loading="lazy" />
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/kinder">
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/kinder.webp" alt="Kinder" loading="lazy" />
           </a>
-          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/kinder">
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/oferta-educativa/kinder">
             <h3 class="text-2xl font-semibold sm:text-3xl">Kinder</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/70">RVOE SEP 09060319/07/2006</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
           </a>
-          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/pre-first">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/pre-first.jpg" alt="Pre-first" loading="lazy" />
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/pre-first">
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/pre-first.webp" alt="Pre-first" loading="lazy" />
             <div class="absolute left-6 bottom-6 text-white">
               <p class="text-lg font-semibold sm:text-xl">Pre-First</p>
               <p class="mt-4 text-xs font-semibold uppercase tracking-[0.2em]">Más información</p>
             </div>
           </a>
-          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/primaria">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/primaria.jpg" alt="Primaria" loading="lazy" />
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/primaria">
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/primaria.webp" alt="Primaria" loading="lazy" />
             <div class="absolute left-6 bottom-6 text-white">
               <p class="text-lg font-semibold sm:text-xl">Primaria</p>
               <p class="mt-3 text-xs uppercase tracking-[0.2em] text-white/80">RVOE SEP 09050086/06/2005</p>
@@ -76,7 +76,7 @@ if ($baseUrl === '/') {
           </a>
         </div>
         <div class="relative h-[260px] overflow-hidden rounded-none sm:h-[560px] sm:rounded-tr-3xl">
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/colegio-del-valle.jpg" alt="Colegio del Valle" loading="lazy" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/colegio-del-valle.webp" alt="Colegio del Valle" loading="lazy" />
           <div class="absolute inset-0 bg-slate-900/50"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-6 px-10 text-center text-white">
             <h3 class="text-2xl font-semibold sm:text-3xl">Contáctanos o visita nuestras instalaciones</h3>
@@ -86,7 +86,7 @@ if ($baseUrl === '/') {
       </div>
       <div class="grid gap-0 lg:grid-cols-2">
         <div class="relative h-[260px] overflow-hidden rounded-none sm:h-[560px] sm:rounded-bl-3xl">
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/contactanos.jpg" alt="Colegio del Valle" loading="lazy" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/contactanos.webp" alt="Colegio del Valle" loading="lazy" />
           <div class="absolute inset-0 bg-slate-900/40"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-4 px-10 text-center text-white">
             <p class="text-sm uppercase tracking-[0.2em] text-white/70">Colegio Del Valle</p>
@@ -95,21 +95,21 @@ if ($baseUrl === '/') {
           </div>
         </div>
         <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-br-3xl">
-          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/secundaria">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/secundaria.jpg" alt="Secundaria" loading="lazy" />
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/secundaria">
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/secundaria.webp" alt="Secundaria" loading="lazy" />
           </a>
-          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-orange-500 p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/secundaria">
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-orange-500 p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/oferta-educativa/secundaria">
             <h3 class="text-2xl font-semibold sm:text-3xl">Secundaria</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">RVOE SEP 0900053/22/06/2000</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
           </a>
-          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/preparatoria">
+          <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/oferta-educativa/preparatoria">
             <h3 class="text-2xl font-semibold sm:text-3xl">Preparatoria</h3>
             <p class="text-sm uppercase tracking-[0.2em] text-white/80">CLAVE UNAM 1172</p>
             <span class="text-sm font-semibold uppercase tracking-[0.2em]">Más información</span>
           </a>
-          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/preparatoria">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/preparatoria.jpg" alt="Preparatoria" loading="lazy" />
+          <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/preparatoria">
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/preparatoria.webp" alt="Preparatoria" loading="lazy" />
           </a>
         </div>
       </div>
@@ -155,23 +155,23 @@ if ($baseUrl === '/') {
     </div>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="<?= $baseUrl ?>/formas-de-pago">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_13_ISEC_Forma-de-pago_172x154.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_13_ISEC_Forma-de-pago_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Formas de pago</p>
       </a>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="https://uneg.academic.lat/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_14_ISEC_Portal_172x154.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_14_ISEC_Portal_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Portal escolar</p>
       </a>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="https://login.microsoftonline.com/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_15_ISEC_Office-365_172x154.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_15_ISEC_Office-365_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Office 365</p>
       </a>
       <div class="rounded-2xl bg-white/5 p-5 text-center">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Mesa de ayuda</p>
       </div>
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="http://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener">
-        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_17_ISEC_Kiosko_172x154.png" alt="" aria-hidden="true" loading="lazy" />
+        <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_17_ISEC_Kiosko_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Kiosko</p>
       </a>
     </div>

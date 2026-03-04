@@ -20,7 +20,7 @@ if ($baseUrl === '/') {
         <a class="rounded-full bg-emerald-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white" href="<?= $baseUrl ?>/">
           Ir al inicio
         </a>
-        <a class="rounded-full border border-emerald-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800" href="<?= $baseUrl ?>/contacto">
+        <a class="rounded-full border border-emerald-300 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-emerald-800" href="<?= $baseUrl ?>/contacto/">
           Volver a contacto
         </a>
       </div>

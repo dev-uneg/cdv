@@ -7,6 +7,6 @@ return [
     'date' => '17 febrero 2026',
     'date_ts' => strtotime('2026-02-17'),
     'category' => 'Comunidad Escolar',
-    'hero' => 'default.jpg',
+    'hero' => 'default.webp',
   ],
 ];

@@ -78,7 +78,7 @@ require __DIR__ . '/partials/header.php';
       </details>
     </div>
     <div class="flex flex-col gap-4">
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
         <i class="text-base" data-lucide="info"></i>
         Mas informacion
       </a>
@@ -202,7 +202,12 @@ require __DIR__ . '/partials/header.php';
           <i class="text-base" data-lucide="volleyball"></i>
           Talleres vespertinos
         </button>
-        <button class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50" type="button" data-tab="plan">
+        <button
+          id="1770308278594-558bbf51-173f"
+          class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50"
+          type="button"
+          data-tab="plan"
+        >
           <i class="text-base" data-lucide="list"></i>
           Plan de Estudios
         </button>
@@ -243,40 +248,48 @@ require __DIR__ . '/partials/header.php';
           </ul>
         </div>
         <div class="hidden" data-panel="plan">
-          <div class="space-y-6 text-slate-600">
-            <div>
-              <p class="font-semibold text-slate-800">Lenguajes</p>
-              <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Español</li>
-                <li>Inglés</li>
-                <li>Artes</li>
-              </ul>
+          <div class="grid gap-10 md:grid-cols-2 text-slate-700">
+            <div class="space-y-8">
+              <div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-800">Lenguajes</p>
+                <ul class="mt-4 list-disc pl-6 space-y-2 text-lg md:text-2xl leading-tight">
+                  <li>Español</li>
+                  <li>Inglés</li>
+                  <li>Artes</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-800">Saberes y Pensamiento Científico</p>
+                <ul class="mt-4 list-disc pl-6 space-y-2 text-lg md:text-2xl leading-tight">
+                  <li>Matemáticas</li>
+                  <li>Ciencias Naturales</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-800">Ética, Naturaleza y Sociedades</p>
+                <ul class="mt-4 list-disc pl-6 space-y-2 text-lg md:text-2xl leading-tight">
+                  <li>Historia</li>
+                  <li>Geografía</li>
+                  <li>Formación Cívica y Ética</li>
+                  <li>La Entidad Donde Vivo</li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <p class="font-semibold text-slate-800">Saberes y Pensamiento Científico</p>
-              <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Matemáticas</li>
-                <li>Ciencias Naturales</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-800">Ética, Naturaleza y Sociedades</p>
-              <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Historia</li>
-                <li>Geografía</li>
-                <li>Formación Cívica y Ética</li>
-                <li>La Entidad Donde Vivo</li>
-              </ul>
-            </div>
-            <div>
-              <p class="font-semibold text-slate-800">De lo Humano a lo Comunitario</p>
-              <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Educación Física</li>
-                <li>Educación Socioemocional</li>
-                <li>Tecnología</li>
-                <li>Autonomía Curricular</li>
-                <li>Inglés</li>
-              </ul>
+            <div class="space-y-8">
+              <div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-800">De lo Humano a lo Comunitario</p>
+                <ul class="mt-4 list-disc pl-6 space-y-2 text-lg md:text-2xl leading-tight">
+                  <li>Educación Física</li>
+                  <li>Educación Socioemocional</li>
+                  <li>Tecnología</li>
+                </ul>
+              </div>
+              <div>
+                <p class="text-2xl md:text-3xl font-semibold text-slate-800">Autonomía Curricular</p>
+                <ul class="mt-4 list-disc pl-6 space-y-2 text-lg md:text-2xl leading-tight">
+                  <li>Inglés</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
@@ -296,7 +309,7 @@ require __DIR__ . '/partials/header.php';
         <i class="text-base" data-lucide="file-text"></i>
         Reglamento
       </a>
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/kinder/Calendario-kinder.jpg" target="_blank" rel="noopener">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/kinder/Calendario-kinder.webp" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="calendar-days"></i>
         Calendario academico
       </a>
@@ -400,6 +413,12 @@ require __DIR__ . '/partials/header.php';
 
 <script>
   (() => {
+    const hashValue = decodeURIComponent((window.location.hash || '').replace(/^#/, ''));
+    const planAnchors = new Set([
+      '1770308278594-558bbf51-173f',
+      'plan-estudios-kinder',
+    ]);
+
     const scopes = document.querySelectorAll('[data-tabscope]');
     scopes.forEach((scope) => {
       const tabs = scope.querySelectorAll('[data-tab]');
@@ -420,7 +439,20 @@ require __DIR__ . '/partials/header.php';
         tab.addEventListener('click', () => setActive(tab.getAttribute('data-tab')));
       });
       setActive(scope.getAttribute('data-default') || tabs[0]?.getAttribute('data-tab'));
+
+      if (planAnchors.has(hashValue) && scope.querySelector('[data-tab="plan"]')) {
+        setActive('plan');
+      }
     });
+
+    if (planAnchors.has(hashValue)) {
+      const planAnchor = document.getElementById('1770308278594-558bbf51-173f');
+      if (planAnchor) {
+        requestAnimationFrame(() => {
+          planAnchor.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        });
+      }
+    }
 
     const accordions = document.querySelectorAll('[data-accordion]');
     accordions.forEach((accordion) => {

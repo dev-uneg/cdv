@@ -70,7 +70,7 @@ require __DIR__ . '/partials/header.php';
       </details>
     </div>
     <div class="flex flex-col gap-4">
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-indigo-700 px-8 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700" href="<?= $baseUrl ?>/contacto">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-indigo-700 px-8 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-indigo-700" href="<?= $baseUrl ?>/contacto/">
         Pedir mayor información
       </a>
     </div>

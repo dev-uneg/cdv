@@ -7,17 +7,17 @@ require __DIR__ . '/partials/header.php';
 <section class="bg-white">
   <div class="max-w-[1300px] mx-auto px-6 py-10">
     <div class="grid grid-cols-1 gap-3 sm:grid-cols-6">
-      <button class="relative col-span-4 row-span-2 h-[340px] sm:h-[400px] overflow-hidden rounded-3xl sm:col-span-3 sm:row-span-2 sm:h-[400px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG1.png" aria-label="Abrir imagen 1">
-        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG1.png" alt="Colegio del Valle" loading="lazy" />
+      <button class="relative col-span-4 row-span-2 h-[340px] sm:h-[400px] overflow-hidden rounded-3xl sm:col-span-3 sm:row-span-2 sm:h-[400px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG1.webp" aria-label="Abrir imagen 1">
+        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG1.webp" alt="Colegio del Valle" loading="lazy" />
       </button>
-      <button class="relative col-span-2 h-[170px] overflow-hidden rounded-3xl sm:col-span-2 sm:h-[170px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG2.png" aria-label="Abrir imagen 2">
-        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG2.png" alt="Colegio del Valle" loading="lazy" />
+      <button class="relative col-span-2 h-[170px] overflow-hidden rounded-3xl sm:col-span-2 sm:h-[170px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG2.webp" aria-label="Abrir imagen 2">
+        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG2.webp" alt="Colegio del Valle" loading="lazy" />
       </button>
-      <button class="relative col-span-2 h-[170px] overflow-hidden rounded-3xl sm:col-span-1 sm:h-[170px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG3.png" aria-label="Abrir imagen 3">
-        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG3.png" alt="Colegio del Valle" loading="lazy" />
+      <button class="relative col-span-2 h-[170px] overflow-hidden rounded-3xl sm:col-span-1 sm:h-[170px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG3.webp" aria-label="Abrir imagen 3">
+        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/WEB_CDV_IMAGENES_NOSOTROS_1300X709_IMG3.webp" alt="Colegio del Valle" loading="lazy" />
       </button>
-      <button class="relative col-span-4 h-[210px] overflow-hidden rounded-3xl sm:col-span-3 sm:h-[210px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/CDV-Jardin-central-00.jpg" aria-label="Abrir imagen 4">
-        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/CDV-Jardin-central-00.jpg" alt="Colegio del Valle" loading="lazy" />
+      <button class="relative col-span-4 h-[210px] overflow-hidden rounded-3xl sm:col-span-3 sm:h-[210px]" type="button" data-lightbox src="<?= $baseUrl ?>/_imgs/nosotros/CDV-Jardin-central-00.webp" aria-label="Abrir imagen 4">
+        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/nosotros/CDV-Jardin-central-00.webp" alt="Colegio del Valle" loading="lazy" />
       </button>
     </div>
   </div>

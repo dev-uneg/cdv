@@ -35,7 +35,7 @@ require __DIR__ . '/partials/header.php';
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Correo electronico</h3>
         <p class="mt-3 text-slate-500">Acceder a cuenta de correo institucional</p>
       </a>
-      <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="<?= $baseUrl ?>/comunidad/calendario-academico">
+      <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/">
         <i class="block mx-auto text-5xl text-indigo-500" data-lucide="calendar-check"></i>
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Calendarios Academicos</h3>
         <p class="mt-3 text-slate-500">Consultar calendarios academicos del ciclo escolar</p>
