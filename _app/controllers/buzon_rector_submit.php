@@ -1,6 +1,9 @@
 <?php
 declare(strict_types=1);
 
+use PHPMailer\PHPMailer\Exception as PHPMailerException;
+use PHPMailer\PHPMailer\PHPMailer;
+
 function buzon_redirect(bool $ok, string $errorMessage = ''): void
 {
     $baseUrl = defined('BASE_URL') ? BASE_URL : '';
@@ -38,12 +41,42 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     buzon_redirect(false, 'Correo electronico invalido.');
 }
 
-$to = 'gabriel.riancho@uneg.edu.mx,elizabeth.cisneros@uneg.edu.mx';
-$subject = '[Buzon del Rector] ' . $asunto;
+$smtpConfig = [];
+$smtpConfigPath = __DIR__ . '/../config/smtp.local.php';
+if (file_exists($smtpConfigPath)) {
+    $smtpConfig = require $smtpConfigPath;
+}
 
-$domain = (string) ($_SERVER['HTTP_HOST'] ?? 'coldelvalle.edu.mx');
-$domain = preg_replace('/[^a-zA-Z0-9.\-]/', '', $domain) ?: 'coldelvalle.edu.mx';
-$fromEmail = 'no-reply@' . $domain;
+$smtpHost = (string) ($smtpConfig['host'] ?? getenv('SMTP_HOST') ?? 'smtp.gmail.com');
+$smtpPort = (int) ($smtpConfig['port'] ?? getenv('SMTP_PORT') ?? 587);
+$smtpEncryption = (string) ($smtpConfig['encryption'] ?? getenv('SMTP_ENCRYPTION') ?? PHPMailer::ENCRYPTION_STARTTLS);
+$smtpUser = (string) ($smtpConfig['username'] ?? getenv('SMTP_USERNAME') ?? 'webs.delvalle@gmail.com');
+$smtpPassword = (string) ($smtpConfig['password'] ?? getenv('SMTP_PASSWORD') ?? '');
+$smtpFromEmail = (string) ($smtpConfig['from_email'] ?? getenv('SMTP_FROM_EMAIL') ?? $smtpUser);
+$smtpFromName = (string) ($smtpConfig['from_name'] ?? getenv('SMTP_FROM_NAME') ?? 'Colegio del Valle');
+
+if ($smtpUser === '' || $smtpPassword === '' || $smtpFromEmail === '') {
+    buzon_redirect(false, 'Falta configurar SMTP para el envio del buzon.');
+}
+
+$recipients = $smtpConfig['buzon_rector_recipients'] ?? [];
+if (!is_array($recipients)) {
+    $recipients = [];
+}
+
+$validRecipients = [];
+foreach ($recipients as $recipient) {
+    $recipientEmail = trim((string) $recipient);
+    if ($recipientEmail !== '' && filter_var($recipientEmail, FILTER_VALIDATE_EMAIL)) {
+        $validRecipients[] = $recipientEmail;
+    }
+}
+
+if ($validRecipients === []) {
+    buzon_redirect(false, 'Falta configurar destinatarios del buzon.');
+}
+
+$subject = '[Buzon del Rector] ' . $asunto;
 
 $bodyLines = [
     'Nuevo mensaje desde el Buzon del Rector',
@@ -59,16 +92,30 @@ $bodyLines = [
 ];
 $body = implode("\n", $bodyLines);
 
-$headers = [
-    'MIME-Version: 1.0',
-    'Content-Type: text/plain; charset=UTF-8',
-    'From: Colegio del Valle <' . $fromEmail . '>',
-    'Reply-To: ' . $email,
-    'X-Mailer: PHP/' . phpversion(),
-];
+try {
+    $mail = new PHPMailer(true);
+    $mail->isSMTP();
+    $mail->Host = $smtpHost;
+    $mail->Port = $smtpPort;
+    $mail->SMTPAuth = true;
+    $mail->SMTPSecure = $smtpEncryption;
+    $mail->Username = $smtpUser;
+    $mail->Password = $smtpPassword;
+    $mail->CharSet = PHPMailer::CHARSET_UTF8;
 
-$sent = @mail($to, $subject, $body, implode("\r\n", $headers));
-if (!$sent) {
+    $mail->setFrom($smtpFromEmail, $smtpFromName);
+    $mail->addReplyTo($email, $nombre);
+
+    foreach ($validRecipients as $recipient) {
+        $mail->addAddress($recipient);
+    }
+
+    $mail->Subject = $subject;
+    $mail->Body = $body;
+    $mail->AltBody = $body;
+    $mail->isHTML(false);
+    $mail->send();
+} catch (PHPMailerException $e) {
     buzon_redirect(false, 'No se pudo enviar tu mensaje. Intenta nuevamente en unos minutos.');
 }
 
