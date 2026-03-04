@@ -48,7 +48,7 @@ if ($errorMessage === '') {
           <i class="text-lg text-slate-500" data-lucide="mail"></i>
           <div>
             <p class="font-semibold text-slate-800">Correo</p>
-            <p>contacto@coldelvalle.edu.mx</p>
+            <p><a class="hover:text-slate-900" href="mailto:contacto@coldelvalle.edu.mx">contacto@coldelvalle.edu.mx</a></p>
           </div>
         </div>
         <div class="flex items-start gap-3">
@@ -62,7 +62,7 @@ if ($errorMessage === '') {
           <i class="text-lg text-slate-500" data-lucide="phone"></i>
           <div>
             <p class="font-semibold text-slate-800">Telefono</p>
-            <p>55 5063 1500</p>
+            <p><a class="hover:text-slate-900" href="tel:+525550631500">55 5063 1500</a></p>
           </div>
         </div>
       </div>

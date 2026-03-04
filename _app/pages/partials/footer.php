@@ -19,9 +19,9 @@
       <div>
         <p class="text-sm font-semibold uppercase tracking-[0.2em]">Contacto</p>
         <div class="mt-4 space-y-2 text-sm text-slate-400">
-          <p>Av. Insurgentes Sur 1234, Col. del Valle</p>
-          <p>55 1234 5678</p>
-          <p>info@colegiodelvalle.mx</p>
+          <p>Mier y Pesado 227, Col. del Valle Centro, 03100 Ciudad de Mexico, CDMX</p>
+          <p><a class="hover:text-white" href="tel:+525550631500">55 5063 1500</a></p>
+          <p><a class="hover:text-white" href="mailto:contacto@coldelvalle.edu.mx">contacto@coldelvalle.edu.mx</a></p>
         </div>
       </div>
       <div>

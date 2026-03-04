@@ -189,18 +189,18 @@ $navClass = function (string $key) use ($activePage): string {
         <div class="topbar-marquee">
           <div class="topbar-marquee__inner">
             <div class="topbar-marquee__group">
-              <span>ADMISIONES: 55 5063 1500 - Opcion 1</span>
+              <span>ADMISIONES: <a class="underline decoration-white/40 hover:decoration-white" href="tel:+525550631500">55 5063 1500</a> - Opcion 1</span>
               <span class="text-slate-400">|</span>
-              <span>WHATSAPP: 55 7113 7882</span>
+              <span>WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525571137882" target="_blank" rel="noopener">55 7113 7882</a></span>
               <span class="text-slate-400">|</span>
-              <span>CREDITO Y COBRANZA WHATSAPP: 55 1700 9348 - 56 6747 7007</span>
+              <span>CREDITO Y COBRANZA WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525517009348" target="_blank" rel="noopener">55 1700 9348</a> - <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525667477007" target="_blank" rel="noopener">56 6747 7007</a></span>
             </div>
             <div class="topbar-marquee__group topbar-marquee__group--duplicate" aria-hidden="true">
-              <span>ADMISIONES: 55 5063 1500 - Opcion 1</span>
+              <span>ADMISIONES: <a class="underline decoration-white/40 hover:decoration-white" href="tel:+525550631500">55 5063 1500</a> - Opcion 1</span>
               <span class="text-slate-400">|</span>
-              <span>WHATSAPP: 55 7113 7882</span>
+              <span>WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525571137882" target="_blank" rel="noopener">55 7113 7882</a></span>
               <span class="text-slate-400">|</span>
-              <span>CREDITO Y COBRANZA WHATSAPP: 55 1700 9348 - 56 6747 7007</span>
+              <span>CREDITO Y COBRANZA WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525517009348" target="_blank" rel="noopener">55 1700 9348</a> - <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525667477007" target="_blank" rel="noopener">56 6747 7007</a></span>
             </div>
           </div>
         </div>

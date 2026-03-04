@@ -80,7 +80,7 @@ if ($baseUrl === '/') {
           <div class="absolute inset-0 bg-slate-900/50"></div>
           <div class="absolute inset-0 flex flex-col items-center justify-center gap-6 px-10 text-center text-white">
             <h3 class="text-2xl font-semibold sm:text-3xl">Contáctanos o visita nuestras instalaciones</h3>
-            <a class="inline-flex rounded-full bg-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-900" href="#contacto-home">Contactar</a>
+            <a class="inline-flex rounded-full bg-white px-8 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-900" href="<?= $baseUrl ?>/contacto/">Contactar</a>
           </div>
         </div>
       </div>
@@ -151,7 +151,7 @@ if ($baseUrl === '/') {
         <p class="text-xs uppercase tracking-[0.3em] text-white/60">Enlaces de interes</p>
         <h2 class="mt-3 text-3xl font-bold">Recursos para la comunidad</h2>
       </div>
-      <a class="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em]" href="#contacto-home">Contactanos</a>
+      <a class="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em]" href="<?= $baseUrl ?>/contacto/">Contactanos</a>
     </div>
     <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
       <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="<?= $baseUrl ?>/formas-de-pago">
@@ -170,7 +170,7 @@ if ($baseUrl === '/') {
         <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Mesa de ayuda</p>
       </div>
-      <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="http://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener">
+      <a class="rounded-2xl bg-white/5 p-5 text-center transition hover:bg-white/10" href="https://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener">
         <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_17_ISEC_Kiosko_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
         <p class="text-xs uppercase tracking-[0.2em] text-white/70">Kiosko</p>
       </a>

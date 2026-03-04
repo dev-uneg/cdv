@@ -25,7 +25,7 @@ require __DIR__ . '/partials/header.php';
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Office 365</h3>
         <p class="mt-3 text-slate-500">Acceder a cuenta Office 365</p>
       </a>
-      <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="http://isecelearning.com/" target="_blank" rel="noopener">
+      <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="https://isecelearning.com/" target="_blank" rel="noopener">
         <i class="block mx-auto text-5xl text-indigo-500" data-lucide="globe"></i>
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">E-learning</h3>
         <p class="mt-3 text-slate-500">Acceder a E-learning</p>
