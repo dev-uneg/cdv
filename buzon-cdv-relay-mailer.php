@@ -111,7 +111,27 @@ $bodyLines = [
     'Fecha: ' . $createdAt,
     'IP: ' . ($ip !== '' ? $ip : 'N/D'),
 ];
-$body = implode("\n", $bodyLines);
+$bodyText = implode("\n", $bodyLines);
+
+$h = static function (string $value): string {
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+};
+$bodyHtml = '<div style="font-family:Arial,sans-serif;font-size:14px;color:#0f172a;line-height:1.5;">'
+    . '<h2 style="margin:0 0 14px;font-size:18px;color:#0f172a;">Nuevo mensaje desde el Buzon del Rector</h2>'
+    . '<table cellpadding="6" cellspacing="0" border="0" style="border-collapse:collapse;">'
+    . '<tr><td style="font-weight:bold;">Nombre:</td><td>' . $h($nombre) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Correo:</td><td>' . $h($email) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Telefono:</td><td>' . $h($telefono !== '' ? $telefono : 'No proporcionado') . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Relacion:</td><td>' . $h($relacion) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Asunto:</td><td>' . $h($asunto) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">Fecha:</td><td>' . $h($createdAt) . '</td></tr>'
+    . '<tr><td style="font-weight:bold;">IP:</td><td>' . $h($ip !== '' ? $ip : 'N/D') . '</td></tr>'
+    . '</table>'
+    . '<p style="margin:16px 0 6px;font-weight:bold;">Mensaje:</p>'
+    . '<div style="white-space:pre-wrap;background:#f8fafc;border:1px solid #e2e8f0;border-radius:8px;padding:10px;">'
+    . $h($mensaje)
+    . '</div>'
+    . '</div>';
 
 try {
     $mail = new \PHPMailer\PHPMailer\PHPMailer(true);
@@ -136,9 +156,9 @@ try {
     }
 
     $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->AltBody = $body;
-    $mail->isHTML(false);
+    $mail->Body = $bodyHtml;
+    $mail->AltBody = $bodyText;
+    $mail->isHTML(true);
     $mail->send();
 
     echo json_encode(['ok' => true]);
@@ -148,4 +168,3 @@ try {
     echo json_encode(['ok' => false, 'error' => $clean($e->getMessage())]);
     exit;
 }
-
