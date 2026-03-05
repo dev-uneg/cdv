@@ -1,9 +1,6 @@
 <?php
 declare(strict_types=1);
 
-use PHPMailer\PHPMailer\Exception as PHPMailerException;
-use PHPMailer\PHPMailer\PHPMailer;
-
 function buzon_redirect(bool $ok, string $errorMessage = ''): void
 {
     $baseUrl = defined('BASE_URL') ? BASE_URL : '';
@@ -19,6 +16,39 @@ function buzon_redirect(bool $ok, string $errorMessage = ''): void
 function buzon_clean(string $value): string
 {
     return trim(str_replace(["\r", "\n"], ' ', $value));
+}
+
+function buzon_webhook_post(string $url, array $payload): array
+{
+    $ch = curl_init($url);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept: application/json'],
+        CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
+        CURLOPT_TIMEOUT => 12,
+    ]);
+
+    $raw = curl_exec($ch);
+    if ($raw === false) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        return ['ok' => false, 'error' => 'cURL: ' . buzon_clean($error)];
+    }
+
+    $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
+    curl_close($ch);
+
+    if ($status < 200 || $status >= 300) {
+        return ['ok' => false, 'error' => 'HTTP ' . $status . ' body=' . buzon_clean((string) $raw)];
+    }
+
+    $decoded = json_decode((string) $raw, true);
+    if (is_array($decoded) && isset($decoded['ok']) && !$decoded['ok']) {
+        return ['ok' => false, 'error' => buzon_clean((string) ($decoded['error'] ?? 'Webhook retorno ok=false'))];
+    }
+
+    return ['ok' => true, 'error' => ''];
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -41,82 +71,23 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     buzon_redirect(false, 'Correo electronico invalido.');
 }
 
-$smtpConfig = [];
-$smtpConfigPath = __DIR__ . '/../config/smtp.local.php';
-if (file_exists($smtpConfigPath)) {
-    $smtpConfig = require $smtpConfigPath;
-}
-
-$smtpHost = (string) ($smtpConfig['host'] ?? getenv('SMTP_HOST') ?? 'smtp.gmail.com');
-$smtpPort = (int) ($smtpConfig['port'] ?? getenv('SMTP_PORT') ?? 587);
-$smtpEncryption = (string) ($smtpConfig['encryption'] ?? getenv('SMTP_ENCRYPTION') ?? PHPMailer::ENCRYPTION_STARTTLS);
-$smtpUser = (string) ($smtpConfig['username'] ?? getenv('SMTP_USERNAME') ?? 'webs.delvalle@gmail.com');
-$smtpPassword = (string) ($smtpConfig['password'] ?? getenv('SMTP_PASSWORD') ?? '');
-$smtpFromEmail = (string) ($smtpConfig['from_email'] ?? getenv('SMTP_FROM_EMAIL') ?? $smtpUser);
-$smtpFromName = (string) ($smtpConfig['from_name'] ?? getenv('SMTP_FROM_NAME') ?? 'Colegio del Valle');
-
-if ($smtpUser === '' || $smtpPassword === '' || $smtpFromEmail === '') {
-    buzon_redirect(false, 'Falta configurar SMTP para el envio del buzon.');
-}
-
-$recipients = $smtpConfig['buzon_rector_recipients'] ?? [];
-if (!is_array($recipients)) {
-    $recipients = [];
-}
-
-$validRecipients = [];
-foreach ($recipients as $recipient) {
-    $recipientEmail = trim((string) $recipient);
-    if ($recipientEmail !== '' && filter_var($recipientEmail, FILTER_VALIDATE_EMAIL)) {
-        $validRecipients[] = $recipientEmail;
-    }
-}
-
-if ($validRecipients === []) {
-    buzon_redirect(false, 'Falta configurar destinatarios del buzon.');
-}
-
-$subject = '[Buzon del Rector] ' . $asunto;
-
-$bodyLines = [
-    'Nuevo mensaje desde el Buzon del Rector',
-    '',
-    'Nombre: ' . $nombre,
-    'Correo: ' . $email,
-    'Telefono: ' . ($telefono !== '' ? $telefono : 'No proporcionado'),
-    'Relacion con el colegio: ' . $relacion,
-    'Asunto: ' . $asunto,
-    '',
-    'Mensaje:',
-    $mensaje,
+$webhookUrl = trim((string) (getenv('BUZON_RECTOR_WEBHOOK_URL') ?: 'https://delvalle.qodexia.site/buzon-cdv-relay-mailer.php'));
+$payload = [
+    'nombre' => $nombre,
+    'email' => $email,
+    'telefono' => $telefono,
+    'relacion' => $relacion,
+    'asunto' => $asunto,
+    'mensaje' => $mensaje,
+    'created_at' => date('c'),
+    'ip' => (string) ($_SERVER['REMOTE_ADDR'] ?? ''),
 ];
-$body = implode("\n", $bodyLines);
 
-try {
-    $mail = new PHPMailer(true);
-    $mail->isSMTP();
-    $mail->Host = $smtpHost;
-    $mail->Port = $smtpPort;
-    $mail->SMTPAuth = true;
-    $mail->SMTPSecure = $smtpEncryption;
-    $mail->Username = $smtpUser;
-    $mail->Password = $smtpPassword;
-    $mail->CharSet = PHPMailer::CHARSET_UTF8;
-
-    $mail->setFrom($smtpFromEmail, $smtpFromName);
-    $mail->addReplyTo($email, $nombre);
-
-    foreach ($validRecipients as $recipient) {
-        $mail->addAddress($recipient);
-    }
-
-    $mail->Subject = $subject;
-    $mail->Body = $body;
-    $mail->AltBody = $body;
-    $mail->isHTML(false);
-    $mail->send();
-} catch (PHPMailerException $e) {
-    buzon_redirect(false, 'No se pudo enviar tu mensaje. Intenta nuevamente en unos minutos.');
+$webhookResult = buzon_webhook_post($webhookUrl, $payload);
+if (!($webhookResult['ok'] ?? false)) {
+    $error = (string) ($webhookResult['error'] ?? 'Error desconocido en webhook');
+    error_log('[buzon_rector_submit] webhook failed: ' . $error);
+    buzon_redirect(false, 'No se pudo enviar el correo del buzon: ' . $error);
 }
 
 buzon_redirect(true);
