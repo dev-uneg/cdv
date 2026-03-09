@@ -18,6 +18,49 @@ function buzon_clean(string $value): string
     return trim(str_replace(["\r", "\n"], ' ', $value));
 }
 
+function buzon_turnstile_verify(string $secret, string $response, string $remoteIp = ''): array
+{
+    $endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
+    $payload = [
+        'secret' => $secret,
+        'response' => $response,
+    ];
+
+    if ($remoteIp !== '') {
+        $payload['remoteip'] = $remoteIp;
+    }
+
+    $ch = curl_init($endpoint);
+    curl_setopt_array($ch, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_POST => true,
+        CURLOPT_POSTFIELDS => http_build_query($payload),
+        CURLOPT_HTTPHEADER => ['Content-Type: application/x-www-form-urlencoded'],
+        CURLOPT_TIMEOUT => 10,
+    ]);
+
+    $raw = curl_exec($ch);
+    if ($raw === false) {
+        $error = curl_error($ch);
+        curl_close($ch);
+        return [
+            'success' => false,
+            'error-codes' => ['curl-error: ' . buzon_clean($error)],
+        ];
+    }
+
+    curl_close($ch);
+    $decoded = json_decode($raw, true);
+    if (!is_array($decoded)) {
+        return [
+            'success' => false,
+            'error-codes' => ['invalid-json-response'],
+        ];
+    }
+
+    return $decoded;
+}
+
 function buzon_webhook_post(string $url, array $payload): array
 {
     $ch = curl_init($url);
@@ -69,6 +112,31 @@ if ($nombre === '' || $email === '' || $relacion === '' || $asunto === '' || $me
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
     buzon_redirect(false, 'Correo electronico invalido.');
+}
+
+$turnstileConfig = [];
+$turnstileConfigPath = __DIR__ . '/../config/turnstile.local.php';
+if (file_exists($turnstileConfigPath)) {
+    $turnstileConfig = require $turnstileConfigPath;
+}
+
+$turnstileSecret = (string) ($turnstileConfig['secret_key'] ?? getenv('TURNSTILE_SECRET_KEY') ?? '');
+if ($turnstileSecret === '' || $turnstileSecret === 'PON_AQUI_TU_TURNSTILE_SECRET_KEY') {
+    buzon_redirect(false, 'Falta configurar Cloudflare Turnstile.');
+}
+
+$turnstileResponse = trim((string) ($_POST['cf-turnstile-response'] ?? ''));
+if ($turnstileResponse === '') {
+    buzon_redirect(false, 'Completa la validacion de seguridad.');
+}
+
+$turnstileResult = buzon_turnstile_verify($turnstileSecret, $turnstileResponse, (string) ($_SERVER['REMOTE_ADDR'] ?? ''));
+if (!($turnstileResult['success'] ?? false)) {
+    $codes = $turnstileResult['error-codes'] ?? [];
+    if (is_array($codes) && $codes !== []) {
+        buzon_redirect(false, 'Turnstile rechazo la validacion: ' . implode(', ', $codes));
+    }
+    buzon_redirect(false, 'No se pudo validar tu solicitud. Intenta nuevamente.');
 }
 
 $webhookUrl = trim((string) (getenv('BUZON_RECTOR_WEBHOOK_URL') ?: 'https://delvalle.qodexia.site/buzon-cdv-relay-mailer.php'));
