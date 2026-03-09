@@ -28,6 +28,7 @@ $navClass = function (string $key) use ($activePage): string {
   <?php if ($pageDescription !== ''): ?>
     <meta name="description" content="<?= htmlspecialchars($pageDescription, ENT_QUOTES, 'UTF-8') ?>" />
   <?php endif; ?>
+  <link rel="icon" type="image/png" href="<?= $baseUrl ?>/_imgs/favicon.png" />
   <link rel="stylesheet" href="<?= $baseUrl ?>/_assets/output.css" />
   <!--
     Tailwind CDN (solo desarrollo/urgencias). Para usarlo:
