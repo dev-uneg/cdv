@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/../helpers/leads_db.php';
+
 function buzon_redirect(bool $ok, string $errorMessage = ''): void
 {
     $baseUrl = defined('BASE_URL') ? BASE_URL : '';
@@ -137,6 +139,22 @@ if (!($turnstileResult['success'] ?? false)) {
         buzon_redirect(false, 'Turnstile rechazo la validacion: ' . implode(', ', $codes));
     }
     buzon_redirect(false, 'No se pudo validar tu solicitud. Intenta nuevamente.');
+}
+
+$buzonLeadId = buzon_rector_db_insert([
+    'nombre' => $nombre,
+    'email' => $email,
+    'telefono' => $telefono,
+    'relacion' => $relacion,
+    'asunto' => $asunto,
+    'mensaje' => $mensaje,
+    'aviso_aceptado' => $avisoAceptado,
+    'ip' => $_SERVER['REMOTE_ADDR'] ?? null,
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
+    'created_at' => date('c'),
+]);
+if (!$buzonLeadId) {
+    error_log('[buzon_rector_submit] no se pudo guardar en buzon_rector_messages.');
 }
 
 $webhookUrl = trim((string) (getenv('BUZON_RECTOR_WEBHOOK_URL') ?: 'https://delvalle.qodexia.site/buzon-cdv-relay-mailer.php'));

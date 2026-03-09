@@ -18,6 +18,19 @@ $router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy'
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
+// Admin
+$router->map('GET|POST', '/admin/login', '_app/controllers/admin/login.php', 'admin-login');
+$router->map('GET', '/admin', ['redirect' => '/admin/login'], 'admin-root');
+$router->map('GET', '/admin/panel', '_app/controllers/admin/panel.php', 'admin-panel');
+$router->map('GET', '/admin/contacto', '_app/controllers/admin/contacto_index.php', 'admin-contacto-index');
+$router->map('GET', '/admin/contacto/show', '_app/controllers/admin/contacto_show.php', 'admin-contacto-show');
+$router->map('POST', '/admin/contacto/delete', '_app/controllers/admin/contacto_delete.php', 'admin-contacto-delete');
+$router->map('GET', '/admin/contacto/export', '_app/controllers/admin/contacto_export.php', 'admin-contacto-export');
+$router->map('GET', '/admin/buzon-rector', '_app/controllers/admin/buzon_index.php', 'admin-buzon-index');
+$router->map('GET', '/admin/buzon-rector/show', '_app/controllers/admin/buzon_show.php', 'admin-buzon-show');
+$router->map('POST', '/admin/buzon-rector/delete', '_app/controllers/admin/buzon_delete.php', 'admin-buzon-delete');
+$router->map('GET', '/admin/buzon-rector/export', '_app/controllers/admin/buzon_export.php', 'admin-buzon-export');
+$router->map('GET', '/admin/logout', '_app/controllers/admin/logout.php', 'admin-logout');
 
 $router->map('GET', '/oferta-educativa/kinder', '_app/pages/kinder.php', 'kinder');
 $router->map('GET', '/oferta-academica/kinder', '_app/pages/kinder.php', 'kinder-alias');

@@ -1,6 +1,8 @@
 <?php
 declare(strict_types=1);
 
+require_once __DIR__ . '/../helpers/leads_db.php';
+
 function contacto_respond_json(int $status, array $payload): void
 {
     http_response_code($status);
@@ -166,6 +168,23 @@ if (!($turnstileResult['success'] ?? false)) {
     contacto_fail('No se pudo validar tu solicitud. Intenta nuevamente.');
 }
 
+$leadId = contacto_db_insert([
+    'full_name' => $fullName,
+    'email' => $email,
+    'phone' => $phone,
+    'interest' => $interest,
+    'source' => $source,
+    'message' => $message,
+    'channel' => $channel,
+    'medium' => $medium,
+    'pipedrive_person_id' => null,
+    'status' => 'received',
+    'error_message' => null,
+    'ip' => $_SERVER['REMOTE_ADDR'] ?? null,
+    'user_agent' => $_SERVER['HTTP_USER_AGENT'] ?? null,
+    'created_at' => date('c'),
+]);
+
 $config = [];
 $configPath = __DIR__ . '/../config/pipedrive.local.php';
 if (file_exists($configPath)) {
@@ -174,6 +193,12 @@ if (file_exists($configPath)) {
 
 $token = (string) ($config['api_token'] ?? getenv('PIPEDRIVE_API_TOKEN') ?? '');
 if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
+    if ($leadId) {
+        contacto_db_update($leadId, [
+            'status' => 'pipedrive_failed',
+            'error_message' => 'Falta configurar el API token de Pipedrive.',
+        ]);
+    }
     contacto_fail('Falta configurar el API token de Pipedrive.', 500);
 }
 
@@ -201,10 +226,22 @@ if ($customMediumField !== '') {
 
 $personResponse = contacto_pipedrive_request('https://api.pipedrive.com/v1/persons', $token, $personPayload);
 if (!$personResponse['ok'] || !($personResponse['data']['success'] ?? false)) {
+    if ($leadId) {
+        contacto_db_update($leadId, [
+            'status' => 'pipedrive_failed',
+            'error_message' => (string) ($personResponse['error'] ?? 'Pipedrive error'),
+        ]);
+    }
     contacto_fail('No se pudo crear el contacto en Pipedrive.', 502);
 }
 
 $personId = $personResponse['data']['data']['id'] ?? null;
+if ($leadId) {
+    contacto_db_update($leadId, [
+        'status' => 'pipedrive_ok',
+        'pipedrive_person_id' => $personId ? (string) $personId : null,
+    ]);
+}
 if ($personId && ($interest !== '' || $source !== '' || $message !== '' || $channel !== '' || $medium !== '')) {
     $noteLines = [];
     if ($channel !== '') {
