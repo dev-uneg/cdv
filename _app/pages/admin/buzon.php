@@ -10,10 +10,8 @@ $base = $base === '.' ? '' : $base;
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Buzón del Rector | Admin CDV</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
+  <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
   <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
-  <style>
-    body { font-family: "Figtree", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; }
-  </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
   <main class="mx-auto w-full max-w-7xl px-4 py-10">
