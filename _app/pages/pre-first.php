@@ -138,7 +138,7 @@ require __DIR__ . '/partials/header.php';
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="horario">
         <i class="text-lg" data-lucide="clock-3"></i>
-        Horario
+        Horarios
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="objetivo">
         <i class="text-lg" data-lucide="lightbulb"></i>
@@ -183,7 +183,10 @@ require __DIR__ . '/partials/header.php';
       <div class="hidden" data-panel="horario">
         <h3 class="text-3xl font-semibold text-slate-800">Horario</h3>
         <p class="mt-4 text-slate-600">Lunes a Viernes</p>
-        <p class="mt-2 text-slate-600">de 8:00 hrs a 14:00 hrs</p>
+        <p class="mt-2 text-slate-600">Entrada de 7:20 a 8:00 a.m.</p>
+        <p class="mt-2 text-slate-600">Salida 14:00 hrs</p>
+        <p class="mt-2 text-slate-600">Servicio de Comedor 15:00 hrs</p>
+        <p class="mt-2 text-slate-600">Talleres Extraescolares de 15:30 a 17:30 hrs</p>
       </div>
       <div class="hidden" data-panel="objetivo">
         <h3 class="text-3xl font-semibold text-slate-800">Objetivo</h3>

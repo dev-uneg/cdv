@@ -103,7 +103,7 @@ require __DIR__ . '/partials/header.php';
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="horario">
         <i class="text-lg" data-lucide="clock-3"></i>
-        Horario
+        Horarios
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
@@ -216,7 +216,7 @@ require __DIR__ . '/partials/header.php';
         </button>
         <button class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50" type="button" data-tab="horario-serv">
           <i class="text-base" data-lucide="clock-3"></i>
-          Horario
+          Horarios
         </button>
       </div>
       <div class="mt-6 rounded-3xl border border-slate-200 bg-white p-8 text-left">

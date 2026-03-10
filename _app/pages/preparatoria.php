@@ -190,7 +190,7 @@ require __DIR__ . '/partials/header.php';
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="horario">
         <i class="text-lg" data-lucide="clock-3"></i>
-        Horario
+        Horarios
       </button>
     </div>
     <div class="min-h-[280px] rounded-3xl border border-slate-200 bg-white p-8">
@@ -287,7 +287,10 @@ require __DIR__ . '/partials/header.php';
       <div class="hidden" data-panel="horario">
         <h3 class="text-3xl font-semibold text-slate-800">Horario</h3>
         <p class="mt-4 text-slate-600">Lunes a Viernes</p>
-        <p class="mt-2 text-slate-600">de 13:30 a 15:30 hrs</p>
+        <p class="mt-2 text-slate-600">Entrada de 6:30 a 7:00 a.m.</p>
+        <p class="mt-2 text-slate-600">Salida 13:45 hrs</p>
+        <p class="mt-2 text-slate-600">Servicio de Comedor 15:00 hrs</p>
+        <p class="mt-2 text-slate-600">Talleres Extraescolares de 15:30 a 17:30 hrs</p>
       </div>
     </div>
   </div>
@@ -314,7 +317,7 @@ require __DIR__ . '/partials/header.php';
         </button>
         <button class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50" type="button" data-tab="horario-serv">
           <i class="text-base" data-lucide="clock-3"></i>
-          Horario
+          Horarios
         </button>
         <button class="inline-flex items-center gap-2 rounded-full px-4 py-2 hover:bg-slate-50" type="button" data-tab="ofrecemos">
           <i class="text-base" data-lucide="check"></i>
@@ -439,7 +442,10 @@ require __DIR__ . '/partials/header.php';
         </div>
         <div class="hidden" data-panel="horario-serv">
           <p class="text-slate-600">Lunes a Viernes</p>
-          <p class="mt-2 text-slate-600">de 7:00 a 13:20 hrs</p>
+          <p class="mt-2 text-slate-600">Entrada de 6:30 a 7:00 a.m.</p>
+          <p class="mt-2 text-slate-600">Salida 13:45 hrs</p>
+          <p class="mt-2 text-slate-600">Servicio de Comedor 15:00 hrs</p>
+          <p class="mt-2 text-slate-600">Talleres Extraescolares de 15:30 a 17:30 hrs</p>
         </div>
         <div class="hidden" data-panel="ofrecemos">
           <ul class="list-disc pl-6 space-y-2 text-slate-600">
