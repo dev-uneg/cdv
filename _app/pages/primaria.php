@@ -185,7 +185,7 @@ require __DIR__ . '/partials/header.php';
         </ul>
       </div>
       <div class="hidden" data-panel="horario">
-        <h3 class="text-3xl font-semibold text-slate-800">Horario</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Horarios</h3>
         <p class="mt-4 text-slate-600">Lunes a Viernes</p>
         <p class="mt-2 text-slate-600">de 8:00 a 14:30 hrs</p>
         <p class="mt-2 text-slate-600">Servicio de Comedor 15:00 hrs</p>
@@ -260,7 +260,7 @@ require __DIR__ . '/partials/header.php';
               <li>Ajedrez</li>
             </ul>
             <div>
-              <p class="text-lg font-semibold text-slate-800">Horario</p>
+              <p class="text-lg font-semibold text-slate-800">Horarios</p>
               <p class="mt-3 text-slate-600">Lunes a Viernes</p>
               <p class="mt-2 text-slate-600">de 15:30 a 17:30 hrs</p>
             </div>

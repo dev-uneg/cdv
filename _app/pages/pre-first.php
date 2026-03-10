@@ -181,7 +181,7 @@ require __DIR__ . '/partials/header.php';
         </ul>
       </div>
       <div class="hidden" data-panel="horario">
-        <h3 class="text-3xl font-semibold text-slate-800">Horario</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Horarios</h3>
         <p class="mt-4 text-slate-600">Lunes a Viernes</p>
         <p class="mt-2 text-slate-600">Entrada de 7:20 a 8:00 a.m.</p>
         <p class="mt-2 text-slate-600">Salida 14:00 hrs</p>
