@@ -3,7 +3,19 @@ $pageTitle = 'Preparatoria | Colegio del Valle';
 $pageDescription = 'Preparatoria en Colegio del Valle: clave UNAM, excelencia academica y orientacion vocacional.';
 $activePage = 'preparatoria';
 require __DIR__ . '/partials/header.php';
+$defaultInterest = 'Prepa';
+$sourcePage = 'Pagina Preparatoria CDV';
+$turnstileConfig = [];
+$turnstileConfigPath = __DIR__ . '/../config/turnstile.local.php';
+if (file_exists($turnstileConfigPath)) {
+    $turnstileConfig = require $turnstileConfigPath;
+}
+$turnstileSiteKey = (string) ($turnstileConfig['site_key'] ?? getenv('TURNSTILE_SITE_KEY') ?? '');
+$turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_TU_TURNSTILE_SITE_KEY';
 ?>
+<?php if ($turnstileEnabled): ?>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 <section class="pt-0 pb-0 bg-white">
   <div class="w-full mx-auto px-0">
     <div class="h-[480px] w-full overflow-hidden rounded-none border border-slate-200 bg-white">
@@ -20,25 +32,32 @@ require __DIR__ . '/partials/header.php';
 </section>
 
 <section class="py-16 bg-white">
-  <div class="max-w-[1300px] mx-auto px-6 text-center">
-    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Clave UNAM 1172</p>
-    <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-blue-700">
-      ¿Buscas Preparatorias en la Colonia del Valle? ¡Conoce nuestra institucion!
-    </h1>
-    <p class="mt-4 text-slate-900 leading-relaxed">
-      La formacion de nivel medio superior definira las metas que el alumno se proponga para su futuro; la carrera a
-      escoger, en que se quiere especializar y que area laboral prefiere. Haz la eleccion correcta con una de las
-      mejores preparatorias en la Colonia del Valle: Colegio Del Valle.
-    </p>
-    <p class="mt-12 text-xl text-blue-600">Forma parte de nuestra Comunidad</p>
-    <h2 class="mt-3 text-4xl md:text-5xl font-semibold text-blue-700">Requisitos</h2>
-    <p class="mt-4 text-blue-600">Para poder cursar alguno de los grados de Preparatoria en Colegio Del Valle se requiere cumplir</p>
-    <p class="mt-2 text-slate-900">con los siguientes documentos:</p>
+  <div class="max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-2 items-start lg:items-center">
+    <div class="text-center lg:text-left">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Clave UNAM 1172</p>
+      <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-blue-700">
+        ¿Buscas Preparatorias en la Colonia del Valle? ¡Conoce nuestra institucion!
+      </h1>
+      <p class="mt-4 text-slate-900 leading-relaxed">
+        La formacion de nivel medio superior definira las metas que el alumno se proponga para su futuro; la carrera a
+        escoger, en que se quiere especializar y que area laboral prefiere. Haz la eleccion correcta con una de las
+        mejores preparatorias en la Colonia del Valle: Colegio Del Valle.
+      </p>
+    </div>
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <?php require __DIR__ . '/partials/admisiones-form.php'; ?>
+    </div>
   </div>
 </section>
 
 <section class="py-16 bg-white">
-  <div class="max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-[1.4fr,0.6fr]">
+  <div class="max-w-[1300px] mx-auto px-6 text-center">
+    <p class="text-xl text-blue-600">Forma parte de nuestra Comunidad</p>
+    <h2 class="mt-3 text-4xl md:text-5xl font-semibold text-blue-700">Requisitos</h2>
+    <p class="mt-4 text-blue-600">Para poder cursar alguno de los grados de Preparatoria en Colegio Del Valle se requiere cumplir</p>
+    <p class="mt-2 text-slate-900">con los siguientes documentos:</p>
+  </div>
+  <div class="mt-12 max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-[1.4fr,0.6fr]">
     <div class="space-y-8">
       <details class="group rounded-2xl border border-slate-200 p-6 open:shadow-sm">
         <summary class="flex cursor-pointer items-center gap-4 list-none text-lg font-semibold text-slate-800">

@@ -3,7 +3,19 @@ $pageTitle = 'Kinder | Colegio del Valle';
 $pageDescription = 'Kinder en Colonia del Valle: atencion, cuidados y educacion preescolar con valores y aprendizaje activo.';
 $activePage = 'kinder';
 require __DIR__ . '/partials/header.php';
+$defaultInterest = 'Kinder';
+$sourcePage = 'Pagina Kinder CDV';
+$turnstileConfig = [];
+$turnstileConfigPath = __DIR__ . '/../config/turnstile.local.php';
+if (file_exists($turnstileConfigPath)) {
+    $turnstileConfig = require $turnstileConfigPath;
+}
+$turnstileSiteKey = (string) ($turnstileConfig['site_key'] ?? getenv('TURNSTILE_SITE_KEY') ?? '');
+$turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_TU_TURNSTILE_SITE_KEY';
 ?>
+<?php if ($turnstileEnabled): ?>
+  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+<?php endif; ?>
 <section class="pt-0 pb-0 bg-white">
   <div class="w-full mx-auto px-0">
     <div class="h-[480px] w-full overflow-hidden rounded-none border border-slate-200 bg-white">
@@ -20,25 +32,32 @@ require __DIR__ . '/partials/header.php';
 </section>
 
 <section class="py-16 bg-white">
-  <div class="max-w-[1300px] mx-auto px-6 text-center">
-    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">RVOE SEP 09060319/07/2006</p>
-    <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-cyan-500">
-      Kinder en la Colonia del Valle: Atencion, cuidados y educacion
-    </h1>
-    <p class="mt-4 text-slate-600 leading-relaxed">
-      ¿Buscas un kinder en la Colonia del Valle? Atentos a la educacion de los mas pequenos, ponemos a tu disposicion
-      la calidad en la ensenanza de nuestros profesores, asi como la atencion y el cuidado que las escuelas preescolares
-      deben tener. ¡Tus hijos aprenderan a partir de la diversion!
-    </p>
-    <p class="mt-12 text-xl text-cyan-500">Forma parte de nuestra Comunidad</p>
-    <h2 class="mt-3 text-4xl md:text-5xl font-semibold text-indigo-700">Requisitos</h2>
-    <p class="mt-4 text-slate-600">Para poder cursar el Kinder en Colegio Del Valle se requiere cumplir con</p>
-    <p class="mt-2 text-slate-600">los siguientes documentos:</p>
+  <div class="max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-2 items-start lg:items-center">
+    <div class="text-center lg:text-left">
+      <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">RVOE SEP 09060319/07/2006</p>
+      <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-cyan-500">
+        Kinder en la Colonia del Valle: Atencion, cuidados y educacion
+      </h1>
+      <p class="mt-4 text-slate-600 leading-relaxed">
+        ¿Buscas un kinder en la Colonia del Valle? Atentos a la educacion de los mas pequenos, ponemos a tu disposicion
+        la calidad en la ensenanza de nuestros profesores, asi como la atencion y el cuidado que las escuelas preescolares
+        deben tener. ¡Tus hijos aprenderan a partir de la diversion!
+      </p>
+    </div>
+    <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
+      <?php require __DIR__ . '/partials/admisiones-form.php'; ?>
+    </div>
   </div>
 </section>
 
 <section class="py-16 bg-white">
-  <div class="max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-[1.4fr,0.6fr]">
+  <div class="max-w-[1300px] mx-auto px-6 text-center">
+    <p class="text-xl text-cyan-500">Forma parte de nuestra Comunidad</p>
+    <h2 class="mt-3 text-4xl md:text-5xl font-semibold text-indigo-700">Requisitos</h2>
+    <p class="mt-4 text-slate-600">Para poder cursar el Kinder en Colegio Del Valle se requiere cumplir con</p>
+    <p class="mt-2 text-slate-600">los siguientes documentos:</p>
+  </div>
+  <div class="mt-12 max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-[1.4fr,0.6fr]">
     <div class="space-y-8" data-accordion>
       <details class="group rounded-2xl border border-slate-200 p-6 open:shadow-sm">
         <summary class="flex cursor-pointer items-center gap-4 list-none text-lg font-semibold text-slate-800">
