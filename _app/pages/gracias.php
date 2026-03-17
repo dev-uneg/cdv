@@ -2,6 +2,7 @@
 $pageTitle = 'Gracias | Colegio del Valle';
 $pageDescription = 'Gracias por contactarnos. Nuestro equipo de admisiones se pondra en contacto contigo pronto.';
 $activePage = '';
+$mainClass = 'bg-white';
 require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 if ($baseUrl === '/') {

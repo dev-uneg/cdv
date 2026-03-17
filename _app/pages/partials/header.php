@@ -2,6 +2,7 @@
 $pageTitle = $pageTitle ?? 'Colegio del Valle';
 $pageDescription = isset($pageDescription) ? trim($pageDescription) : '';
 $activePage = $activePage ?? '';
+$mainClass = $mainClass ?? '';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 if ($baseUrl === '/') {
     $baseUrl = '';
@@ -377,4 +378,4 @@ $navClass = function (string $key) use ($activePage): string {
       })();
     </script>
   </header>
-  <main class="w-full flex-1">
+  <main class="w-full flex-1 <?= htmlspecialchars($mainClass, ENT_QUOTES, 'UTF-8') ?>">
