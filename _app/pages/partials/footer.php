@@ -35,7 +35,11 @@
     <div class="border-t border-slate-800">
       <div class="max-w-[1300px] mx-auto px-6 py-5 flex flex-col gap-2 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
         <p>© <?= date('Y') ?> Colegio del Valle. Todos los derechos reservados.</p>
-        <p>Agencia Digital · Marketing y Tecnologia Educativa</p>
+        <div class="flex flex-wrap items-center gap-3">
+          <a class="hover:text-white" href="<?= $baseUrl ?>/aviso-de-privacidad/">Aviso de privacidad</a>
+          <span class="text-slate-700">|</span>
+          <p>Agencia Digital · Marketing y Tecnologia Educativa</p>
+        </div>
       </div>
     </div>
   </footer>

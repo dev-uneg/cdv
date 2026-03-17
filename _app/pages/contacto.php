@@ -105,9 +105,13 @@ if ($errorMessage === '') {
         <?php if ($turnstileEnabled): ?>
           <div class="cf-turnstile" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>
         <?php endif; ?>
-        <label class="inline-flex items-center gap-3 text-xs text-slate-600">
+        <label class="inline-flex items-center gap-3 text-sm text-slate-600">
           <input type="checkbox" name="privacy" value="1" required class="h-5 w-5 accent-emerald-600" />
-          <span>Acepto el aviso de privacidad y el uso de mis datos para contacto.</span>
+          <span>
+            Acepto el
+            <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">aviso de privacidad</a>
+            y el uso de mis datos para contacto.
+          </span>
         </label>
         <button type="submit" class="rounded-full bg-emerald-500 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white w-fit">Enviar</button>
       </form>

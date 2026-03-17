@@ -483,7 +483,7 @@ require __DIR__ . '/partials/header.php';
         <i class="text-base" data-lucide="calendar-days"></i>
         Calendario academico
       </a>
-      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_assets/PDFs/preparatoria/Colegio-Del-Valle-Preparatoria-Aviso-de-Privacidad.pdf" target="_blank" rel="noopener">
+      <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="shield-check"></i>
         Aviso de privacidad
       </a>

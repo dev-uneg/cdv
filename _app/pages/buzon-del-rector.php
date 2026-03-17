@@ -85,12 +85,17 @@ if ($errorMessage === '') {
       <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600">
         Aviso de privacidad: Los datos personales recabados en este formulario se utilizan unicamente para dar seguimiento a tu
         mensaje y no se compartiran con terceros. Puedes solicitar el acceso, rectificacion o eliminacion de tu informacion
-        escribiendo a contacto del colegio.
+        escribiendo a contacto del colegio. Consulta el aviso completo
+        <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">aqui</a>.
       </div>
 
       <label class="mt-6 flex items-start gap-3 text-sm text-slate-600">
         <input class="mt-1 h-4 w-4 rounded border-slate-300" type="checkbox" name="aviso" required />
-        Acepto el aviso de privacidad y autorizo el uso de mis datos para atender este mensaje.
+        <span>
+          Acepto el
+          <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">aviso de privacidad</a>
+          y autorizo el uso de mis datos para atender este mensaje.
+        </span>
       </label>
 
       <?php if ($turnstileEnabled): ?>

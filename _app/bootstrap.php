@@ -15,6 +15,8 @@ $router->map('GET', '/nosotros', ['redirect' => '/nosotros/'], 'nosotros-legacy'
 $router->map('GET', '/servicios', '_app/pages/servicios.php', 'servicios');
 $router->map('GET', '/contacto/', '_app/pages/contacto.php', 'contacto');
 $router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy');
+$router->map('GET', '/aviso-de-privacidad/', '_app/pages/aviso-de-privacidad.php', 'aviso-de-privacidad');
+$router->map('GET', '/aviso-de-privacidad', ['redirect' => '/aviso-de-privacidad/'], 'aviso-de-privacidad-legacy');
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
