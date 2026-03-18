@@ -61,7 +61,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <h2 class="text-2xl font-bold tracking-tight">Solicita información personalizada</h2>
         <p class="mt-2 text-sm text-slate-600">Comparte tus datos y un asesor de admisiones te contacta para resolver todo: plan académico, colegiaturas y proceso de ingreso.</p>
 
-        <form class="mt-6 grid gap-4 md:grid-cols-2" method="post" action="<?= $baseUrl ?>/api/contacto">
+        <form class="mt-6 grid gap-4 md:grid-cols-2" method="post" action="<?= $baseUrl ?>/api/contacto-landing">
           <input class="rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-slate-500" placeholder="Nombre completo*" type="text" name="full_name" required />
           <input class="rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-slate-500" placeholder="Correo electrónico*" type="email" name="email" required />
           <input class="rounded-xl border border-slate-300 px-4 py-3 text-sm outline-none transition focus:border-slate-500" placeholder="Teléfono*" type="tel" name="phone" required />
@@ -80,7 +80,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 
           <input type="hidden" name="source" value="LP General CDV" />
           <input type="hidden" name="channel" value="Web" />
-          <input type="hidden" name="medium" value="Sitio web" />
+          <input type="hidden" name="medium" value="Landing" />
 
           <?php if ($turnstileEnabled): ?>
             <div class="cf-turnstile md:col-span-2" data-sitekey="<?= htmlspecialchars($turnstileSiteKey, ENT_QUOTES, 'UTF-8') ?>"></div>

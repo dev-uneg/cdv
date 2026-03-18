@@ -21,6 +21,7 @@ $router->map('GET', '/aviso-de-privacidad/', '_app/pages/aviso-de-privacidad.php
 $router->map('GET', '/aviso-de-privacidad', ['redirect' => '/aviso-de-privacidad/'], 'aviso-de-privacidad-legacy');
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
+$router->map('POST', '/api/contacto-landing', '_app/controllers/contacto_landing_submit.php', 'api-contacto-landing-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
 // Admin
 $router->map('GET|POST', '/admin/login', '_app/controllers/admin/login.php', 'admin-login');
