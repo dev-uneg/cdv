@@ -13,6 +13,8 @@ $router->map('GET', '/', '_app/pages/home.php', 'home');
 $router->map('GET', '/nosotros/', '_app/pages/nosotros.php', 'nosotros');
 $router->map('GET', '/nosotros', ['redirect' => '/nosotros/'], 'nosotros-legacy');
 $router->map('GET', '/servicios', '_app/pages/servicios.php', 'servicios');
+$router->map('GET', '/lp-general', '_app/pages/lp-general.php', 'lp-general');
+$router->map('GET', '/lp-general/', ['redirect' => '/lp-general'], 'lp-general-legacy-slash');
 $router->map('GET', '/contacto/', '_app/pages/contacto.php', 'contacto');
 $router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy');
 $router->map('GET', '/aviso-de-privacidad/', '_app/pages/aviso-de-privacidad.php', 'aviso-de-privacidad');
