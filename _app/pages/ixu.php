@@ -36,10 +36,6 @@ if ($baseUrl === '/') {
         <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-tendencias-mercadotecnia-siglo-xxi.webp" alt="Curso Tendencias para mercadotecnia del siglo XXI" loading="lazy" />
         <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
       </button>
-      <button class="group rounded-3xl border border-slate-200 bg-white p-4 text-center" type="button" data-lightbox="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.webp">
-        <img class="aspect-[4/5] w-full rounded-2xl object-cover" src="<?= $baseUrl ?>/_imgs/ixu/curso-liderazgo-efectivo.webp" alt="Curso Desarrollo de habilidades para un liderazgo efectivo" loading="lazy" />
-        <span class="mt-3 block text-xs uppercase tracking-[0.2em] text-slate-500 group-hover:text-slate-700">Ver detalle</span>
-      </button>
     </div>
   </div>
 </section>
