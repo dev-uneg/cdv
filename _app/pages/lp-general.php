@@ -213,8 +213,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm">
           <img
             class="h-full w-full object-cover"
-            src="<?= $baseUrl ?>/_imgs/landings/alumnos.png"
-            alt="Alumnos de Colegio del Valle"
+            src="<?= $baseUrl ?>/_imgs/landings/instalaciones.webp"
+            alt="Instalaciones de Colegio del Valle"
             loading="lazy"
           />
         </div>
@@ -226,9 +226,9 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 <section id="diferenciales" class="py-16 bg-slate-50">
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">¿Por qué esta landing?</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">¿Por qué elegirnos?</p>
       <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Lo que hace diferente a Colegio del Valle</h2>
-      <p class="mx-auto mt-4 max-w-3xl text-slate-600 leading-relaxed">Combinamos formación bilingüe, acompañamiento cercano y una comunidad activa para que cada alumno aprenda con alto nivel académico, crezca con seguridad y desarrolle su mejor versión.</p>
+      <p class="mx-auto mt-4 max-w-3xl text-slate-600 leading-relaxed">Combinamos certificación en inglés, acompañamiento cercano y una comunidad activa para que cada alumno aprenda con alto nivel académico, crezca con seguridad y desarrolle su mejor versión.</p>
     </div>
     <div class="mt-8 grid gap-6 lg:grid-cols-3">
       <article class="rounded-3xl bg-[#3E436C] p-8 text-white">
@@ -236,8 +236,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <i data-lucide="book-open"></i>
         </span>
         <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white/70">Diferencial</p>
-        <h3 class="mt-3 text-2xl font-bold">Modelo bilingüe</h3>
-        <p class="mt-4 text-sm text-white/85">Integración natural del inglés para una comunicación global desde edades tempranas.</p>
+        <h3 class="mt-3 text-2xl font-bold">Certificación en inglés</h3>
+        <p class="mt-4 text-sm text-white/85">Preparación continua para evaluaciones de inglés con seguimiento académico por nivel.</p>
       </article>
       <article class="rounded-3xl bg-orange-500 p-8 text-white">
         <span class="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-white/15">
@@ -264,7 +264,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="grid gap-10 lg:grid-cols-[1.1fr,1fr] lg:items-center">
       <div>
         <p class="text-xs font-semibold uppercase tracking-[0.3em] text-slate-500">Proceso de admisión</p>
-        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Ingresar es fácil y acompañado</h2>
+        <h2 class="mt-3 text-3xl font-bold tracking-tight text-slate-900 md:text-4xl">Proceso de admisión claro y acompañado</h2>
         <p class="mt-4 text-slate-600">Nuestro equipo te acompaña en cada paso para que tomes la mejor decisión para tu familia.</p>
       </div>
       <ol class="space-y-4">
