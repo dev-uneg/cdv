@@ -181,20 +181,20 @@ if ($baseUrl === '/') {
 <section id="noticias" class="py-16 bg-white">
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="text-center">
-      <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Desde el blog</p>
-      <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Ultimas entradas</h2>
+      <p class="text-xs uppercase tracking-[0.3em] text-slate-500">Desde noticias</p>
+      <h2 class="mt-3 text-3xl md:text-4xl font-bold tracking-tight">Ultimas noticias</h2>
       <p class="mt-3 text-slate-600">Ideas y recursos actuales para la comunidad educativa.</p>
     </div>
     <?php
-      $blogPosts = include __DIR__ . '/blog/data.php';
-      usort($blogPosts, fn($a, $b) => ($b['date_ts'] ?? 0) <=> ($a['date_ts'] ?? 0));
-      $blogPosts = array_slice($blogPosts, 0, 3);
+      $newsPosts = include __DIR__ . '/noticias/data.php';
+      usort($newsPosts, fn($a, $b) => ($b['date_ts'] ?? 0) <=> ($a['date_ts'] ?? 0));
+      $newsPosts = array_slice($newsPosts, 0, 3);
     ?>
     <div class="mt-10 grid gap-6 md:grid-cols-3">
-      <?php foreach ($blogPosts as $post): ?>
+      <?php foreach ($newsPosts as $post): ?>
         <article class="rounded-3xl border border-slate-200 overflow-hidden bg-white">
           <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/blog/<?= htmlspecialchars($post['hero']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" loading="lazy" />
+            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/noticias/<?= htmlspecialchars($post['hero']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" loading="lazy" />
           </div>
           <div class="p-5">
             <p class="text-xs uppercase tracking-[0.2em] text-slate-400">
@@ -202,7 +202,7 @@ if ($baseUrl === '/') {
             </p>
             <h3 class="mt-2 font-semibold text-slate-900"><?= htmlspecialchars($post['title']) ?></h3>
             <p class="mt-2 text-sm text-slate-600"><?= htmlspecialchars($post['excerpt']) ?></p>
-            <a class="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-slate-900" href="<?= $baseUrl ?>/blog/<?= htmlspecialchars($post['slug']) ?>">Leer mas</a>
+            <a class="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.2em] text-slate-900" href="<?= $baseUrl ?>/noticias/<?= htmlspecialchars($post['slug']) ?>">Leer mas</a>
           </div>
         </article>
       <?php endforeach; ?>

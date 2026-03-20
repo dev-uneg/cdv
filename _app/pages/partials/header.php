@@ -278,7 +278,6 @@ $navClass = function (string $key) use ($activePage): string {
             </div>
           </div>
           <a class="<?= $navClass('contacto') ?>" href="<?= $baseUrl ?>/contacto/">Contacto</a>
-          <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/blog">Blog</a>
           <a class="text-slate-600 hover:text-slate-900" href="<?= $baseUrl ?>/ixu/">IXU</a>
         </nav>
       </div>
@@ -324,7 +323,6 @@ $navClass = function (string $key) use ($activePage): string {
             </div>
           </details>
           <a class="block rounded-lg px-3 py-3 <?= $navClass('contacto') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/contacto/" data-mobile-close>Contacto</a>
-          <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/blog" data-mobile-close>Blog</a>
           <a class="block rounded-lg px-3 py-3 text-slate-600 hover:bg-slate-50 hover:text-slate-900" href="<?= $baseUrl ?>/ixu/" data-mobile-close>IXU</a>
         </nav>
       </aside>

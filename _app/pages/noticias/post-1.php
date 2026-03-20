@@ -12,7 +12,7 @@ $post = $posts[0] ?? null;
   <div class="max-w-[1300px] mx-auto px-6 grid gap-10 lg:grid-cols-[1fr,0.35fr] items-start">
     <article class="max-w-none">
       <div class="mb-8 h-[450px] overflow-hidden rounded-[32px] border border-slate-200 bg-slate-100">
-        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/blog/post-1.webp" alt="Evaluación formativa en la Nueva Escuela Mexicana" loading="lazy" />
+        <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/noticias/post-1.webp" alt="Evaluación formativa en la Nueva Escuela Mexicana" loading="lazy" />
       </div>
       <p class="text-xs uppercase tracking-[0.2em] text-slate-400">10 febrero 2026 · Educación Integral</p>
       <h1 class="mt-2 text-3xl md:text-4xl font-semibold text-slate-800">Evaluación formativa en la Nueva Escuela Mexicana</h1>
@@ -265,7 +265,7 @@ $post = $posts[0] ?? null;
 
     <div class="lg:sticky lg:top-8 h-fit">
       <?php
-        $sectionBase = $baseUrl . '/blog';
+        $sectionBase = $baseUrl . '/noticias/';
         $query = '';
         include __DIR__ . '/sidebar.php';
       ?>

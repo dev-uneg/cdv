@@ -63,12 +63,6 @@ foreach ($newsRoutes as $slug => $file) {
     $router->map('GET', '/noticias/' . $slug, $file, 'noticias-' . $slug);
 }
 
-$router->map('GET', '/blog', '_app/pages/blog/index.php', 'blog');
-$blogRoutes = include __DIR__ . '/pages/blog/routes.php';
-foreach ($blogRoutes as $slug => $file) {
-    $router->map('GET', '/blog/' . $slug, $file, 'blog-' . $slug);
-}
-
 $router->map('GET', '/formas-de-pago', '_app/pages/formas-de-pago.php', 'formas-de-pago');
 $router->map('GET', '/beneficios', '_app/pages/beneficios.php', 'beneficios');
 $router->map('GET', '/reglamentos', '_app/pages/reglamentos.php', 'reglamentos');

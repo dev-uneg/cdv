@@ -1,2 +1,6 @@
 <?php
-return [];
+return [
+  'evaluacion-formativa-nueva-escuela-mexicana' => '_app/pages/noticias/post-1.php',
+  'actividades-de-artes-para-fomentar-la-creatividad-y-el-aprendizaje' => '_app/pages/noticias/post-2.php',
+  'papel-del-docente-en-la-nueva-escuela-mexicana' => '_app/pages/noticias/post-3.php',
+];
