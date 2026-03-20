@@ -36,7 +36,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="text-center lg:text-left">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">RVOE SEP 09060319/07/2006</p>
       <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-cyan-500">
-        Kinder en la Colonia del Valle: Atencion, cuidados y educación
+        Kinder en la Colonia del Valle: Atención, cuidados y educación
       </h1>
       <p class="mt-4 text-slate-600 leading-relaxed">
         ¿Buscas un kinder en la Colonia del Valle? Atentos a la educación de los mas pequeños, ponemos a tu disposición
@@ -71,7 +71,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <li>3 Fotografias tamaño infantil.</li>
           <li>Acta de Nacimiento.*</li>
           <li>Cartilla de Vacunacion.*</li>
-          <li>Certificado Medico.*</li>
+          <li>Certificado Médico.*</li>
           <li>Hojas de Registro.*</li>
           <li>CURP* Original y 2 copias.</li>
         </ul>
@@ -92,7 +92,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <ul class="mt-5 space-y-2 text-slate-600 list-disc pl-6">
           <li>1 Fotografias tamaño infantil de cada uno o 3 Fotografias tamaño infantil de personas autorizadas para llevar al alumno a casa.</li>
           <li>Copia de Credencial del IFE.</li>
-          <li>Carta de autorizacion de Padres para que otras personas recojan a sus hijos.</li>
+          <li>Carta de autorización de Padres para que otras personas recojan a sus hijos.</li>
         </ul>
       </details>
     </div>
@@ -126,11 +126,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
-        Mision
+        Misión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="vision">
         <i class="text-lg" data-lucide="eye"></i>
-        Vision
+        Visión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="valores">
         <i class="text-lg" data-lucide="heart"></i>
@@ -142,7 +142,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Kinder</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Nuestro modelo esta basado en el conocimiento significativo, promoviendo la investigación,
-          experimentacion, análisis y reflexion en forma dinamica y atractiva para los educandos,
+          experimentacion, análisis y reflexión en forma dinámica y atractiva para los educandos,
           promoviendo toma de decisiones en un ambiente alegre, de juego y trabajo en equipo, en comunidad
           y en familia que de una manera conjunta nos llevaran a grandes logros por medio de una comunicación
           continua de trabajo estrecho con padres de familia verdaderamente conscientes de la educación y
@@ -169,7 +169,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <p class="mt-2 text-slate-600">Talleres Extraescolares de 15:30 a 17:30 hrs</p>
       </div>
       <div class="hidden" data-panel="mision">
-        <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Misión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           El quehacer educativo de esta institución es respaldado por 50 años de experiencia en la labor educativa
           y nuestro principal objetivo en el Kinder Colegio Del Valle es lograr una verdadera educación integral
@@ -179,12 +179,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="vision">
-        <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Visión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Nuestra institución es reconocida por la comunidad debido a los logros de los niños y niñas ya que, se
-          promueve una educación integral a través de la investigación, análisis y reflexion, que en forma dinamica
+          promueve una educación integral a través de la investigación, análisis y reflexión, que en forma dinámica
           y atractiva se imparte contando con el profesionalismo o compromiso del equipo directivo, docente y
-          administrativo que hace posible esta gran labor que es la formación integral de la poblacion educativa
+          administrativo que hace posible esta gran labor que es la formación integral de la población educativa
           que atendemos.
         </p>
       </div>
@@ -376,10 +376,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <div class="mt-4 space-y-3 text-slate-600">
             <p>
               En Colegio del Valle puedes comenzar el proceso online a través del chat dispuesto en su sitio web las 24 horas
-              del día. Tambien puedes enviar mensaje directo a través de WhatsApp para conocer cada paso en el proceso de
+              del día. También puedes enviar mensaje directo a través de WhatsApp para conocer cada paso en el proceso de
               inscripción en educación preescolar.
             </p>
-            <p>Recuerda que será necesario realizar una visita al colegio para consignar la documentacion requerida.</p>
+            <p>Recuerda que será necesario realizar una visita al colegio para consignar la documentación requerida.</p>
           </div>
         </details>
 
@@ -409,7 +409,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <ul class="mt-2 list-disc space-y-1 pl-6">
                 <li>Una fotografia tamaño infantil de cada padre o tres fotografias tamaño infantil de personas autorizadas para llevar al alumno a casa.</li>
                 <li>Copia de credencial del INE.</li>
-                <li>Carta de autorizacion de padres para que otras personas recojan a sus hijos.</li>
+                <li>Carta de autorización de padres para que otras personas recojan a sus hijos.</li>
               </ul>
             </div>
           </div>

@@ -39,8 +39,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         ¿Buscas Preparatorias en la Colonia del Valle? ¡Conoce nuestra institución!
       </h1>
       <p class="mt-4 text-slate-900 leading-relaxed">
-        La formación de nivel medio superior definira las metas que el alumno se proponga para su futuro; la carrera a
-        escoger, en que se quiere especializar y que area laboral prefiere. Haz la eleccion correcta con una de las
+        La formación de nivel medio superior definirá las metas que el alumno se proponga para su futuro; la carrera a
+        escoger, en que se quiere especializar y que area laboral prefiere. Haz la elección correcta con una de las
         mejores preparatorias en la Colonia del Valle: Colegio Del Valle.
       </p>
     </div>
@@ -70,12 +70,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-5 space-y-4 text-slate-600">
           <p class="font-semibold text-slate-800">17 años, cumplidos en el mes de agosto.</p>
           <ul class="space-y-2 list-disc pl-6">
-            <li>Solicitud de Inscripcion totalmente requisitada.</li>
+            <li>Solicitud de Inscripción totalmente requisitada.</li>
             <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
-            Entregar la siguiente documentacion en original y 2 copias:
+            Entregar la siguiente documentación en original y 2 copias:
           </p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Acta de nacimiento.</li>
@@ -106,12 +106,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-5 space-y-4 text-slate-600">
           <p class="font-semibold text-slate-800">18 años.</p>
           <ul class="space-y-2 list-disc pl-6">
-            <li>Llenar solicitud de Inscripcion.</li>
+            <li>Llenar solicitud de Inscripción.</li>
             <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
-            Entregar la siguiente documentacion en original y 2 copias:
+            Entregar la siguiente documentación en original y 2 copias:
           </p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Acta de nacimiento.</li>
@@ -142,12 +142,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-5 space-y-4 text-slate-600">
           <p class="font-semibold text-slate-800">19 años.</p>
           <ul class="space-y-2 list-disc pl-6">
-            <li>Llenar solicitud de Inscripcion.</li>
+            <li>Llenar solicitud de Inscripción.</li>
             <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
-            Entregar la siguiente documentacion en original y 2 copias:
+            Entregar la siguiente documentación en original y 2 copias:
           </p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Acta de nacimiento.</li>
@@ -185,7 +185,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="rounded-3xl border border-slate-200 bg-white p-6 space-y-3">
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-cyan-600 shadow-sm" type="button" data-tab="elegirnos">
         <i class="text-lg" data-lucide="star"></i>
-        ¿Por que elegirnos?
+        ¿Por qué elegirnos?
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="modelo">
         <i class="text-lg" data-lucide="book-open"></i>
@@ -193,11 +193,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
-        Mision
+        Misión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="vision">
         <i class="text-lg" data-lucide="eye"></i>
-        Vision
+        Visión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="valores">
         <i class="text-lg" data-lucide="heart"></i>
@@ -214,23 +214,23 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     </div>
     <div class="min-h-[280px] rounded-3xl border border-slate-200 bg-white p-8">
       <div data-panel="elegirnos">
-        <h3 class="text-3xl font-semibold text-slate-800">¿Por que elegirnos?</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">¿Por qué elegirnos?</h3>
         <div class="mt-4 space-y-4 text-slate-600 leading-relaxed">
           <p>47 años nos respaldan, somos una Escuela Preparatoria que se recomienda de familia en familia.</p>
           <p>Instalaciones modernas y agradables así como una excelente ubicación.</p>
           <p>
             Seguimiento personalizado a los alumnos a través de los orientadores, con el objeto de tener acciones
-            preventivas para rescate de materias, ademas de contar con un Coordinador Academico y una Coordinacion de
+            preventivas para rescate de materias, ademas de contar con un Coordinador Académico y una Coordinacion de
             orientadores.
           </p>
           <p>
             Contamos con un area de psicología para atención y seguimiento de los problemas frecuentes que se presentan y
-            son propios de la edad. Muy importante porque cada vez es mas frecuente la problematica que presentan hoy en
+            son propios de la edad. Muy importante porque cada vez es más frecuente la problemática que presentan hoy en
             día los jóvenes y padres de familia. Se trabaja en conjunto con profesores, coordinadores y padres de familia.
           </p>
           <p>
             Nuestro Programa llamado Horizontes brinda apoyo y seguimiento para materias con alto grado de dificultad como
-            Matematicas, Fisica, Quimica.
+            Matemáticas, Física, Química.
           </p>
           <p>
             Somos una escuela segura con operativos de vigilancia en el ingreso, egreso y estancia de los alumnos, somos
@@ -265,17 +265,17 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="mision">
-        <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Misión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          La Preparatoria Colegio Del Valle tiene como mision ser una institución educativa, que ofrece la formación de
+          La Preparatoria Colegio Del Valle tiene como misión ser una institución educativa, que ofrece la formación de
           jóvenes que pueden desarrollar habilidades, actitudes y valores para su vida académica y cotidiana, fomentando
           en ellos las buenas costumbres y virtudes humanas.
         </p>
       </div>
       <div class="hidden" data-panel="vision">
-        <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Visión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Ofrecemos una Educacion Preparatoria de calidad, y de vanguardia en el modelo educativo, con reconocimiento y
+          Ofrecemos una Educación Preparatoria de calidad, y de vanguardia en el modelo educativo, con reconocimiento y
           personal altamente capacitado, comprometido con la institución.
         </p>
       </div>
@@ -359,16 +359,16 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <div>
               <p class="text-2xl font-semibold text-slate-800">Cuarto</p>
               <ul class="mt-3 list-disc pl-6 space-y-1">
-                <li>Matematicas IV</li>
-                <li>Fisica III</li>
+                <li>Matemáticas IV</li>
+                <li>Física III</li>
                 <li>Lengua Espanola</li>
                 <li>Logica</li>
                 <li>Historia Universal III</li>
-                <li>Educacion Estetica y Artistica IV</li>
+                <li>Educación Estetica y Artistica IV</li>
                 <li>Geografia</li>
-                <li>Educacion Fisica IV</li>
+                <li>Educación Física IV</li>
                 <li>Informatica</li>
-                <li>Ingles IV</li>
+                <li>Inglés IV</li>
                 <li>Orientacion Educativa IV</li>
                 <li>Dibujo II</li>
               </ul>
@@ -376,19 +376,19 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <div>
               <p class="text-2xl font-semibold text-slate-800">Quinto</p>
               <ul class="mt-3 list-disc pl-6 space-y-1">
-                <li>Matematicas V</li>
-                <li>Quimica III</li>
-                <li>Biologia IV</li>
-                <li>Educacion para la Salud</li>
+                <li>Matemáticas V</li>
+                <li>Química III</li>
+                <li>Biología IV</li>
+                <li>Educación para la Salud</li>
                 <li>Historia de Mexico II</li>
                 <li>Etimologias Grecolatinas</li>
-                <li>Ingles V</li>
-                <li>Educacion Estetica y Artistica V</li>
+                <li>Inglés V</li>
+                <li>Educación Estetica y Artistica V</li>
                 <li>Orientacion Educativa V</li>
                 <li>Literatura Universal</li>
                 <li>Informatica II</li>
                 <li>Etica</li>
-                <li>Educacion Fisica V</li>
+                <li>Educación Física V</li>
               </ul>
             </div>
             <div>
@@ -397,25 +397,25 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <ul class="mt-2 list-disc pl-6 space-y-1">
                 <li>Derecho</li>
                 <li>Informatica III</li>
-                <li>Ingles VI</li>
-                <li>Matematicas VI</li>
+                <li>Inglés VI</li>
+                <li>Matemáticas VI</li>
                 <li>Psicologia</li>
                 <li>Literatura Mexicana e Iberoamericana</li>
-                <li>Educacion Fisica VI</li>
+                <li>Educación Física VI</li>
               </ul>
-              <p class="mt-4 font-semibold text-slate-800">Area I Fisico Matematicas y de las Ingenierias</p>
+              <p class="mt-4 font-semibold text-slate-800">Area I Fisico Matemáticas y de las Ingenierias</p>
               <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Fisica IV</li>
+                <li>Física IV</li>
                 <li>Dibujo Constructivo II</li>
-                <li>Quimica IV</li>
-                <li>Temas selectos de Matematicas</li>
+                <li>Química IV</li>
+                <li>Temas selectos de Matemáticas</li>
               </ul>
               <p class="mt-4 font-semibold text-slate-800">Area II Ciencias Biologicas y de la Salud</p>
               <ul class="mt-2 list-disc pl-6 space-y-1">
-                <li>Fisica IV</li>
-                <li>Quimica IV</li>
-                <li>Biologia V</li>
-                <li>Temas selectos de Biologia</li>
+                <li>Física IV</li>
+                <li>Química IV</li>
+                <li>Biología V</li>
+                <li>Temas selectos de Biología</li>
               </ul>
               <p class="mt-4 font-semibold text-slate-800">Area III Ciencias Sociales</p>
               <ul class="mt-2 list-disc pl-6 space-y-1">
@@ -431,7 +431,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
                 <li>Historia de las Doctrinas Filosoficas</li>
                 <li>Introduccion al Estudio de las Ciencias Sociales y Economicas</li>
                 <li>Historia del Arte</li>
-                <li>Comunicacion Visual</li>
+                <li>Comunicación Visual</li>
               </ul>
             </div>
           </div>
@@ -470,7 +470,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <ul class="list-disc pl-6 space-y-2 text-slate-600">
             <li>Grupos reducidos (maximo 23 alumnos)</li>
             <li>Profesorado altamente calificado</li>
-            <li>Ingles avanzado</li>
+            <li>Inglés avanzado</li>
             <li>Servicios</li>
             <li>Biblioteca y hemeroteca</li>
             <li>Servicios de cafeteria</li>
@@ -492,7 +492,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 
 <section class="py-16 bg-white">
   <div class="max-w-[1300px] mx-auto px-6 text-center">
-    <p class="text-lg text-slate-600">Descubre mas sobre las Preparatorias Privadas en CDMX</p>
+    <p class="text-lg text-slate-600">Descubre más sobre las Preparatorias Privadas en CDMX</p>
     <div class="mt-6 grid gap-4 md:grid-cols-4">
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_assets/PDFs/preparatoria/REGLAMENTO-OFICIAL-PREPA.pdf" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="file-text"></i>
@@ -538,7 +538,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             algunos de los motivos para seleccionar a Colegio del Valle y asistir a los jóvenes para alcanzar el exito
             profesional.
           </p>
-          <p>Para mas información sobre los recursos y costos de la Prepa Del Valle haz clic aquí.</p>
+          <p>Para más información sobre los recursos y costos de la Prepa Del Valle haz clic aquí.</p>
         </div>
       </details>
 
@@ -552,14 +552,14 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            El documento que te entregan al culminar la prepa se llama Certificado de Bachillerato. Es un titulo oficial,
+            El documento que te entregan al culminar la prepa se llama Certificado de Bachillerato. Es un título oficial,
             emitido por la institución educativa de donde egresaste y esta autenticado por el Estado Mexicano. Este
             certificado da cuenta de que has cumplido con todo el régimen académico y es importante debido a que es el
             comprobante requerido para acceder a la educación superior o el mercado laboral.
           </p>
           <p>
             Para que un certificado de bachillerato sea considerado legal, debe estar verificado por la Secretaria de
-            Educacion Publica (SEP), llevar firma autenticada del director del colegio y la entidad federativa. Para
+            Educación Publica (SEP), llevar firma autenticada del director del colegio y la entidad federativa. Para
             aprender como validar un certificado de preparatoria, haz clic en el enlace proporcionado.
           </p>
         </div>

@@ -118,7 +118,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <ul class="space-y-2 list-disc pl-6">
             <li>Boleta de 1° de Secundaria.</li>
             <li>Boleta de 2° de Secundaria.</li>
-            <li>Creditos legalizados en caso de que hayan reprobado materias en 1° o 2° de secundaria.</li>
+            <li>Créditos legalizados en caso de que hayan reprobado materias en 1° o 2° de secundaria.</li>
           </ul>
         </div>
       </details>
@@ -145,11 +145,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
-        Mision
+        Misión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="vision">
         <i class="text-lg" data-lucide="eye"></i>
-        Vision
+        Visión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="valores">
         <i class="text-lg" data-lucide="heart"></i>
@@ -168,30 +168,30 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div data-panel="modelo">
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Secundaria</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Entre las mejores escuelas Secundarias en la Colonia del Valle, conoce Colegio Del Valle, una Institucion
+          Entre las mejores escuelas Secundarias en la Colonia del Valle, conoce Colegio Del Valle, una Institución
           Educativa Privada pensada para el desarrollo optimo de adolescentes.
         </p>
         <p class="mt-4 text-slate-600 leading-relaxed">
           El Colegio Del Valle es reconocido hoy en día, como una institución seria, honesta y comprometida con la
           educación de nuestra juventud, que trabaja por dotar a nuestra nación de ciudadanos conscientes y capaces de
-          enfrentar y transformar el mundo dinamico que les toco vivir. En este sentido, es sabido que al tiempo que se
-          abordan los contenidos curriculares que establece la normatividad vigente de la SEP, simultaneamente hemos
+          enfrentar y transformar el mundo dinámico que les toco vivir. En este sentido, es sabido que al tiempo que se
+          abordan los contenidos curriculares que establece la normatividad vigente de la SEP, simultáneamente hemos
           implementado estrategias de trabajo encaminadas a fomentar el trabajo colaborativo y el desarrollo de
           capacidades encaminadas para resolver problemas reales.
         </p>
       </div>
       <div class="hidden" data-panel="mision">
-        <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Misión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          La secundaria Colegio Del Valle tiene como mision ser una institución educativa, que ofrece la formación de
+          La secundaria Colegio Del Valle tiene como misión ser una institución educativa, que ofrece la formación de
           jóvenes que sean capaces de desarrollar habilidades, actitudes y valores para su vida académica y cotidiana,
           fomentando en ellos las buenas costumbres y virtudes humanas.
         </p>
       </div>
       <div class="hidden" data-panel="vision">
-        <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Visión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Ofrecemos una Educacion Secundaria de calidad, y de vanguardia en el modelo educativo, con reconocimiento y
+          Ofrecemos una Educación Secundaria de calidad, y de vanguardia en el modelo educativo, con reconocimiento y
           personal altamente capacitado, comprometido con la institución.
         </p>
       </div>
@@ -256,7 +256,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 <section class="py-16 bg-white">
   <div class="max-w-[1300px] mx-auto px-6 text-center" data-tabscope data-default="ofrecemos">
     <h2 class="text-3xl md:text-4xl font-semibold text-slate-800">Servicios</h2>
-    <p class="mt-3 text-slate-600">Conoce mas sobre lo que las mejores Escuelas Secundarias en CDMX te ofrecen.</p>
+    <p class="mt-3 text-slate-600">Conoce más sobre lo que las mejores Escuelas Secundarias en CDMX te ofrecen.</p>
 
     <div class="mt-8">
       <div class="inline-flex flex-wrap justify-center gap-2 rounded-full border border-slate-200 bg-white p-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
@@ -291,7 +291,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </div>
         <div class="hidden" data-panel="servicios">
           <ul class="list-disc pl-6 space-y-2 text-slate-600">
-            <li>Ingles avanzado</li>
+            <li>Inglés avanzado</li>
             <li>Instalaciones de vanguardia</li>
             <li>Seguridad Interna</li>
             <li>Convenios institucionales</li>
@@ -315,45 +315,45 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <p class="text-2xl font-semibold text-slate-800">Primero</p>
               <ul class="mt-3 list-disc pl-6 space-y-1">
                 <li>Espanol I</li>
-                <li>Matematicas I</li>
-                <li>Ciencias I (énfasis en Biologia)</li>
+                <li>Matemáticas I</li>
+                <li>Ciencias I (énfasis en Biología)</li>
                 <li>Geografia de Mexico y del Mundo</li>
                 <li>Lengua Extranjera I</li>
-                <li>Educacion Fisica I</li>
+                <li>Educación Física I</li>
                 <li>Artes (Danza)</li>
-                <li>Introduccion a Fisica y Quimica</li>
+                <li>Introduccion a Física y Química</li>
                 <li>Desarrollo Humano</li>
-                <li>Tecnologia I (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
+                <li>Tecnología I (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
               </ul>
             </div>
             <div>
               <p class="text-2xl font-semibold text-slate-800">Segundo</p>
               <ul class="mt-3 list-disc pl-6 space-y-1">
                 <li>Espanol II</li>
-                <li>Matematicas II</li>
-                <li>Ciencias II (énfasis en Fisica)</li>
+                <li>Matemáticas II</li>
+                <li>Ciencias II (énfasis en Física)</li>
                 <li>Historia I</li>
-                <li>Formacion Civica y Etica I</li>
+                <li>Formación Civica y Etica I</li>
                 <li>Lengua Extranjera II</li>
-                <li>Educacion Fisica II</li>
+                <li>Educación Física II</li>
                 <li>Artes (Danza)</li>
-                <li>Quimica</li>
-                <li>Tecnologia II (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
+                <li>Química</li>
+                <li>Tecnología II (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
               </ul>
             </div>
             <div>
               <p class="text-2xl font-semibold text-slate-800">Tercero</p>
               <ul class="mt-3 list-disc pl-6 space-y-1">
                 <li>Espanol III</li>
-                <li>Matematicas III</li>
-                <li>Ciencias III (énfasis en Quimica)</li>
+                <li>Matemáticas III</li>
+                <li>Ciencias III (énfasis en Química)</li>
                 <li>Historia II</li>
-                <li>Formacion Civica y Etica II</li>
+                <li>Formación Civica y Etica II</li>
                 <li>Lengua Extranjera III</li>
-                <li>Educacion Fisica III</li>
+                <li>Educación Física III</li>
                 <li>Artes (Danza)</li>
-                <li>Fisica</li>
-                <li>Tecnologia III (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
+                <li>Física</li>
+                <li>Tecnología III (Diseno Grafico, Diseno y Creacion Plastica, Turismo, Electronica, Diseno Arquitectonico e Informatica)</li>
               </ul>
             </div>
           </div>
@@ -378,7 +378,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
             Antes de sacar el certificado de secundaria, el estudiante debió culminar sus estudios en uno de los colegios
-            autorizados por la Secretaria de Educacion Publica (SEP). A través de la plataforma de esta institución, así
+            autorizados por la Secretaria de Educación Publica (SEP). A través de la plataforma de esta institución, así
             como del INEA, puedes sacar el certificado de secundaria en caso de haberlo extraviado.
           </p>
           <p>Para sacar el certificado de educación secundaria deberás seguir los siguientes pasos:</p>

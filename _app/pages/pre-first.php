@@ -165,11 +165,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
-        Mision
+        Misión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="vision">
         <i class="text-lg" data-lucide="eye"></i>
-        Vision
+        Visión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="valores">
         <i class="text-lg" data-lucide="heart"></i>
@@ -220,7 +220,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="mision">
-        <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Misión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Promover permanentemente el desarrollo integral del alumno basado en una educación de calidad centrada en el
           fortalecimiento de valores ético-morales, donde el estudiante se distinga por su constancia, esfuerzo, dedicación
@@ -228,7 +228,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="vision">
-        <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Visión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Incorporar a nuestros alumnos a la vida cotidiana siempre bajo la línea de principios y valores que les sirvan
           para transformarse en mejores seres humanos.

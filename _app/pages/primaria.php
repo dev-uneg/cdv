@@ -40,8 +40,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </h1>
       <p class="mt-4 text-slate-900 leading-relaxed">
         Si buscas primarias en la Colonia del Valle, has llegado al sitio ideal. En Colegio Del Valle sabemos que las
-        bases fundamentales para la vida se aprenden en esta etapa de la educación y nosotros buscamos los mas altos
-        estandares de calidad dentro de los Colegios Privados en CDMX.
+        bases fundamentales para la vida se aprenden en esta etapa de la educación y nosotros buscamos los más altos
+        estándares de calidad dentro de los Colegios Privados en CDMX.
       </p>
     </div>
     <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -74,7 +74,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Certificado médico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
             <li>Cartilla de vacunacion dos copias.</li>
             <li>8 fotografias tamaño infantil a color.</li>
-            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
+            <li>Elaborar registro de Inscripción y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
             <li>Ficha de salud original y dos copias (solicitar en dirección).</li>
           </ul>
           <p class="text-sm">
@@ -94,10 +94,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-5 space-y-4 text-slate-600">
           <ul class="space-y-2 list-disc pl-6">
             <li>Carta compromiso original y copia (solicitar en dirección).</li>
-            <li>Presentar Reporte de Evaluacion de Tercer grado de Educacion Preescolar en original y dos copias.</li>
+            <li>Presentar Reporte de Evaluacion de Tercer grado de Educación Preescolar en original y dos copias.</li>
             <li>Certificado médico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
             <li>8 fotografias tamaño infantil a color.</li>
-            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
+            <li>Elaborar registro de Inscripción y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
             <li>Ficha de salud original y dos copias (solicitar en dirección).</li>
             <li>CURP dos copias ampliado a tamaño carta.</li>
             <li>El acreditamiento del programa Prefirst será requisito para efectuar la inscripción al primer nivel de Primaria Bilingue.</li>
@@ -130,11 +130,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="mision">
         <i class="text-lg" data-lucide="flag"></i>
-        Mision
+        Misión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="vision">
         <i class="text-lg" data-lucide="eye"></i>
-        Vision
+        Visión
       </button>
       <button class="inline-flex w-full items-center gap-3 rounded-2xl border border-slate-200 px-4 py-3 text-left text-sm font-semibold text-slate-600 hover:bg-slate-50" type="button" data-tab="valores">
         <i class="text-lg" data-lucide="heart"></i>
@@ -154,7 +154,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Primaria</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Cada día que pasa la vida nos da la oportunidad de mejorar todo lo que realizamos, de construir un mundo
-          mejor, de aspirar a una Educacion llena de oportunidades, de cambios, de vanguardia y dedicacion; para lograr
+          mejor, de aspirar a una Educación llena de oportunidades, de cambios, de vanguardia y dedicacion; para lograr
           nuestros objetivos como escuela y nación hay que esforzarse cada día y prepararse para llegar a cumplir la
           meta fijada. Debido a esto la primaria Colegio Del Valle esta dedicada día con día a realizar un trabajo arduo
           para lograr que esta magna escuela sea de calidad y de entereza, en donde nuestros alumnos y padres de familia
@@ -162,7 +162,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="mision">
-        <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Misión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Promover permanentemente el desarrollo integral del alumno basado en una educación de calidad centrada en el
           fortalecimiento de valores etico-morales, donde el estudiante se distinga por su constancia, esfuerzo,
@@ -170,9 +170,9 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </p>
       </div>
       <div class="hidden" data-panel="vision">
-        <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
+        <h3 class="text-3xl font-semibold text-slate-800">Visión</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Incorporar a nuestros alumnos a la vida cotidiana siempre bajo la linea de principios y valores que les
+          Incorporar a nuestros alumnos a la vida cotidiana siempre bajo la línea de principios y valores que les
           sirvan para transformarse en mejores seres humanos.
         </p>
       </div>
@@ -217,7 +217,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
 <section class="py-16 bg-white">
   <div class="max-w-[1300px] mx-auto px-6 text-center" data-tabscope data-default="ofrecemos">
     <h2 class="text-3xl md:text-4xl font-semibold text-slate-800">Servicios</h2>
-    <p class="mt-3 text-slate-600">Conoce mas sobre lo que las mejores Escuelas Primarias en CDMX te ofrecen.</p>
+    <p class="mt-3 text-slate-600">Conoce más sobre lo que las mejores Escuelas Primarias en CDMX te ofrecen.</p>
 
     <div class="mt-8">
       <div class="inline-flex flex-wrap justify-center gap-2 rounded-full border border-slate-200 bg-white p-2 text-xs font-semibold uppercase tracking-[0.2em] text-slate-600">
@@ -257,7 +257,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </div>
         <div class="hidden" data-panel="servicios">
           <ul class="list-disc pl-6 space-y-2 text-slate-600">
-            <li>Ingles avanzado</li>
+            <li>Inglés avanzado</li>
             <li>Instalaciones de vanguardia</li>
             <li>Seguridad Interna</li>
             <li>Convenios institucionales</li>
@@ -292,14 +292,14 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
                 <p class="font-semibold text-slate-800">Lenguajes</p>
                 <ul class="mt-2 list-disc pl-6 space-y-1">
                   <li>Espanol</li>
-                  <li>Ingles</li>
+                  <li>Inglés</li>
                   <li>Artes</li>
                 </ul>
               </div>
               <div>
                 <p class="font-semibold text-slate-800">Saberes y Pensamiento Cientifico</p>
                 <ul class="mt-2 list-disc pl-6 space-y-1">
-                  <li>Matematicas</li>
+                  <li>Matemáticas</li>
                   <li>Ciencias Naturales</li>
                 </ul>
               </div>
@@ -308,7 +308,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
                 <ul class="mt-2 list-disc pl-6 space-y-1">
                   <li>Historia</li>
                   <li>Geografia</li>
-                  <li>Formacion Civica y Etica</li>
+                  <li>Formación Civica y Etica</li>
                   <li>La Entidad Donde Vivo</li>
                 </ul>
               </div>
@@ -317,11 +317,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <div>
                 <p class="font-semibold text-slate-800">De lo Humano a lo Comunitario</p>
                 <ul class="mt-2 list-disc pl-6 space-y-1">
-                  <li>Educacion Fisica</li>
-                  <li>Educacion Socioemocional</li>
-                  <li>Tecnologia</li>
+                  <li>Educación Física</li>
+                  <li>Educación Socioemocional</li>
+                  <li>Tecnología</li>
                   <li>Autonomia Curricular</li>
-                  <li>Ingles</li>
+                  <li>Inglés</li>
                 </ul>
               </div>
             </div>
@@ -362,7 +362,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
             En educación primaria pública, el Estado Mexicano ofrece mecanismos para verificar si tu hijo quedó inscrito.
-            En los colegios privados como Colegio Del Valle se dispone de otro sistema. Dirigirse a Direccion de Admisiones
+            En los colegios privados como Colegio Del Valle se dispone de otro sistema. Dirigirse a Dirección de Admisiones
             en un horario de lunes a viernes de 9:00 a 19:00 hrs y sabados de 9:00 a 13:00 hrs.
           </p>
           <p>
@@ -411,7 +411,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           </p>
           <p>
             Por otro lado, los padres y tutores podrán ver certificaciones de alumnos de primaria y otros niveles a través
-            del Sistema de Informacion y Gestion Educativa (SIGED). El ingreso en linea y es muy fácil. Solo debes tener a
+            del Sistema de Información y Gestion Educativa (SIGED). El ingreso en línea y es muy fácil. Solo debes tener a
             la mano los datos del CURP del estudiante y la clave del Centro de Trabajo y Escuela (CCT). Ingresa los datos
             en el sitio web del SIGED y ¡listo! Ya puedes checar las calificaciones.
           </p>
