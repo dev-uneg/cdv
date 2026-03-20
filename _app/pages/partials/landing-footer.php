@@ -5,5 +5,6 @@
       <p class="mt-2"><a class="hover:text-white underline" href="<?= $baseUrl ?>/aviso-de-privacidad/">Aviso de privacidad</a></p>
     </div>
   </footer>
+  <?php require __DIR__ . '/cookie-consent.php'; ?>
 </body>
 </html>
