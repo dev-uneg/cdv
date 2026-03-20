@@ -20,7 +20,7 @@ require __DIR__ . '/partials/header.php';
       <div>
         <h2 class="text-xl font-semibold text-slate-800">1. Datos personales que recabamos</h2>
         <p class="mt-3 text-sm leading-relaxed">
-          Podemos recabar datos de identificacion y contacto, incluyendo nombre completo, correo electronico, telefono, nivel educativo de interes, mensaje o asunto de contacto y, cuando aplique, datos tecnicos de navegacion como direccion IP, navegador, fecha y hora de registro.
+          Podemos recabar datos de identificacion y contacto, incluyendo nombre completo, correo electrónico, teléfono, nivel educativo de interés, mensaje o asunto de contacto y, cuando aplique, datos tecnicos de navegacion como dirección IP, navegador, fecha y hora de registro.
         </p>
       </div>
 
@@ -31,7 +31,7 @@ require __DIR__ . '/partials/header.php';
         </p>
         <ul class="mt-3 list-disc space-y-2 pl-6 text-sm leading-relaxed">
           <li>Atender solicitudes de informes, admisiones y contacto institucional.</li>
-          <li>Dar seguimiento a procesos de admision, orientacion y servicios escolares.</li>
+          <li>Dar seguimiento a procesos de admisión, orientacion y servicios escolares.</li>
           <li>Responder mensajes enviados mediante formularios del sitio.</li>
           <li>Mantener medidas de seguridad y control administrativo del sitio web.</li>
         </ul>
@@ -43,16 +43,16 @@ require __DIR__ . '/partials/header.php';
       <div>
         <h2 class="text-xl font-semibold text-slate-800">3. Transferencia de datos</h2>
         <p class="mt-3 text-sm leading-relaxed">
-          Colegio del Valle no vende datos personales. En caso de ser necesario para la prestacion de servicios o cumplimiento de obligaciones legales, tus datos podran compartirse con encargados que apoyan la operacion del sitio, plataformas de comunicacion o autoridades competentes, bajo medidas de confidencialidad y seguridad.
+          Colegio del Valle no vende datos personales. En caso de ser necesario para la prestacion de servicios o cumplimiento de obligaciones legales, tus datos podrán compartirse con encargados que apoyan la operacion del sitio, plataformas de comunicación o autoridades competentes, bajo medidas de confidencialidad y seguridad.
         </p>
       </div>
 
       <div>
         <h2 class="text-xl font-semibold text-slate-800">4. Derechos ARCO y revocacion del consentimiento</h2>
         <p class="mt-3 text-sm leading-relaxed">
-          Puedes ejercer tus derechos de Acceso, Rectificacion, Cancelacion y Oposicion (ARCO), asi como revocar tu consentimiento para el tratamiento de tus datos personales, enviando una solicitud al correo:
+          Puedes ejercer tus derechos de Acceso, Rectificacion, Cancelacion y Oposicion (ARCO), así como revocar tu consentimiento para el tratamiento de tus datos personales, enviando una solicitud al correo:
           <a class="font-semibold text-emerald-700 hover:text-emerald-800" href="mailto:contacto@coldelvalle.edu.mx">contacto@coldelvalle.edu.mx</a>.
-          La solicitud debe incluir nombre completo, medio de contacto, descripcion clara de los datos y derecho que deseas ejercer para su atencion.
+          La solicitud debe incluir nombre completo, medio de contacto, descripcion clara de los datos y derecho que deseas ejercer para su atención.
         </p>
       </div>
 
@@ -66,7 +66,7 @@ require __DIR__ . '/partials/header.php';
       <div>
         <h2 class="text-xl font-semibold text-slate-800">6. Cambios al aviso de privacidad</h2>
         <p class="mt-3 text-sm leading-relaxed">
-          Colegio del Valle puede actualizar este Aviso de Privacidad en cualquier momento. Cualquier cambio se publicara en esta misma pagina.
+          Colegio del Valle puede actualizar este Aviso de Privacidad en cualquier momento. Cualquier cambio se publicara en esta misma página.
         </p>
       </div>
     </div>

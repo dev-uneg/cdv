@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Inicio | Colegio del Valle';
-$pageDescription = 'Colegio del Valle en CDMX: formacion bilingue, valores y excelencia academica desde preescolar hasta preparatoria.';
+$pageDescription = 'Colegio del Valle en CDMX: formación bilingüe, valores y excelencia académica desde preescolar hasta preparatoria.';
 $activePage = 'home';
 require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
@@ -46,7 +46,7 @@ if ($baseUrl === '/') {
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="text-center">
       <h2 class="text-3xl md:text-4xl font-bold tracking-tight">Colegio en Colonia del Valle</h2>
-      <p class="mt-3 text-slate-600">Formacion bilingue, valores y excelencia academica desde preescolar.</p>
+      <p class="mt-3 text-slate-600">Formacion bilingüe, valores y excelencia académica desde preescolar.</p>
     </div>
     <div class="mt-12 space-y-0">
       <div class="grid gap-0 lg:grid-cols-2">
@@ -120,11 +120,11 @@ if ($baseUrl === '/') {
 <section class="py-12 bg-white">
   <div class="max-w-[1300px] mx-auto px-6 text-center">
     <h2 class="text-2xl md:text-3xl font-bold tracking-tight">
-      Nos preparamos todos los dias para distinguirnos entre los mejores colegios privados en CDMX
+      Nos preparamos todos los días para distinguirnos entre los mejores colegios privados en CDMX
     </h2>
     <p class="mt-4 text-slate-600">
-      La oferta educativa del Colegio en Ciudad de Mexico se adapta a una educacion del presente y del futuro.
-      Desde preescolar hasta preparatoria, impulsamos la excelencia academica y el desarrollo integral.
+      La oferta educativa del Colegio en Ciudad de Mexico se adapta a una educación del presente y del futuro.
+      Desde preescolar hasta preparatoria, impulsamos la excelencia académica y el desarrollo integral.
     </p>
   </div>
 </section>
@@ -148,7 +148,7 @@ if ($baseUrl === '/') {
   <div class="max-w-[1300px] mx-auto px-6">
     <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
       <div>
-        <p class="text-xs uppercase tracking-[0.3em] text-white/60">Enlaces de interes</p>
+        <p class="text-xs uppercase tracking-[0.3em] text-white/60">Enlaces de interés</p>
         <h2 class="mt-3 text-3xl font-bold">Recursos para la comunidad</h2>
       </div>
       <a class="rounded-full border border-white/40 px-5 py-2 text-xs font-semibold uppercase tracking-[0.2em]" href="<?= $baseUrl ?>/contacto/">Contactanos</a>

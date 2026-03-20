@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Beneficios | Colegio del Valle';
-$pageDescription = 'Beneficios de estudiar en Colegio del Valle: excelencia academica, comunidad y servicios para familias.';
+$pageDescription = 'Beneficios de estudiar en Colegio del Valle: excelencia académica, comunidad y servicios para familias.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
@@ -9,7 +9,7 @@ require __DIR__ . '/partials/header.php';
   <div class="max-w-[900px] mx-auto px-6 text-center">
     <h1 class="text-3xl md:text-4xl font-semibold text-slate-800">Beneficios</h1>
     <p class="mt-4 text-slate-600">
-      Conoce los beneficios de formar parte de la comunidad Colegio del Valle. Para mas informacion, contacta a nuestro
+      Conoce los beneficios de formar parte de la comunidad Colegio del Valle. Para mas información, contacta a nuestro
       equipo de admisiones.
     </p>
     <a class="mt-8 inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">

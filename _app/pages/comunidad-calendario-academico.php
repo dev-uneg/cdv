@@ -1,13 +1,13 @@
 <?php
 $pageTitle = 'Comunidad | Calendario Academico';
-$pageDescription = 'Calendarios academicos por nivel: kinder, primaria, secundaria y preparatoria.';
+$pageDescription = 'Calendarios académicos por nivel: kinder, primaria, secundaria y preparatoria.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
 <section class="bg-white">
   <div class="max-w-[1300px] mx-auto px-6 py-10">
     <div class="h-[250px] rounded-[32px] bg-gradient-to-r from-indigo-500 via-sky-500 to-cyan-400 flex items-center justify-center text-center text-white">
-      <h1 class="text-3xl md:text-4xl font-semibold">Calendario academico</h1>
+      <h1 class="text-3xl md:text-4xl font-semibold">Calendario académico</h1>
     </div>
   </div>
 </section>

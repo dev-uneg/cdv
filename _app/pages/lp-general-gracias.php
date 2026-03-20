@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Gracias | Landing | Colegio del Valle';
-$pageDescription = 'Gracias por contactarnos. Nuestro equipo de admisiones se pondra en contacto contigo pronto.';
+$pageDescription = 'Gracias por contactarnos. Nuestro equipo de admisiones se pondrá en contacto contigo pronto.';
 $activePage = '';
 $mainClass = 'bg-white';
 require __DIR__ . '/partials/header.php';
@@ -15,7 +15,7 @@ if ($baseUrl === '/') {
       <p class="text-xs uppercase tracking-[0.3em] text-emerald-700">Formulario enviado</p>
       <h1 class="mt-3 text-3xl md:text-4xl font-semibold text-emerald-900">Gracias por contactarnos</h1>
       <p class="mt-4 text-emerald-900/80">
-        Recibimos tus datos correctamente. El equipo de admisiones te respondera a la brevedad.
+        Recibimos tus datos correctamente. El equipo de admisiones te responderá a la brevedad.
       </p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">
         <a class="rounded-full bg-emerald-600 px-6 py-3 text-xs font-semibold uppercase tracking-[0.2em] text-white" href="<?= $baseUrl ?>/">

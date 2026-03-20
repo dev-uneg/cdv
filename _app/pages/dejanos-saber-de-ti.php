@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Dejanos saber de ti | Colegio del Valle';
-$pageDescription = 'Dejanos saber de ti: comparte tus datos para recibir informacion y seguimiento de admisiones.';
+$pageDescription = 'Dejanos saber de ti: comparte tus datos para recibir información y seguimiento de admisiones.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>

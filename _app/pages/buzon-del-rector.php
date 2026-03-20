@@ -48,17 +48,17 @@ if ($errorMessage === '') {
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="nombre" placeholder="Tu nombre" required />
         </label>
         <label class="text-sm text-slate-600">
-          Correo electronico
+          Correo electrónico
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="email" name="email" placeholder="tucorreo@ejemplo.com" required />
         </label>
         <label class="text-sm text-slate-600">
           Telefono de contacto
-          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="telefono" placeholder="55 0000 0000" />
+          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="teléfono" placeholder="55 0000 0000" />
         </label>
         <label class="text-sm text-slate-600">
           Relacion con el colegio
-          <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="relacion" required>
-            <option value="" selected>Selecciona una opcion</option>
+          <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="relación" required>
+            <option value="" selected>Selecciona una opción</option>
             <option value="madre-padre">Madre o padre de familia</option>
             <option value="alumno">Alumno(a)</option>
             <option value="egresado">Egresado(a)</option>
@@ -83,10 +83,10 @@ if ($errorMessage === '') {
       </div>
 
       <div class="mt-6 rounded-2xl border border-slate-200 bg-slate-50 px-5 py-4 text-sm text-slate-600">
-        Aviso de privacidad: Los datos personales recabados en este formulario se utilizan unicamente para dar seguimiento a tu
-        mensaje y no se compartiran con terceros. Puedes solicitar el acceso, rectificacion o eliminacion de tu informacion
+        Aviso de privacidad: Los datos personales recabados en este formulario se utilizan únicamente para dar seguimiento a tu
+        mensaje y no se compartiran con terceros. Puedes solicitar el acceso, rectificacion o eliminacion de tu información
         escribiendo a contacto del colegio. Consulta el aviso completo
-        <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">aqui</a>.
+        <a class="font-semibold text-emerald-700 underline hover:text-emerald-800" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">aquí</a>.
       </div>
 
       <label class="mt-6 flex items-start gap-3 text-sm text-slate-600">

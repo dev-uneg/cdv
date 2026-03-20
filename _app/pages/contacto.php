@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Contacto | Colegio del Valle';
-$pageDescription = 'Contacta al Colegio del Valle en CDMX: ubicacion, telefono, admisiones y visita nuestras instalaciones.';
+$pageDescription = 'Contacta al Colegio del Valle en CDMX: ubicación, teléfono, admisiones y visita nuestras instalaciones.';
 $activePage = 'contacto';
 require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
@@ -40,8 +40,8 @@ if ($errorMessage === '') {
     <div>
       <h2 class="text-2xl md:text-3xl font-semibold text-slate-800">Nuestra Mision</h2>
       <p class="mt-4 text-slate-600 leading-relaxed">
-        Colegio Del Valle, con mas de 40 anos de tradicion academica, brinda a nuestros alumnos un excelente nivel
-        educativo. Nuestra institucion cuenta con el mayor prestigio de la zona. ¡Ven y conoce la nueva escuela de tus hijos!
+        Colegio Del Valle, con mas de 40 años de tradición académica, brinda a nuestros alumnos un excelente nivel
+        educativo. Nuestra institución cuenta con el mayor prestigio de la zona. ¡Ven y conoce la nueva escuela de tus hijos!
       </p>
       <div class="mt-8 space-y-4 text-sm text-slate-600">
         <div class="flex items-start gap-3">
@@ -95,8 +95,8 @@ if ($errorMessage === '') {
           <i class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-lg text-slate-500" data-lucide="chevron-down"></i>
         </div>
         <p class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-600">
-          Tu informacion esta segura con nosotros. Solo la usaremos para que un asesor de admisiones del Colegio del Valle
-          te contacte, te guie durante el proceso de inscripcion y te comparta detalles claros sobre colegiaturas, costos y
+          Tu información esta segura con nosotros. Solo la usaremos para que un asesor de admisiones del Colegio del Valle
+          te contacte, te guie durante el proceso de inscripción y te comparta detalles claros sobre colegiaturas, costos y
           opciones disponibles segun el nivel educativo que te interesa.
         </p>
         <input type="hidden" name="source" value="Pagina contacto CDV" />

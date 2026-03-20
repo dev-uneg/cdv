@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Kinder | Colegio del Valle';
-$pageDescription = 'Kinder en Colonia del Valle: atencion, cuidados y educacion preescolar con valores y aprendizaje activo.';
+$pageDescription = 'Kinder en Colonia del Valle: atención, cuidados y educación preescolar con valores y aprendizaje activo.';
 $activePage = 'kinder';
 require __DIR__ . '/partials/header.php';
 $defaultInterest = 'Kinder';
@@ -36,12 +36,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="text-center lg:text-left">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-indigo-600">RVOE SEP 09060319/07/2006</p>
       <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-cyan-500">
-        Kinder en la Colonia del Valle: Atencion, cuidados y educacion
+        Kinder en la Colonia del Valle: Atencion, cuidados y educación
       </h1>
       <p class="mt-4 text-slate-600 leading-relaxed">
-        ¿Buscas un kinder en la Colonia del Valle? Atentos a la educacion de los mas pequenos, ponemos a tu disposicion
-        la calidad en la ensenanza de nuestros profesores, asi como la atencion y el cuidado que las escuelas preescolares
-        deben tener. ¡Tus hijos aprenderan a partir de la diversion!
+        ¿Buscas un kinder en la Colonia del Valle? Atentos a la educación de los mas pequeños, ponemos a tu disposición
+        la calidad en la enseñanza de nuestros profesores, así como la atención y el cuidado que las escuelas preescolares
+        deben tener. ¡Tus hijos aprenderán a partir de la diversión!
       </p>
     </div>
     <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
@@ -68,7 +68,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           Alumno
         </summary>
         <ul class="mt-5 space-y-2 text-slate-600 list-disc pl-6">
-          <li>3 Fotografias tamano infantil.</li>
+          <li>3 Fotografias tamaño infantil.</li>
           <li>Acta de Nacimiento.*</li>
           <li>Cartilla de Vacunacion.*</li>
           <li>Certificado Medico.*</li>
@@ -76,8 +76,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <li>CURP* Original y 2 copias.</li>
         </ul>
         <p class="mt-4 text-sm text-slate-600">
-          <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripcion no presenta alguno
-          de estos documentos se suspendera el tramite de inscripcion.
+          <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripción no presenta alguno
+          de estos documentos se suspenderá el trámite de inscripción.
         </p>
       </details>
 
@@ -90,7 +90,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           Padres o Tutores
         </summary>
         <ul class="mt-5 space-y-2 text-slate-600 list-disc pl-6">
-          <li>1 Fotografias tamano infantil de cada uno o 3 Fotografias tamano infantil de personas autorizadas para llevar al alumno a casa.</li>
+          <li>1 Fotografias tamaño infantil de cada uno o 3 Fotografias tamaño infantil de personas autorizadas para llevar al alumno a casa.</li>
           <li>Copia de Credencial del IFE.</li>
           <li>Carta de autorizacion de Padres para que otras personas recojan a sus hijos.</li>
         </ul>
@@ -99,7 +99,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="flex flex-col gap-4">
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
         <i class="text-base" data-lucide="info"></i>
-        Mas informacion
+        Mas información
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_assets/PDFs/kinder/Colegio-Del-Valle-Requisitos-Kinder-2023.pdf" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="download"></i>
@@ -141,12 +141,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div data-panel="modelo">
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Kinder</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Nuestro modelo esta basado en el conocimiento significativo, promoviendo la investigacion,
-          experimentacion, analisis y reflexion en forma dinamica y atractiva para los educandos,
+          Nuestro modelo esta basado en el conocimiento significativo, promoviendo la investigación,
+          experimentacion, análisis y reflexion en forma dinamica y atractiva para los educandos,
           promoviendo toma de decisiones en un ambiente alegre, de juego y trabajo en equipo, en comunidad
-          y en familia que de una manera conjunta nos llevaran a grandes logros por medio de una comunicacion
-          continua de trabajo estrecho con padres de familia verdaderamente conscientes de la educacion y
-          responsables de la formacion de sus hijos.
+          y en familia que de una manera conjunta nos llevaran a grandes logros por medio de una comunicación
+          continua de trabajo estrecho con padres de familia verdaderamente conscientes de la educación y
+          responsables de la formación de sus hijos.
         </p>
       </div>
       <div class="hidden" data-panel="talleres">
@@ -171,20 +171,20 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div class="hidden" data-panel="mision">
         <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          El quehacer educativo de esta institucion es respaldado por 50 anos de experiencia en la labor educativa
-          y nuestro principal objetivo en el Kinder Colegio Del Valle es lograr una verdadera educacion integral
+          El quehacer educativo de esta institución es respaldado por 50 años de experiencia en la labor educativa
+          y nuestro principal objetivo en el Kinder Colegio Del Valle es lograr una verdadera educación integral
           promoviendo y desarrollando aquellas competencias, capacidades intelectuales, sociales, creativas y fisicas
-          en los ninos y ninas de 3 a 5 anos, poniendo especial interes en la educacion en valores en un ambiente de
+          en los niños y niñas de 3 a 5 años, poniendo especial interés en la educación en valores en un ambiente de
           armonia, con el fin de formar personas verdaderamente comprometidas con su entorno.
         </p>
       </div>
       <div class="hidden" data-panel="vision">
         <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Nuestra institucion es reconocida por la comunidad debido a los logros de los ninos y ninas ya que, se
-          promueve una educacion integral a traves de la investigacion, analisis y reflexion, que en forma dinamica
+          Nuestra institución es reconocida por la comunidad debido a los logros de los niños y niñas ya que, se
+          promueve una educación integral a través de la investigación, análisis y reflexion, que en forma dinamica
           y atractiva se imparte contando con el profesionalismo o compromiso del equipo directivo, docente y
-          administrativo que hace posible esta gran labor que es la formacion integral de la poblacion educativa
+          administrativo que hace posible esta gran labor que es la formación integral de la poblacion educativa
           que atendemos.
         </p>
       </div>
@@ -336,7 +336,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/kinder/Calendario-kinder.webp" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="calendar-days"></i>
-        Calendario academico
+        Calendario académico
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/formas-de-pago">
         <i class="text-base" data-lucide="credit-card"></i>
@@ -353,12 +353,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <span class="group-open:hidden">+</span>
               <span class="hidden group-open:inline">−</span>
             </span>
-            ¿Cuando se inscriben los ninos al kinder?
+            ¿Cuándo se inscriben los niños al kinder?
           </summary>
           <div class="mt-4 space-y-3 text-slate-600">
             <p>
-              Si bien los lapsos de preinscripciones para educacion kinder en CDMX tienen esquema distinto en escuelas
-              publicas, en colegios privados como el Colegio del Valle, siempre tienes oportunidad de inscribir a tu hijo.
+              Si bien los lapsos de preinscripciones para educación kinder en CDMX tienen esquema distinto en escuelas
+              públicas, en colegios privados como el Colegio del Valle, siempre tienes oportunidad de inscribir a tu hijo.
               Las prescripciones inician desde el mes de noviembre y cierran hasta junio.
             </p>
             <p>¡Revisa el calendario de kinder y participa de todas las fechas importantes!</p>
@@ -371,15 +371,15 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <span class="group-open:hidden">+</span>
               <span class="hidden group-open:inline">−</span>
             </span>
-            ¿Como inscribir a un nino al kinder?
+            ¿Cómo inscribir a un niño al kinder?
           </summary>
           <div class="mt-4 space-y-3 text-slate-600">
             <p>
-              En Colegio del Valle puedes comenzar el proceso online a traves del chat dispuesto en su sitio web las 24 horas
-              del dia. Tambien puedes enviar mensaje directo a traves de WhatsApp para conocer cada paso en el proceso de
-              inscripcion en educacion preescolar.
+              En Colegio del Valle puedes comenzar el proceso online a través del chat dispuesto en su sitio web las 24 horas
+              del día. Tambien puedes enviar mensaje directo a través de WhatsApp para conocer cada paso en el proceso de
+              inscripción en educación preescolar.
             </p>
-            <p>Recuerda que sera necesario realizar una visita al colegio para consignar la documentacion requerida.</p>
+            <p>Recuerda que será necesario realizar una visita al colegio para consignar la documentacion requerida.</p>
           </div>
         </details>
 
@@ -389,25 +389,25 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <span class="group-open:hidden">+</span>
               <span class="hidden group-open:inline">−</span>
             </span>
-            ¿Que debo hacer para inscribir a mi hijo al kinder?
+            ¿Qué debo hacer para inscribir a mi hijo al kinder?
           </summary>
           <div class="mt-4 space-y-3 text-slate-600">
-            <p>Lo primero a saber es que tu hijo debe tener los tres anos cumplidos o este proximo a cumplirlos.</p>
+            <p>Lo primero a saber es que tu hijo debe tener los tres años cumplidos o este próximo a cumplirlos.</p>
             <div>
               <p class="font-semibold text-slate-800">Alumno</p>
               <ul class="mt-2 list-disc space-y-1 pl-6">
                 <li>Acta de Nacimiento.</li>
-                <li>Tres fotografias tamano infantil.</li>
+                <li>Tres fotografias tamaño infantil.</li>
                 <li>Cartilla de vacunacion.</li>
                 <li>CURP original y dos copias.</li>
-                <li>Certificado medico.</li>
+                <li>Certificado médico.</li>
                 <li>Hojas de registro.</li>
               </ul>
             </div>
             <div>
               <p class="font-semibold text-slate-800">Padres y tutores</p>
               <ul class="mt-2 list-disc space-y-1 pl-6">
-                <li>Una fotografia tamano infantil de cada padre o tres fotografias tamano infantil de personas autorizadas para llevar al alumno a casa.</li>
+                <li>Una fotografia tamaño infantil de cada padre o tres fotografias tamaño infantil de personas autorizadas para llevar al alumno a casa.</li>
                 <li>Copia de credencial del INE.</li>
                 <li>Carta de autorizacion de padres para que otras personas recojan a sus hijos.</li>
               </ul>
@@ -421,12 +421,12 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
               <span class="group-open:hidden">+</span>
               <span class="hidden group-open:inline">−</span>
             </span>
-            ¿Que pasa si no preinscribi a mi hijo al kinder?
+            ¿Qué pasa si no preinscribi a mi hijo al kinder?
           </summary>
           <div class="mt-4 space-y-3 text-slate-600">
             <p>
               Si tu hijo ya ha cursado kinder uno, los procesos de reinscripcion para cursos posteriores se realizan de forma
-              automatica. Si tu hijo proviene de otro colegio distinto al Colegio del Valle, el proceso de reinscripcion a
+              automática. Si tu hijo proviene de otro colegio distinto al Colegio del Valle, el proceso de reinscripcion a
               kinder puede realizarse en fechas que van de noviembre a junio.
             </p>
           </div>

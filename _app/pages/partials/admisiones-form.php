@@ -4,7 +4,7 @@ $sourcePage = $sourcePage ?? 'Sitio web CDV';
 ?>
 <h3 class="text-2xl font-semibold text-slate-800">Solicita informes</h3>
 <p class="mt-2 text-sm text-slate-600">
-  Completa tus datos y un asesor de admisiones te contactara.
+  Completa tus datos y un asesor de admisiones te contactará.
 </p>
 <form class="mt-6 grid gap-4" method="post" action="<?= $baseUrl ?>/api/contacto">
   <input class="rounded-xl border border-slate-200 px-4 py-3 text-sm" placeholder="Nombre completo*" type="text" name="full_name" required />
@@ -23,8 +23,8 @@ $sourcePage = $sourcePage ?? 'Sitio web CDV';
     <i class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-lg text-slate-500" data-lucide="chevron-down"></i>
   </div>
   <p class="rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm leading-relaxed text-slate-600">
-    Tu informacion esta segura con nosotros. Solo la usaremos para que un asesor de admisiones del Colegio del Valle
-    te contacte, te guie durante el proceso de inscripcion y te comparta detalles claros sobre colegiaturas, costos y
+    Tu información esta segura con nosotros. Solo la usaremos para que un asesor de admisiones del Colegio del Valle
+    te contacte, te guie durante el proceso de inscripción y te comparta detalles claros sobre colegiaturas, costos y
     opciones disponibles segun el nivel educativo que te interesa.
   </p>
   <input type="hidden" name="source" value="<?= htmlspecialchars($sourcePage, ENT_QUOTES, 'UTF-8') ?>" />

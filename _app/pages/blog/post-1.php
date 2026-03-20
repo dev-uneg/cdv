@@ -27,7 +27,7 @@ $post = $posts[0] ?? null;
         <h2 class="text-xl font-semibold text-slate-800">Índice de contenido</h2>
         <ol class="mt-4 space-y-2 text-sm text-slate-700 list-decimal pl-5">
           <li><a class="hover:text-indigo-600" href="#que-es">¿Qué es la evaluación formativa en la NEM?</a></li>
-          <li><a class="hover:text-indigo-600" href="#caracteristicas">Características de la evaluación formativa NEM</a></li>
+          <li><a class="hover:text-indigo-600" href="#características">Características de la evaluación formativa NEM</a></li>
           <li><a class="hover:text-indigo-600" href="#importancia">Importancia de la evaluación formativa en la Nueva Escuela Mexicana</a></li>
           <li><a class="hover:text-indigo-600" href="#como-se-aplica">¿Cómo se aplica la evaluación formativa en la NEM?</a></li>
           <li><a class="hover:text-indigo-600" href="#observacion">Observación continua</a></li>
@@ -59,7 +59,7 @@ $post = $posts[0] ?? null;
           </p>
         </div>
 
-        <div id="caracteristicas">
+        <div id="características">
           <h2 class="text-2xl font-semibold text-slate-800">Características de la evaluación formativa NEM</h2>
           <p class="mt-3 leading-relaxed">
             La evaluación formativa NEM presenta una serie de características que la distinguen de otros tipos de evaluación:

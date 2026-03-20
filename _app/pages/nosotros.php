@@ -28,8 +28,8 @@ require __DIR__ . '/partials/header.php';
     <h2 class="text-3xl md:text-4xl font-bold tracking-tight text-slate-800">Mision y Vision</h2>
     <div class="mt-6 space-y-4 text-slate-600 text-sm md:text-base leading-relaxed">
       <p>
-        La Mision de nuestro Colegio es favorecer la formacion integral de nuestros alumnos con base en valores
-        etico-morales ofreciendo una educacion de calidad, que les lleve al pleno desarrollo de sus potencialidades
+        La Mision de nuestro Colegio es favorecer la formación integral de nuestros alumnos con base en valores
+        etico-morales ofreciendo una educación de calidad, que les lleve al pleno desarrollo de sus potencialidades
         para que puedan ser hombres y mujeres de bien, vivir en un mundo de cambio constante y comprometidos con su
         ambiente social y su pais.
       </p>
@@ -39,13 +39,13 @@ require __DIR__ . '/partials/header.php';
         la razon de la filosofia humana.
       </p>
       <p>
-        Concebimos al conocimiento como un proceso comprensivo de informacion actualizada, sometida al rigor analitico
-        de la ciencia y la tecnica, con el fin de poder opinar sobre ellas y aplicarlas en beneficio de la comunidad.
+        Concebimos al conocimiento como un proceso comprensivo de información actualizada, sometida al rigor analitico
+        de la ciencia y la técnica, con el fin de poder opinar sobre ellas y aplicarlas en beneficio de la comunidad.
       </p>
       <p>
-        Atendemos la formacion de conocimientos y valores como un proceso dirigido hacia el logro de la integracion
+        Atendemos la formación de conocimientos y valores como un proceso dirigido hacia el logro de la integracion
         completa del individuo a su entorno. Nuestra Vision es promover la integracion de los alumnos desde jardin de
-        ninos hasta preparatoria fomentando un sentimiento de pertenencia hacia su colegio, companeros, maestros y
+        niños hasta preparatoria fomentando un sentimiento de pertenencia hacia su colegio, companeros, maestros y
         padres de familia.
       </p>
       <p class="uppercase text-xs tracking-[0.2em] text-slate-500">
@@ -60,9 +60,9 @@ require __DIR__ . '/partials/header.php';
     <div>
       <h3 class="text-2xl md:text-3xl font-bold text-white">¿Quienes somos?</h3>
       <p class="mt-4 text-white/75 leading-relaxed">
-        El Colegio del Valle es una institucion particular dedicada a la Educacion basica (Preescolar y Primaria),
-        Media basica (Secundaria) y Media superior (Preparatoria), con una tradicion de mas de seis decadas, que
-        desarrolla su quehacer academico a traves de la vocacion docente y solido compromiso con la educacion.
+        El Colegio del Valle es una institución particular dedicada a la Educacion basica (Preescolar y Primaria),
+        Media basica (Secundaria) y Media superior (Preparatoria), con una tradición de mas de seis decadas, que
+        desarrolla su quehacer académico a través de la vocacion docente y solido compromiso con la educación.
       </p>
     </div>
     <div>
@@ -84,10 +84,10 @@ require __DIR__ . '/partials/header.php';
     <h3 class="text-2xl md:text-3xl font-bold text-slate-800">Modelo Educativo</h3>
     <p class="mt-4 text-slate-600 leading-relaxed">
       Basado en el Constructivismo que permite generar aprendizajes significativos utilizando como estrategias la
-      investigacion, experimentacion, analisis y reflexion en forma dinamica y atractiva para los educandos,
+      investigación, experimentacion, análisis y reflexion en forma dinamica y atractiva para los educandos,
       promoviendo la toma de decisiones en un ambiente alegre, de juego y trabajo en equipo, en comunidad y en familia,
-      que de una manera conjunta nos llevaran a grandes logros por medio de una comunicacion continua de trabajo
-      estrecho con los padres verdaderamente conscientes y responsables de la educacion y formacion de sus hijos.
+      que de una manera conjunta nos llevaran a grandes logros por medio de una comunicación continua de trabajo
+      estrecho con los padres verdaderamente conscientes y responsables de la educación y formación de sus hijos.
     </p>
   </div>
 </section>

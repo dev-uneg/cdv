@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Gracias | Buzon del Rector';
-$pageDescription = 'Gracias por tu mensaje. Tu solicitud sera atendida y revisada por nuestro equipo directivo.';
+$pageDescription = 'Gracias por tu mensaje. Tu solicitud será atendida y revisada por nuestro equipo directivo.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
@@ -11,7 +11,7 @@ require __DIR__ . '/partials/header.php';
       <p class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Buzon del Rector</p>
       <h1 class="mt-4 text-3xl md:text-4xl font-semibold text-slate-800">Gracias por tu mensaje</h1>
       <p class="mt-5 text-slate-700 leading-relaxed">
-        Tu solicitud fue enviada correctamente y sera atendida con seriedad por nuestro equipo directivo. Revisaremos tu mensaje y te
+        Tu solicitud fue enviada correctamente y será atendida con seriedad por nuestro equipo directivo. Revisaremos tu mensaje y te
         daremos seguimiento a la brevedad al correo que registraste.
       </p>
       <div class="mt-8 flex flex-wrap items-center justify-center gap-3">

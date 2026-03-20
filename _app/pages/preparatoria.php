@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Preparatoria | Colegio del Valle';
-$pageDescription = 'Preparatoria en Colegio del Valle: clave UNAM, excelencia academica y orientacion vocacional.';
+$pageDescription = 'Preparatoria en Colegio del Valle: clave UNAM, excelencia académica y orientacion vocacional.';
 $activePage = 'preparatoria';
 require __DIR__ . '/partials/header.php';
 $defaultInterest = 'Prepa';
@@ -36,10 +36,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="text-center lg:text-left">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">Clave UNAM 1172</p>
       <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-blue-700">
-        ¿Buscas Preparatorias en la Colonia del Valle? ¡Conoce nuestra institucion!
+        ¿Buscas Preparatorias en la Colonia del Valle? ¡Conoce nuestra institución!
       </h1>
       <p class="mt-4 text-slate-900 leading-relaxed">
-        La formacion de nivel medio superior definira las metas que el alumno se proponga para su futuro; la carrera a
+        La formación de nivel medio superior definira las metas que el alumno se proponga para su futuro; la carrera a
         escoger, en que se quiere especializar y que area laboral prefiere. Haz la eleccion correcta con una de las
         mejores preparatorias en la Colonia del Valle: Colegio Del Valle.
       </p>
@@ -65,13 +65,13 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          Requisitos de inscripcion para alumnos procedentes de otro plantel 4° año
+          Requisitos de inscripción para alumnos procedentes de otro plantel 4° año
         </summary>
         <div class="mt-5 space-y-4 text-slate-600">
-          <p class="font-semibold text-slate-800">17 anos, cumplidos en el mes de agosto.</p>
+          <p class="font-semibold text-slate-800">17 años, cumplidos en el mes de agosto.</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Solicitud de Inscripcion totalmente requisitada.</li>
-            <li>Haber presentado examen de admision.</li>
+            <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
@@ -82,15 +82,15 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Certificado de secundaria.</li>
             <li>Carta de buena conducta o recomendacion.</li>
             <li>CURP (solo copias) amplificado a 200%.</li>
-            <li>4 fotografias tamano infantil blanco y negro papel mate.</li>
+            <li>4 fotografias tamaño infantil blanco y negro papel mate.</li>
             <li>Boleta de calificaciones de la escuela de procedencia.</li>
-            <li>Historial academico de la UNAM.</li>
-            <li>Constancia de estudios con las ultimas calificaciones incluyendo extraordinarios.</li>
+            <li>Historial académico de la UNAM.</li>
+            <li>Constancia de estudios con las últimas calificaciones incluyendo extraordinarios.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">En caso de recursar:</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Credencial de la UNAM (en caso de recursar).</li>
-            <li>Historial academico de la UNAM (en caso de recursar).</li>
+            <li>Historial académico de la UNAM (en caso de recursar).</li>
           </ul>
         </div>
       </details>
@@ -101,13 +101,13 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          Requisitos de inscripcion 5° año:
+          Requisitos de inscripción 5° año:
         </summary>
         <div class="mt-5 space-y-4 text-slate-600">
-          <p class="font-semibold text-slate-800">18 anos.</p>
+          <p class="font-semibold text-slate-800">18 años.</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Llenar solicitud de Inscripcion.</li>
-            <li>Haber presentado examen de admision.</li>
+            <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
@@ -118,15 +118,15 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Certificado de secundaria.</li>
             <li>Carta de buena conducta o recomendacion.</li>
             <li>CURP (solo copias).</li>
-            <li>4 fotografias tamano infantil blanco y negro papel mate.</li>
+            <li>4 fotografias tamaño infantil blanco y negro papel mate.</li>
             <li>Boleta de calificaciones de la escuela de procedencia.</li>
-            <li>Historial academico de la UNAM.</li>
-            <li>Constancia de estudios con las ultimas calificaciones incluyendo extraordinarios.</li>
+            <li>Historial académico de la UNAM.</li>
+            <li>Constancia de estudios con las últimas calificaciones incluyendo extraordinarios.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">En caso de recursar:</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Credencial de la UNAM (en caso de recursar).</li>
-            <li>Historial academico de la UNAM (en caso de recursar).</li>
+            <li>Historial académico de la UNAM (en caso de recursar).</li>
           </ul>
         </div>
       </details>
@@ -137,13 +137,13 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          Requisitos de inscripcion 6° año:
+          Requisitos de inscripción 6° año:
         </summary>
         <div class="mt-5 space-y-4 text-slate-600">
-          <p class="font-semibold text-slate-800">19 anos.</p>
+          <p class="font-semibold text-slate-800">19 años.</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Llenar solicitud de Inscripcion.</li>
-            <li>Haber presentado examen de admision.</li>
+            <li>Haber presentado examen de admisión.</li>
             <li>Haber presentado entrevista familiar.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">
@@ -154,15 +154,15 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Certificado de secundaria.</li>
             <li>Carta de buena conducta o recomendacion.</li>
             <li>CURP (solo copias).</li>
-            <li>4 fotografias tamano infantil blanco y negro papel mate.</li>
-            <li>2 fotografias tamano diploma.</li>
-            <li>3 fotografias tamano credencial 5 x 3.5 cm ovaladas.</li>
+            <li>4 fotografias tamaño infantil blanco y negro papel mate.</li>
+            <li>2 fotografias tamaño diploma.</li>
+            <li>3 fotografias tamaño credencial 5 x 3.5 cm ovaladas.</li>
             <li>Boleta de calificaciones de la escuela de procedencia.</li>
           </ul>
           <p class="text-sm font-semibold uppercase tracking-wide text-slate-700">En caso de recursar:</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Credencial de la UNAM (en caso de recursar).</li>
-            <li>Historial academico de la UNAM (en caso de recursar).</li>
+            <li>Historial académico de la UNAM (en caso de recursar).</li>
           </ul>
         </div>
       </details>
@@ -170,7 +170,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="flex flex-col gap-4">
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
         <i class="text-base" data-lucide="info"></i>
-        Mas informacion
+        Mas información
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_assets/PDFs/preparatoria/Colegio-Del-Valle-Requisitos-Preparatoria-2023.pdf" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="download"></i>
@@ -216,17 +216,17 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div data-panel="elegirnos">
         <h3 class="text-3xl font-semibold text-slate-800">¿Por que elegirnos?</h3>
         <div class="mt-4 space-y-4 text-slate-600 leading-relaxed">
-          <p>47 anos nos respaldan, somos una Escuela Preparatoria que se recomienda de familia en familia.</p>
-          <p>Instalaciones modernas y agradables asi como una excelente ubicacion.</p>
+          <p>47 años nos respaldan, somos una Escuela Preparatoria que se recomienda de familia en familia.</p>
+          <p>Instalaciones modernas y agradables así como una excelente ubicación.</p>
           <p>
-            Seguimiento personalizado a los alumnos a traves de los orientadores, con el objeto de tener acciones
+            Seguimiento personalizado a los alumnos a través de los orientadores, con el objeto de tener acciones
             preventivas para rescate de materias, ademas de contar con un Coordinador Academico y una Coordinacion de
             orientadores.
           </p>
           <p>
-            Contamos con un area de psicologia para atencion y seguimiento de los problemas frecuentes que se presentan y
+            Contamos con un area de psicología para atención y seguimiento de los problemas frecuentes que se presentan y
             son propios de la edad. Muy importante porque cada vez es mas frecuente la problematica que presentan hoy en
-            dia los jovenes y padres de familia. Se trabaja en conjunto con profesores, coordinadores y padres de familia.
+            día los jóvenes y padres de familia. Se trabaja en conjunto con profesores, coordinadores y padres de familia.
           </p>
           <p>
             Nuestro Programa llamado Horizontes brinda apoyo y seguimiento para materias con alto grado de dificultad como
@@ -249,10 +249,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div class="hidden" data-panel="modelo">
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Preparatoria</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          El modelo educativo de Preparatoria Colegio Del Valle, asegura la alta calidad en sus funciones academicas y
+          El modelo educativo de Preparatoria Colegio Del Valle, asegura la alta calidad en sus funciones académicas y
           administrativas, obligando a una sinergia de superacion y eficiencia entre alumnos, profesores y autoridades.
-          Sus principios estan encaminados a apoyar el desarrollo integral de los jovenes mediante la conceptualizacion
-          del conocimiento como un proceso comprensivo de informacion actualizada y sobre todo en un ambiente humanista.
+          Sus principios estan encaminados a apoyar el desarrollo integral de los jóvenes mediante la conceptualizacion
+          del conocimiento como un proceso comprensivo de información actualizada y sobre todo en un ambiente humanista.
         </p>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Se basa en la teoria del Constructivismo: los seres humanos son producto de su capacidad para adquirir
@@ -267,8 +267,8 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div class="hidden" data-panel="mision">
         <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          La Preparatoria Colegio Del Valle tiene como mision ser una institucion educativa, que ofrece la formacion de
-          jovenes que pueden desarrollar habilidades, actitudes y valores para su vida academica y cotidiana, fomentando
+          La Preparatoria Colegio Del Valle tiene como mision ser una institución educativa, que ofrece la formación de
+          jóvenes que pueden desarrollar habilidades, actitudes y valores para su vida académica y cotidiana, fomentando
           en ellos las buenas costumbres y virtudes humanas.
         </p>
       </div>
@@ -276,7 +276,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         <h3 class="text-3xl font-semibold text-slate-800">Vision</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
           Ofrecemos una Educacion Preparatoria de calidad, y de vanguardia en el modelo educativo, con reconocimiento y
-          personal altamente capacitado, comprometido con la institucion.
+          personal altamente capacitado, comprometido con la institución.
         </p>
       </div>
       <div class="hidden" data-panel="valores">
@@ -448,13 +448,13 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Actividades Sociales.</li>
             <li>Actividades de integracion y multidisciplinarias</li>
             <li>Visitas guiadas</li>
-            <li>Concursos de matematicas</li>
+            <li>Concursos de matemáticas</li>
             <li>Ajedrez</li>
-            <li>Oratoria en el idioma ingles</li>
+            <li>Oratoria en el idioma inglés</li>
             <li>Semana cultural.</li>
             <li>Semana verde</li>
             <li>Feria de ciencias</li>
-            <li>Programa de Horizontes (apoyo de materias con deficiencia academica)</li>
+            <li>Programa de Horizontes (apoyo de materias con deficiencia académica)</li>
             <li>Actividades Civicas</li>
             <li>Intercambios Internacionales Culturales</li>
           </ul>
@@ -477,7 +477,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Papeleria</li>
             <li>Enfermeria</li>
             <li>Laboratorios de computo</li>
-            <li>Aula de musica</li>
+            <li>Aula de música</li>
             <li>Internet inalambrico</li>
             <li>Instalaciones de vanguardia</li>
             <li>Seguridad Interna</li>
@@ -500,7 +500,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/preparatoria/Calendario-preparatoria.webp" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="calendar-days"></i>
-        Calendario academico
+        Calendario académico
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/aviso-de-privacidad/" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="shield-check"></i>
@@ -528,17 +528,17 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            Es fundamental que los padres comprendan que proveer una educacion de calidad es invertir en el futuro de sus
-            hijos. Colegio del Valle esta consciente de ello y comprometido con una educacion de excelencia. Los
-            estudiantes de educacion preparatoria son formados en instalaciones de vanguardia.
+            Es fundamental que los padres comprendan que proveer una educación de calidad es invertir en el futuro de sus
+            hijos. Colegio del Valle esta consciente de ello y comprometido con una educación de excelencia. Los
+            estudiantes de educación preparatoria son formados en instalaciones de vanguardia.
           </p>
           <p>
-            Contamos con clases intensivas de ingles, nuestro plan de estudios retoma el de la Escuela Nacional
+            Contamos con clases intensivas de inglés, nuestro plan de estudios retoma el de la Escuela Nacional
             Preparatoria de la UNAM, organizamos eventos inter escolares e intercambios internacionales. Estos son solo
-            algunos de los motivos para seleccionar a Colegio del Valle y asistir a los jovenes para alcanzar el exito
+            algunos de los motivos para seleccionar a Colegio del Valle y asistir a los jóvenes para alcanzar el exito
             profesional.
           </p>
-          <p>Para mas informacion sobre los recursos y costos de la Prepa Del Valle haz clic aqui.</p>
+          <p>Para mas información sobre los recursos y costos de la Prepa Del Valle haz clic aquí.</p>
         </div>
       </details>
 
@@ -548,14 +548,14 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          ¿Que documento te dan al terminar la preparatoria?
+          ¿Qué documento te dan al terminar la preparatoria?
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
             El documento que te entregan al culminar la prepa se llama Certificado de Bachillerato. Es un titulo oficial,
-            emitido por la institucion educativa de donde egresaste y esta autenticado por el Estado Mexicano. Este
-            certificado da cuenta de que has cumplido con todo el regimen academico y es importante debido a que es el
-            comprobante requerido para acceder a la educacion superior o el mercado laboral.
+            emitido por la institución educativa de donde egresaste y esta autenticado por el Estado Mexicano. Este
+            certificado da cuenta de que has cumplido con todo el régimen académico y es importante debido a que es el
+            comprobante requerido para acceder a la educación superior o el mercado laboral.
           </p>
           <p>
             Para que un certificado de bachillerato sea considerado legal, debe estar verificado por la Secretaria de
@@ -575,7 +575,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            El uniforme en educacion preparatoria es de uso reglamentario. El mismo no debe llevar ningun dibujo, letrero
+            El uniforme en educación preparatoria es de uso reglamentario. El mismo no debe llevar ningún dibujo, letrero
             o color distinto a los dispuestos por Colegio del Valle en su reglamento. El incumplimiento de este codigo de
             vestimenta puede resultar en la negacion de acceso al colegio y posibles sanciones.
           </p>
@@ -588,13 +588,13 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          ¿Como es el uniforme de preparatoria Colegio del Valle?
+          ¿Cómo es el uniforme de preparatoria Colegio del Valle?
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            Los uniformes son distintos para chicos y chicas, y varian tambien segun el dia. Existe el uniforme
+            Los uniformes son distintos para chicos y chicas, y varian también segun el día. Existe el uniforme
             deportivo, el de uso diario y el de invierno. Generalmente, los y las estudiantes utilizan pantalon o falda
-            escolar, playera tipo polo de color blanco y sueter azul marino, estas dos ultimas prendas llevan el logo de
+            escolar, playera tipo polo de color blanco y sueter azul marino, estas dos últimas prendas llevan el logo de
             la escuela. En cuanto a calzado, se usan mocasines negros y medias azul marino.
           </p>
           <p>¡Mucha suerte en esta nueva etapa escolar!</p>

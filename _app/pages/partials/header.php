@@ -274,7 +274,7 @@ $navClass = function (string $key) use ($activePage): string {
               <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/egresados/">Egresados</a>
               <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/docentes/">Docentes</a>
               <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/talleres-vespertinos/">Talleres Vespertinos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/">Calendarios Academicos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-slate-50" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/">Calendarios Académicos</a>
             </div>
           </div>
           <a class="<?= $navClass('contacto') ?>" href="<?= $baseUrl ?>/contacto/">Contacto</a>
@@ -320,7 +320,7 @@ $navClass = function (string $key) use ($activePage): string {
               <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/egresados/" data-mobile-close>Egresados</a>
               <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/docentes/" data-mobile-close>Docentes</a>
               <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/talleres-vespertinos/" data-mobile-close>Talleres Vespertinos</a>
-              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/" data-mobile-close>Calendarios Academicos</a>
+              <a class="block rounded-lg px-3 py-2 hover:bg-white" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/" data-mobile-close>Calendarios Académicos</a>
             </div>
           </details>
           <a class="block rounded-lg px-3 py-3 <?= $navClass('contacto') ?> hover:bg-slate-50" href="<?= $baseUrl ?>/contacto/" data-mobile-close>Contacto</a>

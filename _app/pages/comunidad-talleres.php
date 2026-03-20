@@ -15,7 +15,7 @@ require __DIR__ . '/partials/header.php';
 <section class="py-12 bg-white">
   <div class="max-w-[1300px] mx-auto px-6 text-center">
     <p class="mt-4 text-slate-600 leading-relaxed">
-      En Colegio Del Valle fomentamos las actividades deportivas, aqui podras encontrar las actividades
+      En Colegio Del Valle fomentamos las actividades deportivas, aquí podras encontrar las actividades
       y concursos mas relevantes de toda nuestra comunidad. ¡Aprovechalas!
     </p>
     <div class="mt-8 overflow-hidden rounded-3xl border border-slate-200 bg-white max-w-[50%] mx-auto">

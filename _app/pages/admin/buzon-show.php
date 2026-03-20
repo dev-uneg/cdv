@@ -27,8 +27,8 @@ $base = $base === '.' ? '' : $base;
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Fecha</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars(format_mx_datetime((string) ($row['created_at'] ?? '')), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Nombre</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['nombre'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Correo</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['email'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
-        <div><dt class="text-xs uppercase tracking-wide text-slate-500">Teléfono</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['telefono'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
-        <div><dt class="text-xs uppercase tracking-wide text-slate-500">Relación</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['relacion'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
+        <div><dt class="text-xs uppercase tracking-wide text-slate-500">Teléfono</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['teléfono'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
+        <div><dt class="text-xs uppercase tracking-wide text-slate-500">Relación</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['relación'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Asunto</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['asunto'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div class="md:col-span-2"><dt class="text-xs uppercase tracking-wide text-slate-500">Mensaje</dt><dd class="mt-1 whitespace-pre-wrap text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['mensaje'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
       </dl>

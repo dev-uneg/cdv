@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Primaria | Colegio del Valle';
-$pageDescription = 'Primaria en Colegio del Valle: formacion integral, ingles, tecnologia y valores para un aprendizaje solido.';
+$pageDescription = 'Primaria en Colegio del Valle: formación integral, inglés, tecnología y valores para un aprendizaje solido.';
 $activePage = 'primaria';
 require __DIR__ . '/partials/header.php';
 $defaultInterest = 'Primaria';
@@ -36,11 +36,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="text-center lg:text-left">
       <p class="text-sm font-semibold uppercase tracking-[0.2em] text-blue-600">RVOE SEP 09050086/06/2005</p>
       <h1 class="mt-6 text-3xl md:text-4xl font-semibold text-blue-700">
-        No busques mas Primarias en la Colonia del Valle. ¡Conoce nuestra institucion!
+        No busques mas Primarias en la Colonia del Valle. ¡Conoce nuestra institución!
       </h1>
       <p class="mt-4 text-slate-900 leading-relaxed">
         Si buscas primarias en la Colonia del Valle, has llegado al sitio ideal. En Colegio Del Valle sabemos que las
-        bases fundamentales para la vida se aprenden en esta etapa de la educacion y nosotros buscamos los mas altos
+        bases fundamentales para la vida se aprenden en esta etapa de la educación y nosotros buscamos los mas altos
         estandares de calidad dentro de los Colegios Privados en CDMX.
       </p>
     </div>
@@ -68,17 +68,17 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           Requisitos de ingreso Segundo a Sexto de Primaria
         </summary>
         <div class="mt-5 space-y-4 text-slate-600">
-          <p>CURP dos copias ampliado a tamano carta dos copias.</p>
+          <p>CURP dos copias ampliado a tamaño carta dos copias.</p>
           <ul class="space-y-2 list-disc pl-6">
             <li>Presentar Boleta de Evaluacion por Reporte de Evaluacion de 1º, 2º, 3º, 4º y 5º, segun sea del grado anterior a que ingresa, solamente para alumnos de 6º grado se necesitan todos los grados anteriores, estos expedidos por la S.E.P en original y dos copias.</li>
-            <li>Certificado medico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
+            <li>Certificado médico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
             <li>Cartilla de vacunacion dos copias.</li>
-            <li>8 fotografias tamano infantil a color.</li>
-            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en direccion).</li>
-            <li>Ficha de salud original y dos copias (solicitar en direccion).</li>
+            <li>8 fotografias tamaño infantil a color.</li>
+            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
+            <li>Ficha de salud original y dos copias (solicitar en dirección).</li>
           </ul>
           <p class="text-sm">
-            <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripcion no presenta alguno de estos documentos se suspendera el tramite de inscripcion.
+            <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripción no presenta alguno de estos documentos se suspenderá el trámite de inscripción.
           </p>
         </div>
       </details>
@@ -93,17 +93,17 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
         </summary>
         <div class="mt-5 space-y-4 text-slate-600">
           <ul class="space-y-2 list-disc pl-6">
-            <li>Carta compromiso original y copia (solicitar en direccion).</li>
+            <li>Carta compromiso original y copia (solicitar en dirección).</li>
             <li>Presentar Reporte de Evaluacion de Tercer grado de Educacion Preescolar en original y dos copias.</li>
-            <li>Certificado medico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
-            <li>8 fotografias tamano infantil a color.</li>
-            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en direccion).</li>
-            <li>Ficha de salud original y dos copias (solicitar en direccion).</li>
-            <li>CURP dos copias ampliado a tamano carta.</li>
-            <li>El acreditamiento del programa Prefirst sera requisito para efectuar la inscripcion al primer nivel de Primaria Bilingue.</li>
+            <li>Certificado médico en donde nos indique su estado de salud, su tipo y grupo de sangre en original y dos copias.</li>
+            <li>8 fotografias tamaño infantil a color.</li>
+            <li>Elaborar registro de Inscripcion y Reinscripcion con los datos que se soliciten en la misma SIN OMITIR NINGUNO original y dos copias (solicitar en dirección).</li>
+            <li>Ficha de salud original y dos copias (solicitar en dirección).</li>
+            <li>CURP dos copias ampliado a tamaño carta.</li>
+            <li>El acreditamiento del programa Prefirst será requisito para efectuar la inscripción al primer nivel de Primaria Bilingue.</li>
           </ul>
           <p class="text-sm">
-            <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripcion no presenta alguno de estos documentos se suspendera el tramite de inscripcion.
+            <span class="font-semibold text-slate-800">Nota:</span> Si en el momento de inscripción no presenta alguno de estos documentos se suspenderá el trámite de inscripción.
           </p>
         </div>
       </details>
@@ -111,7 +111,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
     <div class="flex flex-col gap-4">
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/contacto/">
         <i class="text-base" data-lucide="info"></i>
-        Mas informacion
+        Mas información
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_assets/PDFs/primaria/Colegio-Del-Valle-Requisitos-Primaria-2024.pdf" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="download"></i>
@@ -153,10 +153,10 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div data-panel="modelo">
         <h3 class="text-3xl font-semibold text-slate-800">Modelo Educativo Primaria</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Cada dia que pasa la vida nos da la oportunidad de mejorar todo lo que realizamos, de construir un mundo
+          Cada día que pasa la vida nos da la oportunidad de mejorar todo lo que realizamos, de construir un mundo
           mejor, de aspirar a una Educacion llena de oportunidades, de cambios, de vanguardia y dedicacion; para lograr
-          nuestros objetivos como escuela y nacion hay que esforzarse cada dia y prepararse para llegar a cumplir la
-          meta fijada. Debido a esto la primaria Colegio Del Valle esta dedicada dia con dia a realizar un trabajo arduo
+          nuestros objetivos como escuela y nación hay que esforzarse cada día y prepararse para llegar a cumplir la
+          meta fijada. Debido a esto la primaria Colegio Del Valle esta dedicada día con día a realizar un trabajo arduo
           para lograr que esta magna escuela sea de calidad y de entereza, en donde nuestros alumnos y padres de familia
           lleguen a cubrir cada una de las expectativas que tienen como estudiantes y como seres humanos.
         </p>
@@ -164,7 +164,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       <div class="hidden" data-panel="mision">
         <h3 class="text-3xl font-semibold text-slate-800">Mision</h3>
         <p class="mt-4 text-slate-600 leading-relaxed">
-          Promover permanentemente el desarrollo integral del alumno basado en una educacion de calidad centrada en el
+          Promover permanentemente el desarrollo integral del alumno basado en una educación de calidad centrada en el
           fortalecimiento de valores etico-morales, donde el estudiante se distinga por su constancia, esfuerzo,
           dedicacion y compromiso con la sociedad y el medio ambiente.
         </p>
@@ -248,11 +248,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
           <ul class="list-disc pl-6 space-y-2 text-slate-600">
             <li>Primaria Bilingue*</li>
             <li>Profesorado altamente calificado</li>
-            <li>Servicio medico</li>
+            <li>Servicio médico</li>
             <li>Comedor</li>
             <li>Biblioteca y hemeroteca</li>
             <li>Aula de computo</li>
-            <li>Aula de musica</li>
+            <li>Aula de música</li>
           </ul>
         </div>
         <div class="hidden" data-panel="servicios">
@@ -341,7 +341,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/_imgs/primaria/Calendario-primaria.webp" target="_blank" rel="noopener">
         <i class="text-base" data-lucide="calendar-days"></i>
-        Calendario academico
+        Calendario académico
       </a>
       <a class="inline-flex items-center justify-center gap-2 rounded-full border-2 border-slate-300 px-6 py-3 text-center text-xs font-semibold uppercase tracking-[0.2em] text-slate-700" href="<?= $baseUrl ?>/formas-de-pago">
         <i class="text-base" data-lucide="credit-card"></i>
@@ -357,11 +357,11 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          ¿Como saber si mi hijo quedo inscrito en la primaria?
+          ¿Cómo saber si mi hijo quedó inscrito en la primaria?
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            En educacion primaria publica, el Estado Mexicano ofrece mecanismos para verificar si tu hijo quedo inscrito.
+            En educación primaria pública, el Estado Mexicano ofrece mecanismos para verificar si tu hijo quedó inscrito.
             En los colegios privados como Colegio Del Valle se dispone de otro sistema. Dirigirse a Direccion de Admisiones
             en un horario de lunes a viernes de 9:00 a 19:00 hrs y sabados de 9:00 a 13:00 hrs.
           </p>
@@ -369,7 +369,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             Los padres deben checar los tiempos de reinscripcion en el calendario, debido a que la reinscripcion es un
             periodo en el que se deben actualizar los datos del estudiante.
           </p>
-          <p>¡Contactanos para saber si tu hijo quedo inscrito en la primaria de Colegio Del Valle!</p>
+          <p>¡Contactanos para saber si tu hijo quedó inscrito en la primaria de Colegio Del Valle!</p>
         </div>
       </details>
 
@@ -379,7 +379,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          ¿Cuando salen de vacaciones los ninos de primaria?
+          ¿Cuándo salen de vacaciones los niños de primaria?
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
@@ -391,7 +391,7 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <li>Vacacion final de clases: Desde el 16 de julio y hasta 29 de agosto de 2024.</li>
             <li>Receso de clases carnaval: Desde el 25 al 29 de marzo 2024.</li>
             <li>Receso Semana Santa: Desde el 1 al 5 de abril de 2024.</li>
-            <li>Receso fin de ano: Desde mediados de diciembre 2024 hasta los primeros de enero 2025.</li>
+            <li>Receso fin de año: Desde mediados de diciembre 2024 hasta los primeros de enero 2025.</li>
           </ul>
         </div>
       </details>
@@ -402,16 +402,16 @@ $turnstileEnabled = $turnstileSiteKey !== '' && $turnstileSiteKey !== 'PON_AQUI_
             <span class="group-open:hidden">+</span>
             <span class="hidden group-open:inline">−</span>
           </span>
-          ¿Como ver las calificaciones de primaria?
+          ¿Cómo ver las calificaciones de primaria?
         </summary>
         <div class="mt-4 space-y-3 text-slate-600">
           <p>
-            En Colegio del Valle los papas pueden consultar las calificaciones accediendo a su historia academica con un
-            solo clic. ¿Requieres una consulta en persona?, acercate a las instalaciones o contactanos via online.
+            En Colegio del Valle los papás pueden consultar las calificaciones accediendo a su historia académica con un
+            solo clic. ¿Requieres una consulta en persona?, acercate a las instalaciones o contáctanos via online.
           </p>
           <p>
-            Por otro lado, los padres y tutores podran ver certificaciones de alumnos de primaria y otros niveles a traves
-            del Sistema de Informacion y Gestion Educativa (SIGED). El ingreso en linea y es muy facil. Solo debes tener a
+            Por otro lado, los padres y tutores podrán ver certificaciones de alumnos de primaria y otros niveles a través
+            del Sistema de Informacion y Gestion Educativa (SIGED). El ingreso en linea y es muy fácil. Solo debes tener a
             la mano los datos del CURP del estudiante y la clave del Centro de Trabajo y Escuela (CCT). Ingresa los datos
             en el sitio web del SIGED y ¡listo! Ya puedes checar las calificaciones.
           </p>

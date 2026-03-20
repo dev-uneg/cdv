@@ -1,6 +1,6 @@
 <?php
 $pageTitle = 'Comunidad | Docentes';
-$pageDescription = 'Recursos para docentes del Colegio del Valle: comunicados, herramientas y apoyo academico.';
+$pageDescription = 'Recursos para docentes del Colegio del Valle: comunicados, herramientas y apoyo académico.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 ?>
@@ -28,17 +28,17 @@ require __DIR__ . '/partials/header.php';
       <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="https://uneg.academic.lat/Autenticacion.aspx" target="_blank" rel="noopener">
         <i class="block mx-auto text-5xl text-indigo-500" data-lucide="smartphone"></i>
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Portal Escolar</h3>
-        <p class="mt-3 text-slate-500">Acceder a historia academica de alumno</p>
+        <p class="mt-3 text-slate-500">Acceder a historia académica de alumno</p>
       </a>
       <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="https://login.microsoftonline.com/login.srf?wa=wsignin1.0&rpsnv=4&ct=1461195063&rver=6.6.6556.0&wp=MBI_SSL&wreply=https%3a%2f%2foutlook.office.com%2fowa%2f%3frealm%3dcoldelvalle.edu.mx%26exch%3d1&id=260563&whr=coldelvalle.edu.mx&CBCXT=out&msafed=0" target="_blank" rel="noopener">
         <i class="block mx-auto text-5xl text-indigo-500" data-lucide="mail"></i>
-        <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Correo electronico</h3>
+        <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Correo electrónico</h3>
         <p class="mt-3 text-slate-500">Acceder a cuenta de correo institucional</p>
       </a>
       <a class="rounded-3xl border border-slate-200 bg-white p-8 text-center shadow-sm hover:shadow-md transition" href="<?= $baseUrl ?>/comunidad/alumnos/calendarios-academicos/">
         <i class="block mx-auto text-5xl text-indigo-500" data-lucide="calendar-check"></i>
         <h3 class="mt-6 text-2xl font-semibold text-indigo-600">Calendarios Academicos</h3>
-        <p class="mt-3 text-slate-500">Consultar calendarios academicos del ciclo escolar</p>
+        <p class="mt-3 text-slate-500">Consultar calendarios académicos del ciclo escolar</p>
       </a>
     </div>
   </div>
