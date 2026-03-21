@@ -13,6 +13,7 @@ $lucideLoaderPath = $assetsPath . '/lucide-loader.js';
 $lucideSpriteVersion = file_exists($lucideSpritePath) ? (string) filemtime($lucideSpritePath) : '0';
 $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($lucideLoaderPath) : '0';
 $lucideSpriteHref = $baseUrl . '/_assets/lucide-sprite.svg?v=' . $lucideSpriteVersion;
+$preloadImages = (isset($preloadImages) && is_array($preloadImages)) ? $preloadImages : [];
 $navClass = function (string $key) use ($activePage): string {
     if ($key === $activePage) {
         return 'text-slate-900 font-semibold';
@@ -31,6 +32,23 @@ $navClass = function (string $key) use ($activePage): string {
   <?php endif; ?>
   <link rel="icon" type="image/png" href="<?= $baseUrl ?>/_imgs/favicon.png" />
   <link rel="stylesheet" href="<?= $baseUrl ?>/_assets/output.css" />
+  <?php foreach ($preloadImages as $imgPreload): ?>
+    <?php
+      $href = isset($imgPreload['href']) ? (string) $imgPreload['href'] : '';
+      if ($href === '') {
+          continue;
+      }
+      $srcset = isset($imgPreload['imagesrcset']) ? (string) $imgPreload['imagesrcset'] : '';
+      $sizes = isset($imgPreload['imagesizes']) ? (string) $imgPreload['imagesizes'] : '';
+    ?>
+    <link
+      rel="preload"
+      as="image"
+      href="<?= htmlspecialchars($href, ENT_QUOTES, 'UTF-8') ?>"
+      <?php if ($srcset !== ''): ?>imagesrcset="<?= htmlspecialchars($srcset, ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>
+      <?php if ($sizes !== ''): ?>imagesizes="<?= htmlspecialchars($sizes, ENT_QUOTES, 'UTF-8') ?>"<?php endif; ?>
+    />
+  <?php endforeach; ?>
   <!--
     Tailwind CDN (solo desarrollo/urgencias). Para usarlo:
     1) comenta el link a /_assets/output.css

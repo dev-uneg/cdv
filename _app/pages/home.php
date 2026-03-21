@@ -2,18 +2,25 @@
 $pageTitle = 'Inicio | Colegio del Valle';
 $pageDescription = 'Colegio del Valle en CDMX: formación bilingüe, valores y excelencia académica desde preescolar hasta preparatoria.';
 $activePage = 'home';
-require __DIR__ . '/partials/header.php';
 $baseUrl = defined('BASE_URL') ? BASE_URL : rtrim(str_replace('\\', '/', dirname($_SERVER['SCRIPT_NAME'] ?? '/')), '/');
 if ($baseUrl === '/') {
     $baseUrl = '';
 }
+$preloadImages = [
+    [
+        'href' => $baseUrl . '/_imgs/home/kinder-960.webp',
+        'imagesrcset' => $baseUrl . '/_imgs/home/kinder-640.webp 640w, ' . $baseUrl . '/_imgs/home/kinder-960.webp 960w, ' . $baseUrl . '/_imgs/home/kinder.webp 1200w',
+        'imagesizes' => '(max-width: 639px) 100vw, 50vw',
+    ],
+];
+require __DIR__ . '/partials/header.php';
 ?>
 <section class="pt-0 pb-0 bg-white">
   <div class="w-full mx-auto px-0">
     <div class="relative" data-hero-slider>
       <div class="relative h-[160px] md:h-[480px] overflow-hidden rounded-none border border-slate-200 bg-white">
         <div class="absolute inset-0 opacity-100 transition-opacity duration-700" data-slide>
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="eager" fetchpriority="high" />
+          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="eager" fetchpriority="auto" />
         </div>
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.webp" alt="Colegio del Valle" loading="lazy" />
@@ -52,7 +59,16 @@ if ($baseUrl === '/') {
       <div class="grid gap-0 lg:grid-cols-2">
         <div class="grid h-auto grid-cols-1 grid-rows-4 gap-4 overflow-hidden rounded-none sm:h-[560px] sm:grid-cols-2 sm:grid-rows-2 sm:gap-0 sm:rounded-tl-3xl">
           <a class="relative min-h-[180px] sm:min-h-0 block" href="<?= $baseUrl ?>/oferta-educativa/kinder">
-            <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/kinder.webp" alt="Kinder" loading="eager" fetchpriority="high" />
+            <img
+              class="h-full w-full object-cover"
+              src="<?= $baseUrl ?>/_imgs/home/kinder-960.webp"
+              srcset="<?= $baseUrl ?>/_imgs/home/kinder-640.webp 640w, <?= $baseUrl ?>/_imgs/home/kinder-960.webp 960w, <?= $baseUrl ?>/_imgs/home/kinder.webp 1200w"
+              sizes="(max-width: 639px) 100vw, 50vw"
+              alt="Kinder"
+              loading="eager"
+              fetchpriority="high"
+              decoding="async"
+            />
           </a>
           <a class="flex min-h-[180px] flex-col justify-center gap-6 bg-[#3E436C] p-6 text-white sm:min-h-0 sm:h-full sm:p-10" href="<?= $baseUrl ?>/oferta-educativa/kinder">
             <h3 class="text-2xl font-semibold sm:text-3xl">Kinder</h3>
