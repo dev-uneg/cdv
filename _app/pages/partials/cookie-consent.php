@@ -10,7 +10,7 @@ $cookieConsentKey = 'cdv_cookie_consent_v1';
 >
   <div class="flex flex-col gap-4 rounded-2xl border border-slate-200 bg-white/95 p-4 shadow-xl backdrop-blur sm:flex-row sm:items-center sm:justify-between sm:p-5">
     <p class="text-sm leading-relaxed text-slate-700">
-      Usamos cookies para analítica y medición publicitaria (Meta Pixel).
+      Usamos cookies para analítica y medición publicitaria.
       <a class="font-semibold underline hover:text-slate-900" href="<?= $baseUrl ?>/aviso-de-privacidad/">Más información</a>
     </p>
     <div class="flex shrink-0 gap-2">
