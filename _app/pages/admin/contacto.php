@@ -69,7 +69,7 @@ $base = $base === '.' ? '' : $base;
         </form>
       </div>
       <div class="overflow-x-auto">
-        <table class="min-w-full text-left text-sm">
+        <table class="min-w-full whitespace-nowrap text-left text-sm">
           <thead class="bg-slate-100 text-slate-600">
             <tr>
               <th class="px-4 py-3 font-semibold w-10"><span class="sr-only">Seleccionar</span></th>
