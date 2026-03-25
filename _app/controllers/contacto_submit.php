@@ -133,6 +133,7 @@ $source = trim((string) ($_POST['source'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
 $channel = trim((string) ($_POST['channel'] ?? 'Sitio web'));
 $medium = trim((string) ($_POST['medium'] ?? 'Sitio web'));
+$pagePath = trim((string) ($_POST['page_path'] ?? ''));
 $privacyAccepted = isset($_POST['privacy']);
 
 if ($fullName === '' || $email === '' || $phone === '' || $interest === '' || !$privacyAccepted) {
@@ -177,6 +178,7 @@ $leadId = contacto_db_insert([
     'message' => $message,
     'channel' => $channel,
     'medium' => $medium,
+    'page_path' => $pagePath,
     'pipedrive_person_id' => null,
     'status' => 'received',
     'error_message' => null,

@@ -78,13 +78,14 @@ $base = $base === '.' ? '' : $base;
               <th class="px-4 py-3 font-semibold">Email</th>
               <th class="px-4 py-3 font-semibold">Teléfono</th>
               <th class="px-4 py-3 font-semibold">Interés</th>
+              <th class="px-4 py-3 font-semibold">Página origen</th>
               <th class="px-4 py-3 font-semibold">Estado</th>
               <th class="px-4 py-3 font-semibold">Acciones</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100">
             <?php if ($rows === []): ?>
-              <tr><td colspan="8" class="px-4 py-6 text-center text-slate-500">Sin registros todavía.</td></tr>
+              <tr><td colspan="9" class="px-4 py-6 text-center text-slate-500">Sin registros todavía.</td></tr>
             <?php endif; ?>
             <?php foreach ($rows as $row): ?>
               <tr class="hover:bg-slate-50">
@@ -96,6 +97,30 @@ $base = $base === '.' ? '' : $base;
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars((string) ($row['email'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars((string) ($row['phone'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-600"><?php echo htmlspecialchars((string) ($row['interest'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></td>
+                <td class="px-4 py-3 text-slate-600">
+                  <?php
+                  $pagePath = trim((string) ($row['page_path'] ?? ''));
+                  $safePath = '';
+                  if ($pagePath !== '') {
+                    if (strpos($pagePath, '/') !== 0) {
+                      $parsedPath = (string) parse_url($pagePath, PHP_URL_PATH);
+                      $pagePath = $parsedPath !== '' ? $parsedPath : '';
+                    }
+                    if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
+                      $pagePath = '/' . ltrim($pagePath, '/');
+                    }
+                    $safePath = $pagePath;
+                  }
+                  ?>
+                  <?php if ($safePath !== ''): ?>
+                    <a class="inline-flex items-center gap-1 text-slate-700 underline decoration-slate-300 hover:decoration-slate-700" href="<?php echo htmlspecialchars($base . $safePath, ENT_QUOTES, 'UTF-8'); ?>" target="_blank" rel="noopener noreferrer">
+                      <?php echo htmlspecialchars($safePath, ENT_QUOTES, 'UTF-8'); ?>
+                      <i data-lucide="external-link" class="h-3.5 w-3.5"></i>
+                    </a>
+                  <?php else: ?>
+                    <span class="text-slate-400">Sin dato</span>
+                  <?php endif; ?>
+                </td>
                 <td class="px-4 py-3">
                   <?php
                   $status = (string) ($row['status'] ?? '');

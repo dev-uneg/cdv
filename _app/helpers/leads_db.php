@@ -85,6 +85,23 @@ function leads_db_index_exists(PDO $pdo, string $table, string $index): bool
     return (bool) $stmt->fetchColumn();
 }
 
+function leads_db_column_exists(PDO $pdo, string $table, string $column): bool
+{
+    $stmt = $pdo->prepare(
+        'SELECT 1 FROM INFORMATION_SCHEMA.COLUMNS
+         WHERE TABLE_SCHEMA = DATABASE()
+           AND TABLE_NAME = :table
+           AND COLUMN_NAME = :columnName
+         LIMIT 1'
+    );
+    $stmt->execute([
+        ':table' => $table,
+        ':columnName' => $column,
+    ]);
+
+    return (bool) $stmt->fetchColumn();
+}
+
 function leads_db_init(PDO $pdo): void
 {
     $pdo->exec('CREATE TABLE IF NOT EXISTS contacto_leads (
@@ -97,6 +114,7 @@ function leads_db_init(PDO $pdo): void
         message TEXT NULL,
         channel VARCHAR(120) NULL,
         medium VARCHAR(120) NULL,
+        page_path VARCHAR(255) NULL,
         pipedrive_person_id VARCHAR(80) NULL,
         status VARCHAR(60) NOT NULL,
         error_message TEXT NULL,
@@ -124,6 +142,9 @@ function leads_db_init(PDO $pdo): void
     if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX contacto_leads_created_at_idx ON contacto_leads (created_at)');
     }
+    if (!leads_db_column_exists($pdo, 'contacto_leads', 'page_path')) {
+        $pdo->exec('ALTER TABLE contacto_leads ADD COLUMN page_path VARCHAR(255) NULL AFTER medium');
+    }
     if (!leads_db_index_exists($pdo, 'buzon_rector_messages', 'buzon_rector_messages_created_at_idx')) {
         $pdo->exec('CREATE INDEX buzon_rector_messages_created_at_idx ON buzon_rector_messages (created_at)');
     }
@@ -148,11 +169,25 @@ function contacto_db_insert(array $data): ?int
 {
     try {
         $pdo = leads_db();
+
+        $pagePathRaw = trim((string) ($data['page_path'] ?? ($_POST['page_path'] ?? '')));
+        if ($pagePathRaw !== '' && strpos($pagePathRaw, '/') !== 0) {
+            $parsedPath = (string) parse_url($pagePathRaw, PHP_URL_PATH);
+            $pagePathRaw = $parsedPath !== '' ? $parsedPath : '';
+        }
+        if ($pagePathRaw !== '' && strpos($pagePathRaw, '/') !== 0) {
+            $pagePathRaw = '/' . ltrim($pagePathRaw, '/');
+        }
+        if ($pagePathRaw !== '') {
+            $pagePathRaw = substr($pagePathRaw, 0, 255);
+        }
+        $pagePath = $pagePathRaw !== '' ? $pagePathRaw : null;
+
         $stmt = $pdo->prepare('INSERT INTO contacto_leads (
-            full_name, email, phone, interest, source, message, channel, medium,
+            full_name, email, phone, interest, source, message, channel, medium, page_path,
             pipedrive_person_id, status, error_message, ip, user_agent, created_at
         ) VALUES (
-            :full_name, :email, :phone, :interest, :source, :message, :channel, :medium,
+            :full_name, :email, :phone, :interest, :source, :message, :channel, :medium, :page_path,
             :pipedrive_person_id, :status, :error_message, :ip, :user_agent, :created_at
         )');
         $stmt->execute([
@@ -164,6 +199,7 @@ function contacto_db_insert(array $data): ?int
             ':message' => $data['message'] ?? null,
             ':channel' => $data['channel'] ?? null,
             ':medium' => $data['medium'] ?? null,
+            ':page_path' => $pagePath,
             ':pipedrive_person_id' => $data['pipedrive_person_id'] ?? null,
             ':status' => $data['status'] ?? 'received',
             ':error_message' => $data['error_message'] ?? null,

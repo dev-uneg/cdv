@@ -6,5 +6,22 @@
     </div>
   </footer>
   <?php require __DIR__ . '/cookie-consent.php'; ?>
+  <script>
+    (function () {
+      const forms = document.querySelectorAll('form[action*="/api/"]:not([action*="/admin/"])');
+      const currentPath = window.location.pathname || '/';
+
+      forms.forEach((form) => {
+        let field = form.querySelector('input[name="page_path"]');
+        if (!field) {
+          field = document.createElement('input');
+          field.type = 'hidden';
+          field.name = 'page_path';
+          form.appendChild(field);
+        }
+        field.value = currentPath;
+      });
+    })();
+  </script>
 </body>
 </html>

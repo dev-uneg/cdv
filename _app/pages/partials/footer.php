@@ -44,6 +44,40 @@
     </div>
   </footer>
   <?php require __DIR__ . '/cookie-consent.php'; ?>
+  <script>
+    (function () {
+      const isPublicApiForm = (form) => {
+        if (!(form instanceof HTMLFormElement)) return false;
+        const action = form.getAttribute('action') || '';
+        return action.includes('/api/') && !action.includes('/admin/');
+      };
+
+      const setOrCreateHidden = (form, name, value) => {
+        const selector = '[name="' + name + '"]';
+        let field = form.querySelector(selector);
+        if (field) {
+          field.value = value;
+          return;
+        }
+
+        field = document.createElement('input');
+        field.type = 'hidden';
+        field.name = name;
+        field.value = value;
+        form.appendChild(field);
+      };
+
+      const addPagePathField = (form) => {
+        if (!isPublicApiForm(form)) return;
+        const currentPath = window.location.pathname || '/';
+        setOrCreateHidden(form, 'page_path', currentPath);
+      };
+
+      document.querySelectorAll('form').forEach((form) => {
+        addPagePathField(form);
+      });
+    })();
+  </script>
   <a
     id="whatsapp-float-btn"
     class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600"

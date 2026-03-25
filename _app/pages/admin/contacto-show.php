@@ -33,6 +33,7 @@ $base = $base === '.' ? '' : $base;
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Canal</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['channel'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div><dt class="text-xs uppercase tracking-wide text-slate-500">Medio</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['medium'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div class="md:col-span-2"><dt class="text-xs uppercase tracking-wide text-slate-500">Source</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['source'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
+        <div class="md:col-span-2"><dt class="text-xs uppercase tracking-wide text-slate-500">Página origen</dt><dd class="mt-1 text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['page_path'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div class="md:col-span-2"><dt class="text-xs uppercase tracking-wide text-slate-500">Mensaje</dt><dd class="mt-1 whitespace-pre-wrap text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['message'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
         <div class="md:col-span-2"><dt class="text-xs uppercase tracking-wide text-slate-500">Error</dt><dd class="mt-1 whitespace-pre-wrap text-sm text-slate-800"><?php echo htmlspecialchars((string) ($row['error_message'] ?? ''), ENT_QUOTES, 'UTF-8'); ?></dd></div>
       </dl>
