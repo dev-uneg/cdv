@@ -2,10 +2,12 @@
   "scripts": {
     "build:icons": "node _app/scripts/build-lucide-sprite.mjs",
     "optimize:images": "node _app/scripts/optimize-images.mjs",
-    "build": "rm -f _assets/output.css && tailwindcss -i src/input.css -o _assets/output.css --minify",
-    "dev": "tailwindcss -i src/input.css -o _assets/output.css --watch"
+    "build": "BROWSERSLIST_IGNORE_OLD_DATA=1 rm -f _assets/output.css && BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i src/input.css -o _assets/output.css --minify",
+    "dev": "BROWSERSLIST_IGNORE_OLD_DATA=1 tailwindcss -i src/input.css -o _assets/output.css --watch"
   },
   "devDependencies": {
+    "browserslist": "^4.28.1",
+    "caniuse-lite": "^1.0.30001781",
     "lucide-static": "^0.575.0",
     "sharp": "^0.34.5",
     "tailwindcss": "^3.4.19"
