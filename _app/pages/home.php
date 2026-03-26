@@ -23,9 +23,6 @@ require __DIR__ . '/partials/header.php';
           <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-1.webp" alt="Colegio del Valle" loading="eager" fetchpriority="auto" />
         </div>
         <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
-          <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/home/hero-2.webp" alt="Colegio del Valle" loading="lazy" />
-        </div>
-        <div class="absolute inset-0 opacity-0 pointer-events-none transition-opacity duration-700" data-slide>
           <iframe
             class="h-full w-full"
             src="https://www.youtube-nocookie.com/embed/eP8lgG3nUM4?rel=0"
@@ -41,7 +38,6 @@ require __DIR__ . '/partials/header.php';
         <div class="flex items-center gap-2">
           <button class="h-2 w-2 rounded-full bg-white" type="button" data-dot aria-label="Ir al slide 1" aria-current="true"></button>
           <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot aria-label="Ir al slide 2" aria-current="false"></button>
-          <button class="h-2 w-2 rounded-full bg-slate-300" type="button" data-dot aria-label="Ir al slide 3" aria-current="false"></button>
         </div>
         <button class="rounded-full bg-white px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-slate-900 shadow" type="button" data-next>Siguiente</button>
       </div>
