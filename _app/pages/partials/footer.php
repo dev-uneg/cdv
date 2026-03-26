@@ -78,15 +78,48 @@
       });
     })();
   </script>
-  <a
-    id="whatsapp-float-btn"
-    class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600"
-    href="https://wa.me/525571137882"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="WhatsApp"
-  >
-    <i class="text-2xl" data-lucide="message-circle"></i>
-  </a>
+  <?php
+    $requestPath = parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    if (!is_string($requestPath) || $requestPath === '') {
+        $requestPath = '/';
+    }
+    if ($baseUrl !== '' && strncmp($requestPath, $baseUrl, strlen($baseUrl)) === 0) {
+        $requestPath = substr($requestPath, strlen($baseUrl));
+        if ($requestPath === '') {
+            $requestPath = '/';
+        }
+    }
+    $normalizedPath = rtrim($requestPath, '/');
+    if ($normalizedPath === '') {
+        $normalizedPath = '/';
+    }
+    $offerPagesWithoutFloatWhatsapp = [
+        '/oferta-educativa/kinder',
+        '/oferta-educativa/pre-first',
+        '/oferta-educativa/primaria',
+        '/oferta-educativa/secundaria',
+        '/oferta-educativa/preparatoria',
+        '/oferta-academica/kinder',
+        '/oferta-academica/primaria',
+        '/kinder',
+        '/pre-first',
+        '/primaria',
+        '/secundaria',
+        '/preparatoria',
+    ];
+    $showFloatWhatsappBtn = !in_array($normalizedPath, $offerPagesWithoutFloatWhatsapp, true);
+  ?>
+  <?php if ($showFloatWhatsappBtn): ?>
+    <a
+      id="whatsapp-float-btn"
+      class="fixed bottom-6 right-6 z-50 flex h-14 w-14 items-center justify-center rounded-full bg-green-500 text-white shadow-lg hover:bg-green-600"
+      href="https://wa.me/525571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20Colegio%20del%20Valle%20y%20quiero%20informes%20de%20inscripciones%20y%20costos."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="WhatsApp"
+    >
+      <i class="text-2xl" data-lucide="message-circle"></i>
+    </a>
+  <?php endif; ?>
 </body>
 </html>

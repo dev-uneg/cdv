@@ -89,7 +89,7 @@ $lucideSpriteHref = $baseUrl . '/_assets/lucide-sprite.svg?v=' . $lucideSpriteVe
         <div class="flex flex-wrap items-center gap-3">
           <span>ADMISIONES: <a class="underline decoration-white/40 hover:decoration-white" href="tel:+525550631500">55 5063 1500</a> - Opción 1</span>
           <span class="text-slate-400">|</span>
-          <span>WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525571137882" target="_blank" rel="noopener">55 7113 7882</a></span>
+          <span>WHATSAPP: <a class="underline decoration-white/40 hover:decoration-white" href="https://wa.me/525571137882?text=Hola%2C%20acabo%20de%20visitar%20su%20sitio%20web%20Colegio%20del%20Valle%20y%20quiero%20informes%20de%20inscripciones%20y%20costos." target="_blank" rel="noopener">55 7113 7882</a></span>
         </div>
         <div class="flex items-center gap-2 text-sm">
           <a class="inline-flex h-7 w-7 items-center justify-center rounded-full border border-white/40" href="https://www.facebook.com/ColegioDelValleCDMX/" target="_blank" rel="noopener" aria-label="Facebook">
