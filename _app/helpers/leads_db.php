@@ -139,6 +139,18 @@ function leads_db_init(PDO $pdo): void
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
+    $pdo->exec('CREATE TABLE IF NOT EXISTS whatsapp_clicks (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        page_path VARCHAR(255) NULL,
+        target_url VARCHAR(500) NULL,
+        device_type VARCHAR(30) NULL,
+        referrer_url VARCHAR(500) NULL,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
     if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX contacto_leads_created_at_idx ON contacto_leads (created_at)');
     }
@@ -147,6 +159,12 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'buzon_rector_messages', 'buzon_rector_messages_created_at_idx')) {
         $pdo->exec('CREATE INDEX buzon_rector_messages_created_at_idx ON buzon_rector_messages (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_created_at_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_created_at_idx ON whatsapp_clicks (created_at)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_page_path_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_page_path_idx ON whatsapp_clicks (page_path(190))');
     }
 }
 
@@ -268,6 +286,41 @@ function buzon_rector_db_insert(array $data): ?int
         return (int) $pdo->lastInsertId();
     } catch (Throwable $e) {
         error_log('[buzon_rector_db_insert] ' . $e->getMessage());
+        return null;
+    }
+}
+
+function whatsapp_click_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+
+        $stmt = $pdo->prepare('INSERT INTO whatsapp_clicks (
+            page_path, target_url, device_type, referrer_url, ip, user_agent, created_at
+        ) VALUES (
+            :page_path, :target_url, :device_type, :referrer_url, :ip, :user_agent, :created_at
+        )');
+
+        $pagePath = trim((string) ($data['page_path'] ?? ''));
+        if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
+            $pagePath = '/' . ltrim($pagePath, '/');
+        }
+        $targetUrl = trim((string) ($data['target_url'] ?? ''));
+        $deviceType = trim((string) ($data['device_type'] ?? ''));
+        $referrerUrl = trim((string) ($data['referrer_url'] ?? ''));
+
+        $stmt->execute([
+            ':page_path' => $pagePath !== '' ? substr($pagePath, 0, 255) : null,
+            ':target_url' => $targetUrl !== '' ? substr($targetUrl, 0, 500) : null,
+            ':device_type' => $deviceType !== '' ? substr($deviceType, 0, 30) : null,
+            ':referrer_url' => $referrerUrl !== '' ? substr($referrerUrl, 0, 500) : null,
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
         return null;
     }
 }

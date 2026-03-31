@@ -76,6 +76,36 @@
       document.querySelectorAll('form').forEach((form) => {
         addPagePathField(form);
       });
+
+      const trackWhatsappClick = (anchor) => {
+        if (!(anchor instanceof HTMLAnchorElement)) return;
+
+        const endpoint = <?= json_encode($baseUrl . '/api/events/whatsapp-click', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
+        const payload = {
+          page_path: window.location.pathname || '/',
+          target_url: anchor.getAttribute('href') || '',
+          referrer_url: document.referrer || ''
+        };
+
+        const body = JSON.stringify(payload);
+        if (navigator.sendBeacon) {
+          const blob = new Blob([body], { type: 'application/json' });
+          navigator.sendBeacon(endpoint, blob);
+          return;
+        }
+
+        fetch(endpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          keepalive: true
+        }).catch(() => {});
+      };
+
+      const whatsappFloatBtn = document.getElementById('whatsapp-float-btn');
+      if (whatsappFloatBtn) {
+        whatsappFloatBtn.addEventListener('click', () => trackWhatsappClick(whatsappFloatBtn), { passive: true });
+      }
     })();
   </script>
   <?php

@@ -32,7 +32,7 @@ $base = $base === '.' ? '' : $base;
       </section>
     <?php endif; ?>
 
-    <section class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2">
+    <section class="mt-8 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
       <a href="<?php echo $base; ?>/admin/contacto" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
         <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-600 text-white">
           <i data-lucide="users" class="h-6 w-6"></i>
@@ -49,6 +49,15 @@ $base = $base === '.' ? '' : $base;
         <h2 class="mt-4 text-lg font-semibold text-slate-900">Buzón del Rector</h2>
         <p class="mt-1 text-sm text-slate-600">Mensajes enviados desde el formulario de buzón.</p>
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo (int) $buzonCount; ?></p>
+      </a>
+
+      <a href="<?php echo $base; ?>/admin/reports" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-emerald-700 text-white">
+          <i data-lucide="file-text" class="h-6 w-6"></i>
+        </div>
+        <h2 class="mt-4 text-lg font-semibold text-slate-900">Reportes</h2>
+        <p class="mt-1 text-sm text-slate-600">Listado de reportes mensuales de performance web y CRO para CDV.</p>
+        <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo (int) $reportsCount; ?></p>
       </a>
     </section>
   </main>

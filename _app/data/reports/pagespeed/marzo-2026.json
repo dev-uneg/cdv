@@ -1,0 +1,27 @@
+{
+  "source_url": "https://www.coldelvalle.edu.mx/",
+  "captured_at": "31/03/2026 14:02:23",
+  "evidence_url": "https://pagespeed.web.dev/analysis/https-www-coldelvalle-edu-mx/uih5r1plnu?form_factor=desktop",
+  "devices": [
+    {
+      "label": "ORDENADOR",
+      "metrics": [
+        { "name": "LCP", "value": "1.1", "unit": "s", "goal": "< 2.5s" },
+        { "name": "INP", "value": "52", "unit": "ms", "goal": "< 200ms" },
+        { "name": "CLS", "value": "0", "unit": "", "goal": "< 0.1" },
+        { "name": "FCP", "value": "0.8", "unit": "s", "goal": "< 1.8s" },
+        { "name": "TTFB", "value": "0.5", "unit": "s", "goal": "< 0.8s" }
+      ]
+    },
+    {
+      "label": "MÓVIL",
+      "metrics": [
+        { "name": "LCP", "value": "1.3", "unit": "s", "goal": "< 2.5s" },
+        { "name": "INP", "value": "98", "unit": "ms", "goal": "< 200ms" },
+        { "name": "CLS", "value": "0", "unit": "", "goal": "< 0.1" },
+        { "name": "FCP", "value": "1.0", "unit": "s", "goal": "< 1.8s" },
+        { "name": "TTFB", "value": "0.6", "unit": "s", "goal": "< 0.8s" }
+      ]
+    }
+  ]
+}
