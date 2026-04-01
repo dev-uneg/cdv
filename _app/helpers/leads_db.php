@@ -121,6 +121,7 @@ function leads_db_init(PDO $pdo): void
         ip VARCHAR(64) NULL,
         user_agent TEXT NULL,
         created_at DATETIME NOT NULL,
+        created_day DATE NULL,
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
@@ -148,11 +149,28 @@ function leads_db_init(PDO $pdo): void
         ip VARCHAR(64) NULL,
         user_agent TEXT NULL,
         created_at DATETIME NOT NULL,
+        created_day DATE NULL,
         PRIMARY KEY (id)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
     if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX contacto_leads_created_at_idx ON contacto_leads (created_at)');
+    }
+    if (!leads_db_column_exists($pdo, 'contacto_leads', 'created_day')) {
+        $pdo->exec('ALTER TABLE contacto_leads ADD COLUMN created_day DATE NULL AFTER created_at');
+    }
+    $pdo->exec('UPDATE contacto_leads SET created_day = DATE(created_at) WHERE created_day IS NULL');
+    if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_created_day_idx')) {
+        $pdo->exec('CREATE INDEX contacto_leads_created_day_idx ON contacto_leads (created_day)');
+    }
+    if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_day_page_path_idx')) {
+        $pdo->exec('CREATE INDEX contacto_leads_day_page_path_idx ON contacto_leads (created_day, page_path)');
+    }
+    if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_day_interest_idx')) {
+        $pdo->exec('CREATE INDEX contacto_leads_day_interest_idx ON contacto_leads (created_day, interest)');
+    }
+    if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_day_status_idx')) {
+        $pdo->exec('CREATE INDEX contacto_leads_day_status_idx ON contacto_leads (created_day, status)');
     }
     if (!leads_db_column_exists($pdo, 'contacto_leads', 'page_path')) {
         $pdo->exec('ALTER TABLE contacto_leads ADD COLUMN page_path VARCHAR(255) NULL AFTER medium');
@@ -165,6 +183,19 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_page_path_idx')) {
         $pdo->exec('CREATE INDEX whatsapp_clicks_page_path_idx ON whatsapp_clicks (page_path(190))');
+    }
+    if (!leads_db_column_exists($pdo, 'whatsapp_clicks', 'created_day')) {
+        $pdo->exec('ALTER TABLE whatsapp_clicks ADD COLUMN created_day DATE NULL AFTER created_at');
+    }
+    $pdo->exec('UPDATE whatsapp_clicks SET created_day = DATE(created_at) WHERE created_day IS NULL');
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_created_day_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_created_day_idx ON whatsapp_clicks (created_day)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_day_page_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_day_page_idx ON whatsapp_clicks (created_day, page_path)');
+    }
+    if (!leads_db_index_exists($pdo, 'whatsapp_clicks', 'whatsapp_clicks_day_device_idx')) {
+        $pdo->exec('CREATE INDEX whatsapp_clicks_day_device_idx ON whatsapp_clicks (created_day, device_type)');
     }
 }
 
@@ -187,6 +218,7 @@ function contacto_db_insert(array $data): ?int
 {
     try {
         $pdo = leads_db();
+        $createdAt = leads_db_datetime($data['created_at'] ?? null);
 
         $pagePathRaw = trim((string) ($data['page_path'] ?? ($_POST['page_path'] ?? '')));
         if ($pagePathRaw !== '' && strpos($pagePathRaw, '/') !== 0) {
@@ -203,10 +235,10 @@ function contacto_db_insert(array $data): ?int
 
         $stmt = $pdo->prepare('INSERT INTO contacto_leads (
             full_name, email, phone, interest, source, message, channel, medium, page_path,
-            pipedrive_person_id, status, error_message, ip, user_agent, created_at
+            pipedrive_person_id, status, error_message, ip, user_agent, created_at, created_day
         ) VALUES (
             :full_name, :email, :phone, :interest, :source, :message, :channel, :medium, :page_path,
-            :pipedrive_person_id, :status, :error_message, :ip, :user_agent, :created_at
+            :pipedrive_person_id, :status, :error_message, :ip, :user_agent, :created_at, :created_day
         )');
         $stmt->execute([
             ':full_name' => $data['full_name'] ?? '',
@@ -223,7 +255,8 @@ function contacto_db_insert(array $data): ?int
             ':error_message' => $data['error_message'] ?? null,
             ':ip' => $data['ip'] ?? null,
             ':user_agent' => $data['user_agent'] ?? null,
-            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
+            ':created_at' => $createdAt,
+            ':created_day' => substr($createdAt, 0, 10),
         ]);
 
         return (int) $pdo->lastInsertId();
@@ -246,6 +279,8 @@ function contacto_db_update(int $id, array $data): void
         foreach ($data as $key => $value) {
             if ($key === 'created_at') {
                 $value = leads_db_datetime($value);
+                $sets[] = 'created_day = :created_day';
+                $params[':created_day'] = substr($value, 0, 10);
             }
             $sets[] = $key . ' = :' . $key;
             $params[':' . $key] = $value;
@@ -294,11 +329,12 @@ function whatsapp_click_db_insert(array $data): ?int
 {
     try {
         $pdo = leads_db();
+        $createdAt = leads_db_datetime($data['created_at'] ?? null);
 
         $stmt = $pdo->prepare('INSERT INTO whatsapp_clicks (
-            page_path, target_url, device_type, referrer_url, ip, user_agent, created_at
+            page_path, target_url, device_type, referrer_url, ip, user_agent, created_at, created_day
         ) VALUES (
-            :page_path, :target_url, :device_type, :referrer_url, :ip, :user_agent, :created_at
+            :page_path, :target_url, :device_type, :referrer_url, :ip, :user_agent, :created_at, :created_day
         )');
 
         $pagePath = trim((string) ($data['page_path'] ?? ''));
@@ -316,7 +352,8 @@ function whatsapp_click_db_insert(array $data): ?int
             ':referrer_url' => $referrerUrl !== '' ? substr($referrerUrl, 0, 500) : null,
             ':ip' => $data['ip'] ?? null,
             ':user_agent' => $data['user_agent'] ?? null,
-            ':created_at' => leads_db_datetime($data['created_at'] ?? null),
+            ':created_at' => $createdAt,
+            ':created_day' => substr($createdAt, 0, 10),
         ]);
 
         return (int) $pdo->lastInsertId();

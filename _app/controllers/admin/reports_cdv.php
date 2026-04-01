@@ -23,6 +23,10 @@ if (!$monthStart instanceof DateTimeImmutable) {
 $monthEnd = $monthStart->modify('last day of this month')->setTime(23, 59, 59);
 $prevStart = $monthStart->modify('-1 month');
 $prevEnd = $prevStart->modify('last day of this month')->setTime(23, 59, 59);
+$monthStartDate = $monthStart->format('Y-m-d');
+$monthEndDate = $monthEnd->format('Y-m-d');
+$prevStartDate = $prevStart->format('Y-m-d');
+$prevEndDate = $prevEnd->format('Y-m-d');
 
 $monthNames = [
     1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril', 5 => 'mayo', 6 => 'junio',
@@ -70,19 +74,19 @@ $whatsTopPages = [];
 
 try {
     $pdo = leads_db();
-    $countSql = 'SELECT COUNT(*) FROM contacto_leads WHERE created_at BETWEEN :from AND :to';
+    $countSql = 'SELECT COUNT(*) FROM contacto_leads WHERE created_day BETWEEN :from_day AND :to_day';
 
     $currentStmt = $pdo->prepare($countSql);
     $currentStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     $summary['total_leads'] = (int) $currentStmt->fetchColumn();
 
     $prevStmt = $pdo->prepare($countSql);
     $prevStmt->execute([
-        ':from' => $prevStart->format('Y-m-d H:i:s'),
-        ':to' => $prevEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $prevStartDate,
+        ':to_day' => $prevEndDate,
     ]);
     $summary['prev_total_leads'] = (int) $prevStmt->fetchColumn();
 
@@ -90,10 +94,10 @@ try {
         $summary['growth_pct'] = (($summary['total_leads'] - $summary['prev_total_leads']) / $summary['prev_total_leads']) * 100;
     }
 
-    $statusStmt = $pdo->prepare('SELECT status, COUNT(*) AS total FROM contacto_leads WHERE created_at BETWEEN :from AND :to GROUP BY status');
+    $statusStmt = $pdo->prepare('SELECT status, COUNT(*) AS total FROM contacto_leads WHERE created_day BETWEEN :from_day AND :to_day GROUP BY status');
     $statusStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     foreach ($statusStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
         $status = (string) ($row['status'] ?? '');
@@ -114,25 +118,25 @@ try {
     $withoutPageStmt = $pdo->prepare(
         "SELECT COUNT(*)
          FROM contacto_leads
-         WHERE created_at BETWEEN :from AND :to
-           AND (page_path IS NULL OR TRIM(page_path) = '')"
+         WHERE created_day BETWEEN :from_day AND :to_day
+           AND (page_path IS NULL OR page_path = '')"
     );
     $withoutPageStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     $summary['without_page_path'] = (int) $withoutPageStmt->fetchColumn();
 
     $dailyStmt = $pdo->prepare(
-        'SELECT DATE(created_at) AS day_key, COUNT(*) AS total
+        'SELECT created_day AS day_key, COUNT(*) AS total
          FROM contacto_leads
-         WHERE created_at BETWEEN :from AND :to
-         GROUP BY DATE(created_at)
+         WHERE created_day BETWEEN :from_day AND :to_day
+         GROUP BY created_day
          ORDER BY day_key ASC'
     );
     $dailyStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     $dailyMap = [];
     foreach ($dailyStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
@@ -148,58 +152,65 @@ try {
 
     $interestStmt = $pdo->prepare(
         "SELECT
-            COALESCE(NULLIF(TRIM(interest), ''), 'Sin especificar') AS label,
+            interest AS raw_label,
             COUNT(*) AS total
          FROM contacto_leads
-         WHERE created_at BETWEEN :from AND :to
-         GROUP BY label
+         WHERE created_day BETWEEN :from_day AND :to_day
+         GROUP BY interest
          ORDER BY total DESC
          LIMIT 8"
     );
     $interestStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     foreach ($interestStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
-        $interestLabels[] = (string) ($row['label'] ?? 'Sin especificar');
+        $rawLabel = (string) ($row['raw_label'] ?? '');
+        $interestLabels[] = trim($rawLabel) !== '' ? $rawLabel : 'Sin especificar';
         $interestValues[] = (int) ($row['total'] ?? 0);
     }
 
     $pagesStmt = $pdo->prepare(
         "SELECT
-            COALESCE(NULLIF(page_path, ''), '(sin página)') AS label,
+            page_path AS raw_label,
             COUNT(*) AS total
          FROM contacto_leads
-         WHERE created_at BETWEEN :from AND :to
-         GROUP BY label
+         WHERE created_day BETWEEN :from_day AND :to_day
+         GROUP BY page_path
          ORDER BY total DESC
          LIMIT 10"
     );
     $pagesStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
-    $topPages = $pagesStmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($pagesStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $rawLabel = (string) ($row['raw_label'] ?? '');
+        $topPages[] = [
+            'label' => $rawLabel !== '' ? $rawLabel : '(sin página)',
+            'total' => (int) ($row['total'] ?? 0),
+        ];
+    }
 
     $whatsCountStmt = $pdo->prepare(
-        'SELECT COUNT(*) FROM whatsapp_clicks WHERE created_at BETWEEN :from AND :to'
+        'SELECT COUNT(*) FROM whatsapp_clicks WHERE created_day BETWEEN :from_day AND :to_day'
     );
     $whatsCountStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
     $summary['whatsapp_clicks'] = (int) $whatsCountStmt->fetchColumn();
 
     $whatsDailyStmt = $pdo->prepare(
-        'SELECT DATE(created_at) AS day_key, COUNT(*) AS total
+        'SELECT created_day AS day_key, COUNT(*) AS total
          FROM whatsapp_clicks
-         WHERE created_at BETWEEN :from AND :to
-         GROUP BY DATE(created_at)
+         WHERE created_day BETWEEN :from_day AND :to_day
+         GROUP BY created_day
          ORDER BY day_key ASC'
     );
     $whatsDailyStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
 
     $whatsDailyMap = [];
@@ -217,19 +228,25 @@ try {
 
     $whatsTopPagesStmt = $pdo->prepare(
         "SELECT
-            COALESCE(NULLIF(page_path, ''), '(sin página)') AS label,
+            page_path AS raw_label,
             COUNT(*) AS total
          FROM whatsapp_clicks
-         WHERE created_at BETWEEN :from AND :to
-         GROUP BY label
+         WHERE created_day BETWEEN :from_day AND :to_day
+         GROUP BY page_path
          ORDER BY total DESC
          LIMIT 8"
     );
     $whatsTopPagesStmt->execute([
-        ':from' => $monthStart->format('Y-m-d H:i:s'),
-        ':to' => $monthEnd->format('Y-m-d H:i:s'),
+        ':from_day' => $monthStartDate,
+        ':to_day' => $monthEndDate,
     ]);
-    $whatsTopPages = $whatsTopPagesStmt->fetchAll(PDO::FETCH_ASSOC);
+    foreach ($whatsTopPagesStmt->fetchAll(PDO::FETCH_ASSOC) as $row) {
+        $rawLabel = (string) ($row['raw_label'] ?? '');
+        $whatsTopPages[] = [
+            'label' => $rawLabel !== '' ? $rawLabel : '(sin página)',
+            'total' => (int) ($row['total'] ?? 0),
+        ];
+    }
 } catch (Throwable $e) {
     $dbError = 'No se pudo construir el reporte con datos de la base de datos.';
 }
