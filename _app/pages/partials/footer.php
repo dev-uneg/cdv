@@ -102,10 +102,20 @@
         }).catch(() => {});
       };
 
-      const whatsappFloatBtn = document.getElementById('whatsapp-float-btn');
-      if (whatsappFloatBtn) {
-        whatsappFloatBtn.addEventListener('click', () => trackWhatsappClick(whatsappFloatBtn), { passive: true });
-      }
+      // Delegated listener: captures WhatsApp links even if they are rendered after this script.
+      document.addEventListener('click', (event) => {
+        const target = event.target;
+        if (!(target instanceof Element)) return;
+
+        const anchor = target.closest('a[href]');
+        if (!(anchor instanceof HTMLAnchorElement)) return;
+
+        const href = (anchor.getAttribute('href') || '').toLowerCase();
+        const isWhatsappLink = href.includes('wa.me/') || href.includes('api.whatsapp.com/send');
+        if (!isWhatsappLink) return;
+
+        trackWhatsappClick(anchor);
+      }, { passive: true });
     })();
   </script>
   <?php
