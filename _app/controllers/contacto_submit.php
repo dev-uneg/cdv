@@ -206,6 +206,7 @@ if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
 
 $customInterestField = (string) ($config['custom_fields']['interest'] ?? '');
 $customMediumField = (string) ($config['custom_fields']['medium'] ?? '');
+$ownerId = (int) ($config['owner_id'] ?? getenv('PIPEDRIVE_OWNER_ID') ?? 0);
 
 $personPayload = [
     'name' => $fullName,
@@ -218,6 +219,10 @@ $personPayload = [
         'primary' => true,
     ]],
 ];
+
+if ($ownerId > 0) {
+    $personPayload['owner_id'] = $ownerId;
+}
 
 if ($customInterestField !== '') {
     $personPayload[$customInterestField] = $interest;

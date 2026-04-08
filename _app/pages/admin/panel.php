@@ -75,6 +75,15 @@ $base = $base === '.' ? '' : $base;
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo (int) $todaySuspiciousClicks; ?></p>
         <p class="mt-1 text-xs font-medium text-slate-500"><?php echo (int) $daysWithSuspiciousClicks; ?> reporte(s) disponible(s)</p>
       </a>
+
+      <a href="<?php echo $base; ?>/admin/pipedrive-owner-ids" class="group rounded-2xl border border-indigo-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-700 text-white">
+          <i data-lucide="id-card" class="h-6 w-6"></i>
+        </div>
+        <h2 class="mt-4 text-lg font-semibold text-slate-900">Owner IDs</h2>
+        <p class="mt-1 text-sm text-slate-600">Lista de usuarios de Pipedrive para asignar propietario en leads.</p>
+        <p class="mt-4 text-sm font-semibold text-indigo-700">Abrir utilidad</p>
+      </a>
     </section>
   </main>
 </body>

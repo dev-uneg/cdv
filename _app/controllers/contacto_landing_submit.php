@@ -206,6 +206,7 @@ if ($token === '' || $token === 'PON_AQUI_TU_TOKEN') {
 
 $customInterestField = (string) ($config['custom_fields']['interest'] ?? '');
 $customMediumField = (string) ($config['custom_fields']['medium'] ?? '');
+$ownerId = (int) ($config['owner_id'] ?? getenv('PIPEDRIVE_OWNER_ID') ?? 0);
 
 $personPayload = [
     'name' => $fullName,
@@ -219,6 +220,10 @@ $personPayload = [
     ]],
     '28c972a5db524e5d6a0b97af596d5c7a5aea43cc' => 'google',
 ];
+
+if ($ownerId > 0) {
+    $personPayload['owner_id'] = $ownerId;
+}
 
 if ($customInterestField !== '') {
     $personPayload[$customInterestField] = $interest;

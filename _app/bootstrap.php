@@ -41,6 +41,8 @@ $router->map('GET', '/admin/panel', '_app/controllers/admin/panel.php', 'admin-p
 $router->map('GET', '/admin/reports', '_app/controllers/admin/reports_index.php', 'admin-reports-index');
 $router->map('GET', '/admin/reports/cdv-mensual', '_app/controllers/admin/reports_cdv.php', 'admin-reports-cdv-mensual');
 $router->map('GET', '/admin/reports/engagement-mensual', '_app/controllers/admin/reports_engagement.php', 'admin-reports-engagement-mensual');
+$router->map('GET', '/admin/pipedrive-owner-ids', '_app/controllers/admin/pipedrive_owner_ids.php', 'admin-pipedrive-owner-ids');
+$router->map('GET', '/admin/api/pipedrive-users', '_app/controllers/admin/pipedrive_users_api.php', 'admin-api-pipedrive-users');
 $router->map('GET', '/admin/attacks/report-fecha', '_app/controllers/admin/attacks_report_date.php', 'admin-attacks-report-date');
 $router->map('GET', '/admin/contacto', '_app/controllers/admin/contacto_index.php', 'admin-contacto-index');
 $router->map('GET', '/admin/contacto/show', '_app/controllers/admin/contacto_show.php', 'admin-contacto-show');
