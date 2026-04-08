@@ -78,19 +78,21 @@ declare(strict_types=1);
               <th class="px-4 py-3 font-semibold">Reporte</th>
               <th class="px-4 py-3 font-semibold">Periodo</th>
               <th class="px-4 py-3 font-semibold">Leads</th>
+              <th class="px-4 py-3 font-semibold">Page views</th>
               <th class="px-4 py-3 font-semibold">Estado</th>
               <th class="px-4 py-3 font-semibold">Acción</th>
             </tr>
           </thead>
           <tbody class="divide-y divide-slate-100">
             <?php if ($rows === []): ?>
-              <tr><td colspan="5" class="px-4 py-4 text-slate-500">Aún no hay meses con datos para mostrar reportes.</td></tr>
+              <tr><td colspan="6" class="px-4 py-4 text-slate-500">Aún no hay meses con datos para mostrar reportes.</td></tr>
             <?php endif; ?>
             <?php foreach ($rows as $row): ?>
               <tr>
                 <td class="px-4 py-3 font-medium text-slate-800"><?php echo htmlspecialchars((string) $row['name'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 text-slate-700"><?php echo htmlspecialchars((string) $row['period'], ENT_QUOTES, 'UTF-8'); ?></td>
                 <td class="px-4 py-3 font-semibold text-slate-900"><?php echo (int) $row['leads']; ?></td>
+                <td class="px-4 py-3 font-semibold text-slate-900"><?php echo (int) ($row['page_views'] ?? 0); ?></td>
                 <td class="px-4 py-3">
                   <?php if ((string) $row['status'] === 'En progreso'): ?>
                     <span class="inline-flex rounded-full border border-amber-200 bg-amber-100 px-3 py-1 text-xs font-semibold text-amber-800">En progreso</span>
@@ -99,10 +101,16 @@ declare(strict_types=1);
                   <?php endif; ?>
                 </td>
                 <td class="px-4 py-3">
-                  <a href="<?php echo $base; ?>/admin/reports/cdv-mensual?ym=<?php echo rawurlencode((string) $row['ym']); ?>" class="inline-flex items-center gap-2 rounded-lg bg-[#0b2c65] px-3 py-2 text-xs font-semibold text-white hover:bg-[#092653]">
-                    <i data-lucide="file-text" class="h-4 w-4"></i>
-                    Abrir reporte
-                  </a>
+                  <div class="flex flex-wrap items-center gap-2">
+                    <a href="<?php echo $base; ?>/admin/reports/cdv-mensual?ym=<?php echo rawurlencode((string) $row['ym']); ?>" class="inline-flex items-center gap-2 rounded-lg bg-[#0b2c65] px-3 py-2 text-xs font-semibold text-white hover:bg-[#092653]">
+                      <i data-lucide="file-text" class="h-4 w-4"></i>
+                      Performance
+                    </a>
+                    <a href="<?php echo $base; ?>/admin/reports/engagement-mensual?ym=<?php echo rawurlencode((string) $row['ym']); ?>" class="inline-flex items-center gap-2 rounded-lg bg-teal-700 px-3 py-2 text-xs font-semibold text-white hover:bg-teal-800">
+                      <i data-lucide="activity" class="h-4 w-4"></i>
+                      Engagement
+                    </a>
+                  </div>
                 </td>
               </tr>
             <?php endforeach; ?>

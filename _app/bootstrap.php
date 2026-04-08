@@ -33,12 +33,14 @@ $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'a
 $router->map('POST', '/api/contacto-landing', '_app/controllers/contacto_landing_submit.php', 'api-contacto-landing-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
 $router->map('POST', '/api/events/whatsapp-click', '_app/controllers/events/whatsapp_click.php', 'api-events-whatsapp-click');
+$router->map('POST', '/api/events/engagement', '_app/controllers/events/engagement.php', 'api-events-engagement');
 // Admin
 $router->map('GET|POST', '/admin/login', '_app/controllers/admin/login.php', 'admin-login');
 $router->map('GET', '/admin', ['redirect' => '/admin/login'], 'admin-root');
 $router->map('GET', '/admin/panel', '_app/controllers/admin/panel.php', 'admin-panel');
 $router->map('GET', '/admin/reports', '_app/controllers/admin/reports_index.php', 'admin-reports-index');
 $router->map('GET', '/admin/reports/cdv-mensual', '_app/controllers/admin/reports_cdv.php', 'admin-reports-cdv-mensual');
+$router->map('GET', '/admin/reports/engagement-mensual', '_app/controllers/admin/reports_engagement.php', 'admin-reports-engagement-mensual');
 $router->map('GET', '/admin/attacks/report-fecha', '_app/controllers/admin/attacks_report_date.php', 'admin-attacks-report-date');
 $router->map('GET', '/admin/contacto', '_app/controllers/admin/contacto_index.php', 'admin-contacto-index');
 $router->map('GET', '/admin/contacto/show', '_app/controllers/admin/contacto_show.php', 'admin-contacto-show');

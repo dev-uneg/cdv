@@ -24,6 +24,18 @@ try {
          ORDER BY ym DESC"
     )->fetchAll(PDO::FETCH_ASSOC);
 
+    $engagementRows = $pdo->query(
+        "SELECT
+            DATE_FORMAT(day_key, '%Y-%m') AS ym,
+            SUM(page_views) AS page_views_total
+         FROM web_engagement_daily
+         GROUP BY ym"
+    )->fetchAll(PDO::FETCH_ASSOC);
+    $engagementByYm = [];
+    foreach ($engagementRows as $row) {
+        $engagementByYm[(string) ($row['ym'] ?? '')] = (int) ($row['page_views_total'] ?? 0);
+    }
+
     $monthNames = [
         1 => 'enero', 2 => 'febrero', 3 => 'marzo', 4 => 'abril', 5 => 'mayo', 6 => 'junio',
         7 => 'julio', 8 => 'agosto', 9 => 'septiembre', 10 => 'octubre', 11 => 'noviembre', 12 => 'diciembre',
@@ -46,9 +58,42 @@ try {
             'period' => $monthLabel,
             'ym' => $ym,
             'leads' => (int) ($row['leads_total'] ?? 0),
+            'page_views' => $engagementByYm[$ym] ?? 0,
             'status' => $ym === $currentYm ? 'En progreso' : 'Cerrado',
         ];
     }
+
+    foreach ($engagementByYm as $ym => $pageViewsTotal) {
+        $alreadyExists = false;
+        foreach ($rows as $existingRow) {
+            if ((string) ($existingRow['ym'] ?? '') === $ym) {
+                $alreadyExists = true;
+                break;
+            }
+        }
+        if ($alreadyExists || !preg_match('/^\d{4}-\d{2}$/', $ym)) {
+            continue;
+        }
+
+        $monthDate = DateTimeImmutable::createFromFormat('Y-m-d', $ym . '-01', $tz);
+        $monthLabel = $ym;
+        if ($monthDate instanceof DateTimeImmutable) {
+            $monthLabel = ucfirst(($monthNames[(int) $monthDate->format('n')] ?? '') . ' ' . $monthDate->format('Y'));
+        }
+
+        $rows[] = [
+            'name' => 'Reporte Mensual de Performance Web y CRO (CDV)',
+            'period' => $monthLabel,
+            'ym' => $ym,
+            'leads' => 0,
+            'page_views' => (int) $pageViewsTotal,
+            'status' => $ym === $currentYm ? 'En progreso' : 'Cerrado',
+        ];
+    }
+
+    usort($rows, static function (array $a, array $b): int {
+        return strcmp((string) ($b['ym'] ?? ''), (string) ($a['ym'] ?? ''));
+    });
 } catch (Throwable $e) {
     $dbError = 'No se pudo cargar el listado de reportes.';
 }

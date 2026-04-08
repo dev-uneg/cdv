@@ -116,6 +116,95 @@
 
         trackWhatsappClick(anchor);
       }, { passive: true });
+
+      const engagementEndpoint = <?= json_encode($baseUrl . '/api/events/engagement', JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE); ?>;
+      const pagePath = window.location.pathname || '/';
+      const pageStartMs = Date.now();
+      const sentEvents = new Set();
+      let pageHiddenAtLeastOnce = false;
+
+      const getOrCreateSessionToken = () => {
+        const storageKey = 'cdv_engagement_session_v1';
+        try {
+          const existing = window.localStorage.getItem(storageKey);
+          if (existing && /^[A-Za-z0-9_-]{12,80}$/.test(existing)) {
+            return existing;
+          }
+          const seed = Math.random().toString(36).slice(2) + Date.now().toString(36);
+          const token = seed.replace(/[^A-Za-z0-9_-]/g, '').slice(0, 48);
+          window.localStorage.setItem(storageKey, token);
+          return token;
+        } catch (error) {
+          return '';
+        }
+      };
+
+      const sessionToken = getOrCreateSessionToken();
+
+      const sendEngagement = (eventName, extra = {}) => {
+        if (sentEvents.has(eventName)) return;
+        const payload = {
+          event_name: eventName,
+          page_path: pagePath,
+          session_token: sessionToken,
+          ...extra,
+        };
+        const body = JSON.stringify(payload);
+
+        if (navigator.sendBeacon) {
+          const blob = new Blob([body], { type: 'application/json' });
+          navigator.sendBeacon(engagementEndpoint, blob);
+          sentEvents.add(eventName);
+          return;
+        }
+
+        fetch(engagementEndpoint, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body,
+          keepalive: true
+        }).catch(() => {});
+        sentEvents.add(eventName);
+      };
+
+      sendEngagement('page_view');
+
+      window.setTimeout(() => {
+        if (document.visibilityState === 'visible') {
+          sendEngagement('engaged_10s');
+        }
+      }, 10000);
+
+      const onScrollTrack = () => {
+        const doc = document.documentElement;
+        if (!doc) return;
+        const maxScroll = doc.scrollHeight - window.innerHeight;
+        if (maxScroll <= 0) return;
+        const ratio = Math.min(100, Math.max(0, Math.round((window.scrollY / maxScroll) * 100)));
+        if (ratio >= 50) {
+          sendEngagement('scroll_50', { scroll_pct: 50 });
+        }
+        if (ratio >= 90) {
+          sendEngagement('scroll_90', { scroll_pct: 90 });
+          window.removeEventListener('scroll', onScrollTrack);
+        }
+      };
+      window.addEventListener('scroll', onScrollTrack, { passive: true });
+
+      document.addEventListener('visibilitychange', () => {
+        if (document.visibilityState === 'hidden') {
+          pageHiddenAtLeastOnce = true;
+        }
+      });
+
+      const flushTimeOnPage = () => {
+        const elapsed = Date.now() - pageStartMs;
+        const duration = Math.min(1800000, Math.max(0, elapsed));
+        if (duration < 1000 && !pageHiddenAtLeastOnce) return;
+        sendEngagement('time_on_page', { duration_ms: duration });
+      };
+
+      window.addEventListener('pagehide', flushTimeOnPage, { passive: true });
     })();
   </script>
   <?php
