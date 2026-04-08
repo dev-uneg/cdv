@@ -9,19 +9,26 @@ if ($basePath === '/') {
 $router->setBasePath($basePath);
 define('BASE_URL', $basePath);
 
+// Public site: core landing and institutional pages.
 $router->map('GET', '/', '_app/pages/home.php', 'home');
 $router->map('GET', '/nosotros/', '_app/pages/nosotros.php', 'nosotros');
 $router->map('GET', '/nosotros', ['redirect' => '/nosotros/'], 'nosotros-legacy');
 $router->map('GET', '/servicios', '_app/pages/servicios.php', 'servicios');
+
+// Public site: LP General and thank-you flow.
 $router->map('GET', '/lp-general', '_app/pages/lp-general.php', 'lp-general');
 $router->map('GET', '/lp-general/', ['redirect' => '/lp-general'], 'lp-general-legacy-slash');
 $router->map('GET', '/lp-general/gracias', '_app/pages/lp-general-gracias.php', 'lp-general-gracias');
 $router->map('GET', '/lp-general/gracias/', ['redirect' => '/lp-general/gracias'], 'lp-general-gracias-legacy-slash');
+
+// Public site: contact, privacy and generic thank-you page.
 $router->map('GET', '/contacto/', '_app/pages/contacto.php', 'contacto');
 $router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy');
 $router->map('GET', '/aviso-de-privacidad/', '_app/pages/aviso-de-privacidad.php', 'aviso-de-privacidad');
 $router->map('GET', '/aviso-de-privacidad', ['redirect' => '/aviso-de-privacidad/'], 'aviso-de-privacidad-legacy');
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
+
+// Public API endpoints: lead capture and event tracking.
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
 $router->map('POST', '/api/contacto-landing', '_app/controllers/contacto_landing_submit.php', 'api-contacto-landing-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
@@ -43,6 +50,7 @@ $router->map('POST', '/admin/buzon-rector/delete', '_app/controllers/admin/buzon
 $router->map('GET', '/admin/buzon-rector/export', '_app/controllers/admin/buzon_export.php', 'admin-buzon-export');
 $router->map('GET', '/admin/logout', '_app/controllers/admin/logout.php', 'admin-logout');
 
+// Public site: academic offer pages (current canonical URLs + aliases).
 $router->map('GET', '/oferta-educativa/kinder', '_app/pages/kinder.php', 'kinder');
 $router->map('GET', '/oferta-academica/kinder', '_app/pages/kinder.php', 'kinder-alias');
 $router->map('GET', '/oferta-academica/kinder/', '_app/pages/kinder.php', 'kinder-alias-slash');
@@ -60,6 +68,7 @@ $router->map('GET', '/primaria', ['redirect' => '/oferta-educativa/primaria'], '
 $router->map('GET', '/secundaria', ['redirect' => '/oferta-educativa/secundaria'], 'secundaria-legacy');
 $router->map('GET', '/preparatoria', ['redirect' => '/oferta-educativa/preparatoria'], 'preparatoria-legacy');
 
+// News module: listing and dynamic article routes.
 $router->map('GET', '/noticias/', '_app/pages/noticias/index.php', 'noticias');
 $router->map('GET', '/noticias', ['redirect' => '/noticias/'], 'noticias-legacy');
 $newsRoutes = include __DIR__ . '/pages/noticias/routes.php';
@@ -67,6 +76,7 @@ foreach ($newsRoutes as $slug => $file) {
     $router->map('GET', '/noticias/' . $slug, $file, 'noticias-' . $slug);
 }
 
+// Public site: additional institutional/community sections.
 $router->map('GET', '/formas-de-pago', '_app/pages/formas-de-pago.php', 'formas-de-pago');
 $router->map('GET', '/beneficios', '_app/pages/beneficios.php', 'beneficios');
 $router->map('GET', '/reglamentos', '_app/pages/reglamentos.php', 'reglamentos');
@@ -92,6 +102,7 @@ $router->map('GET', '/comunidad/alumnos/calendarios-academicos', ['redirect' => 
 $router->map('GET', '/ixu/', '_app/pages/ixu.php', 'ixu');
 $router->map('GET', '/ixu', ['redirect' => '/ixu/'], 'ixu-legacy');
 
+// Router execution: resolve redirects, dispatch target controller/page, fallback 404.
 $match = $router->match();
 if ($match && is_array($match['target']) && isset($match['target']['redirect'])) {
     header('Location: ' . $basePath . $match['target']['redirect'], true, 301);
