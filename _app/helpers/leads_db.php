@@ -361,3 +361,59 @@ function whatsapp_click_db_insert(array $data): ?int
         return null;
     }
 }
+
+function whatsapp_click_contains_suspicious_payload(?string $value): bool
+{
+    $raw = strtolower(trim((string) $value));
+    if ($raw === '') {
+        return false;
+    }
+
+    $needles = [
+        'sleep(',
+        'waitfor',
+        'pg_sleep',
+        'dbms_pipe',
+        'benchmark(',
+        ' union select',
+        "' or ",
+        '" or ',
+        ' xor(',
+        '/*',
+        '*/',
+        '--',
+    ];
+
+    foreach ($needles as $needle) {
+        if (strpos($raw, $needle) !== false) {
+            return true;
+        }
+    }
+
+    return false;
+}
+
+function whatsapp_click_is_rate_limited(?string $ip, int $windowSeconds = 60, int $maxEvents = 60): bool
+{
+    $ipValue = trim((string) $ip);
+    if ($ipValue === '' || $windowSeconds <= 0 || $maxEvents <= 0) {
+        return false;
+    }
+
+    try {
+        $pdo = leads_db();
+        $stmt = $pdo->prepare(
+            'SELECT COUNT(*)
+             FROM whatsapp_clicks
+             WHERE ip = :ip
+               AND created_at >= DATE_SUB(NOW(), INTERVAL :window_second SECOND)'
+        );
+        $stmt->bindValue(':ip', $ipValue, PDO::PARAM_STR);
+        $stmt->bindValue(':window_second', $windowSeconds, PDO::PARAM_INT);
+        $stmt->execute();
+
+        return (int) $stmt->fetchColumn() >= $maxEvents;
+    } catch (Throwable $e) {
+        return false;
+    }
+}

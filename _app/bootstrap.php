@@ -32,6 +32,7 @@ $router->map('GET', '/admin', ['redirect' => '/admin/login'], 'admin-root');
 $router->map('GET', '/admin/panel', '_app/controllers/admin/panel.php', 'admin-panel');
 $router->map('GET', '/admin/reports', '_app/controllers/admin/reports_index.php', 'admin-reports-index');
 $router->map('GET', '/admin/reports/cdv-mensual', '_app/controllers/admin/reports_cdv.php', 'admin-reports-cdv-mensual');
+$router->map('GET', '/admin/attacks/report-fecha', '_app/controllers/admin/attacks_report_date.php', 'admin-attacks-report-date');
 $router->map('GET', '/admin/contacto', '_app/controllers/admin/contacto_index.php', 'admin-contacto-index');
 $router->map('GET', '/admin/contacto/show', '_app/controllers/admin/contacto_show.php', 'admin-contacto-show');
 $router->map('POST', '/admin/contacto/delete', '_app/controllers/admin/contacto_delete.php', 'admin-contacto-delete');

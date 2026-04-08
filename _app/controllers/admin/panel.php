@@ -12,6 +12,10 @@ $dbError = '';
 $contactoCount = 0;
 $buzonCount = 0;
 $reportsCount = 0;
+$todaySuspiciousClicks = 0;
+$daysWithSuspiciousClicks = 0;
+$attacksWarning = '';
+$attackReportsCount = 0;
 
 try {
     $pdo = leads_db();
@@ -20,6 +24,23 @@ try {
     $reportsCount = (int) $pdo->query("SELECT COUNT(DISTINCT DATE_FORMAT(created_at, '%Y-%m')) FROM contacto_leads")->fetchColumn();
 } catch (Throwable $e) {
     $dbError = 'No se pudo conectar a la base de datos. Configura _app/config/db.local.php o variables de entorno DB_.';
+}
+
+if ($dbError === '') {
+    $reportsDir = __DIR__ . '/../../pages/admin/attacks';
+    if (is_dir($reportsDir)) {
+        $reportFiles = glob($reportsDir . '/report-*.php');
+        if (is_array($reportFiles)) {
+            foreach ($reportFiles as $file) {
+                if (basename((string) $file) === 'report-fecha.php') {
+                    continue;
+                }
+                $attackReportsCount++;
+            }
+        }
+    }
+    $todaySuspiciousClicks = $attackReportsCount;
+    $daysWithSuspiciousClicks = $attackReportsCount;
 }
 
 require __DIR__ . '/../../pages/admin/panel.php';
