@@ -1,6 +1,6 @@
 <?php
-$pageTitle = 'Dejanos saber de ti | Egresados ISEC';
-$pageDescription = 'Registro de egresados ISEC para compartir trayectoria y recibir información de beneficios institucionales.';
+$pageTitle = 'Dejanos saber de ti | Egresados CDV';
+$pageDescription = 'Registro de egresados de Colegio del Valle para compartir trayectoria y recibir información institucional.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
 
@@ -22,12 +22,12 @@ if ($errorMessage === '') {
       <h1 class="text-3xl md:text-4xl font-semibold text-slate-800">Dejanos saber de ti</h1>
       <h2 class="mt-3 text-xl font-semibold text-slate-700">Egresados en acción.</h2>
       <p class="mt-4 text-slate-600 leading-relaxed">
-        Hoy en día conocerte para nosotros es importante, queremos saber qué has hecho, en dónde has dejado tu huella y, con ello, poder compartirte información importante respecto a tu alma mater, así como accesos a múltiples beneficios por ser egresado de la Universidad de Negocios ISEC.
+        Hoy en día conocerte para nosotros es importante, queremos saber qué has hecho, en dónde has dejado tu huella y, con ello, poder compartirte información importante respecto a tu alma mater, así como accesos a múltiples beneficios por ser egresado de Colegio del Valle.
       </p>
       <p class="mt-4 text-slate-600 leading-relaxed">
         Por favor, ayúdanos con tu registro.
       </p>
-      <p class="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Egresados ISEC</p>
+      <p class="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Egresados CDV</p>
       <p class="mt-2 text-sm text-slate-500">Los campos con * son obligatorios.</p>
     </div>
 

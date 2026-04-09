@@ -12,7 +12,7 @@ admin_require_auth();
 $base = admin_base_path();
 
 if (!admin_is_async_request()) {
-    $pageTitle = 'Egresados ISEC | Admin CDV';
+    $pageTitle = 'Egresados CDV | Admin CDV';
     require __DIR__ . '/../../pages/admin/partials/async-shell.php';
     exit;
 }

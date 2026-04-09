@@ -8,7 +8,7 @@ $base = $base === '.' ? '' : $base;
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Egresados ISEC | Admin CDV</title>
+  <title>Egresados CDV | Admin CDV</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
   <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
@@ -42,7 +42,7 @@ $base = $base === '.' ? '' : $base;
     <?php
       $headerActionsHtml = (string) ob_get_clean();
       $headerBadgeIcon = 'graduation-cap';
-      $headerBadgeText = 'Comunidad · Egresados ISEC';
+      $headerBadgeText = 'Comunidad · Egresados CDV';
       $headerBadgeClass = 'bg-indigo-100 text-indigo-800';
       $headerTitleIcon = 'graduation-cap';
       $headerTitleIconClass = 'h-7 w-7 text-indigo-700';

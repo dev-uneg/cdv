@@ -37,7 +37,7 @@ try {
 }
 
 header('Content-Type: text/csv; charset=utf-8');
-header('Content-Disposition: attachment; filename="egresados_isec_filtrado.csv"');
+header('Content-Disposition: attachment; filename="egresados_cdv_filtrado.csv"');
 
 $out = fopen('php://output', 'w');
 fputcsv($out, [

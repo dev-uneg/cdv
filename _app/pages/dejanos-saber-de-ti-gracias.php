@@ -1,5 +1,5 @@
 <?php
-$pageTitle = 'Gracias | Egresados ISEC';
+$pageTitle = 'Gracias | Egresados CDV';
 $pageDescription = 'Gracias por registrar tus datos de egresado.';
 $activePage = '';
 require __DIR__ . '/partials/header.php';
@@ -8,7 +8,7 @@ require __DIR__ . '/partials/header.php';
 <section class="py-16 bg-white">
   <div class="max-w-[900px] mx-auto px-6">
     <div class="rounded-[32px] border border-emerald-200 bg-emerald-50 p-10 text-center">
-      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Egresados ISEC</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.25em] text-emerald-700">Egresados CDV</p>
       <h1 class="mt-4 text-3xl md:text-4xl font-semibold text-slate-800">Gracias por tu registro</h1>
       <p class="mt-5 text-slate-700 leading-relaxed">
         Tu información se guardó correctamente. Pronto te compartiremos información relevante y beneficios para egresados.
