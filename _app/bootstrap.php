@@ -11,6 +11,8 @@ define('BASE_URL', $basePath);
 
 // Public site: core landing and institutional pages.
 $router->map('GET', '/', '_app/pages/home.php', 'home');
+$router->map('GET', '/home-des/', '_app/page_des/home.php', 'home-des');
+$router->map('GET', '/home-des', ['redirect' => '/home-des/'], 'home-des-legacy');
 $router->map('GET', '/nosotros/', '_app/pages/nosotros.php', 'nosotros');
 $router->map('GET', '/nosotros', ['redirect' => '/nosotros/'], 'nosotros-legacy');
 $router->map('GET', '/servicios', '_app/pages/servicios.php', 'servicios');

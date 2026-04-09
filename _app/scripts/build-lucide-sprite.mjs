@@ -4,7 +4,10 @@ import path from 'node:path';
 const projectRoot = process.cwd();
 const iconsDir = path.join(projectRoot, 'node_modules', 'lucide-static', 'icons');
 const outputPath = path.join(projectRoot, '_assets', 'lucide-sprite.svg');
-const searchRoots = [path.join(projectRoot, '_app', 'pages')];
+const searchRoots = [
+  path.join(projectRoot, '_app', 'pages'),
+  path.join(projectRoot, '_app', 'page_des'),
+];
 const iconPattern = /data-lucide="([a-z0-9-]+)"/g;
 
 if (!fs.existsSync(iconsDir)) {
