@@ -181,6 +181,29 @@ function leads_db_init(PDO $pdo): void
         PRIMARY KEY (day_key, page_path)
     ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
 
+    $pdo->exec('CREATE TABLE IF NOT EXISTS egresados_registros (
+        id BIGINT UNSIGNED NOT NULL AUTO_INCREMENT,
+        nombre VARCHAR(120) NOT NULL,
+        apellido_paterno VARCHAR(120) NOT NULL,
+        apellido_materno VARCHAR(120) NOT NULL,
+        generacion VARCHAR(80) NOT NULL,
+        anio_ingreso SMALLINT UNSIGNED NOT NULL,
+        anio_egreso SMALLINT UNSIGNED NOT NULL,
+        nivel_egreso VARCHAR(120) NOT NULL,
+        carrera_egreso VARCHAR(190) NOT NULL,
+        telefono VARCHAR(60) NOT NULL,
+        email VARCHAR(190) NOT NULL,
+        trabaja_actualmente TINYINT(1) NOT NULL DEFAULT 0,
+        empresa VARCHAR(190) NOT NULL,
+        cargo_actual VARCHAR(190) NOT NULL,
+        aviso_aceptado TINYINT(1) NOT NULL DEFAULT 0,
+        ip VARCHAR(64) NULL,
+        user_agent TEXT NULL,
+        created_at DATETIME NOT NULL,
+        created_day DATE NULL,
+        PRIMARY KEY (id)
+    ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci');
+
     if (!leads_db_index_exists($pdo, 'contacto_leads', 'contacto_leads_created_at_idx')) {
         $pdo->exec('CREATE INDEX contacto_leads_created_at_idx ON contacto_leads (created_at)');
     }
@@ -246,6 +269,20 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'web_engagement_daily', 'web_engagement_daily_page_idx')) {
         $pdo->exec('CREATE INDEX web_engagement_daily_page_idx ON web_engagement_daily (page_path)');
+    }
+
+    if (!leads_db_index_exists($pdo, 'egresados_registros', 'egresados_registros_created_at_idx')) {
+        $pdo->exec('CREATE INDEX egresados_registros_created_at_idx ON egresados_registros (created_at)');
+    }
+    if (!leads_db_column_exists($pdo, 'egresados_registros', 'created_day')) {
+        $pdo->exec('ALTER TABLE egresados_registros ADD COLUMN created_day DATE NULL AFTER created_at');
+    }
+    $pdo->exec('UPDATE egresados_registros SET created_day = DATE(created_at) WHERE created_day IS NULL');
+    if (!leads_db_index_exists($pdo, 'egresados_registros', 'egresados_registros_created_day_idx')) {
+        $pdo->exec('CREATE INDEX egresados_registros_created_day_idx ON egresados_registros (created_day)');
+    }
+    if (!leads_db_index_exists($pdo, 'egresados_registros', 'egresados_registros_day_nivel_idx')) {
+        $pdo->exec('CREATE INDEX egresados_registros_day_nivel_idx ON egresados_registros (created_day, nivel_egreso)');
     }
 }
 
@@ -389,6 +426,48 @@ function buzon_rector_db_insert(array $data): ?int
         return (int) $pdo->lastInsertId();
     } catch (Throwable $e) {
         error_log('[buzon_rector_db_insert] ' . $e->getMessage());
+        return null;
+    }
+}
+
+function egresados_db_insert(array $data): ?int
+{
+    try {
+        $pdo = leads_db();
+        $createdAt = leads_db_datetime($data['created_at'] ?? null);
+        $stmt = $pdo->prepare('INSERT INTO egresados_registros (
+            nombre, apellido_paterno, apellido_materno, generacion, anio_ingreso, anio_egreso,
+            nivel_egreso, carrera_egreso, telefono, email, trabaja_actualmente, empresa, cargo_actual,
+            aviso_aceptado, ip, user_agent, created_at, created_day
+        ) VALUES (
+            :nombre, :apellido_paterno, :apellido_materno, :generacion, :anio_ingreso, :anio_egreso,
+            :nivel_egreso, :carrera_egreso, :telefono, :email, :trabaja_actualmente, :empresa, :cargo_actual,
+            :aviso_aceptado, :ip, :user_agent, :created_at, :created_day
+        )');
+        $stmt->execute([
+            ':nombre' => trim((string) ($data['nombre'] ?? '')),
+            ':apellido_paterno' => trim((string) ($data['apellido_paterno'] ?? '')),
+            ':apellido_materno' => trim((string) ($data['apellido_materno'] ?? '')),
+            ':generacion' => trim((string) ($data['generacion'] ?? '')),
+            ':anio_ingreso' => (int) ($data['anio_ingreso'] ?? 0),
+            ':anio_egreso' => (int) ($data['anio_egreso'] ?? 0),
+            ':nivel_egreso' => trim((string) ($data['nivel_egreso'] ?? '')),
+            ':carrera_egreso' => trim((string) ($data['carrera_egreso'] ?? '')),
+            ':telefono' => trim((string) ($data['telefono'] ?? '')),
+            ':email' => trim((string) ($data['email'] ?? '')),
+            ':trabaja_actualmente' => !empty($data['trabaja_actualmente']) ? 1 : 0,
+            ':empresa' => trim((string) ($data['empresa'] ?? '')),
+            ':cargo_actual' => trim((string) ($data['cargo_actual'] ?? '')),
+            ':aviso_aceptado' => !empty($data['aviso_aceptado']) ? 1 : 0,
+            ':ip' => $data['ip'] ?? null,
+            ':user_agent' => $data['user_agent'] ?? null,
+            ':created_at' => $createdAt,
+            ':created_day' => substr($createdAt, 0, 10),
+        ]);
+
+        return (int) $pdo->lastInsertId();
+    } catch (Throwable $e) {
+        error_log('[egresados_db_insert] ' . $e->getMessage());
         return null;
     }
 }

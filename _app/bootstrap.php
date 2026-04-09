@@ -34,6 +34,7 @@ $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 $router->map('POST', '/api/contacto', '_app/controllers/contacto_submit.php', 'api-contacto-submit');
 $router->map('POST', '/api/contacto-landing', '_app/controllers/contacto_landing_submit.php', 'api-contacto-landing-submit');
 $router->map('POST', '/api/buzon-del-rector', '_app/controllers/buzon_rector_submit.php', 'api-buzon-rector-submit');
+$router->map('POST', '/api/egresados-registro', '_app/controllers/egresados_submit.php', 'api-egresados-registro-submit');
 $router->map('POST', '/api/events/whatsapp-click', '_app/controllers/events/whatsapp_click.php', 'api-events-whatsapp-click');
 $router->map('POST', '/api/events/engagement', '_app/controllers/events/engagement.php', 'api-events-engagement');
 // Admin
@@ -54,6 +55,10 @@ $router->map('GET', '/admin/buzon-rector', '_app/controllers/admin/buzon_index.p
 $router->map('GET', '/admin/buzon-rector/show', '_app/controllers/admin/buzon_show.php', 'admin-buzon-show');
 $router->map('POST', '/admin/buzon-rector/delete', '_app/controllers/admin/buzon_delete.php', 'admin-buzon-delete');
 $router->map('GET', '/admin/buzon-rector/export', '_app/controllers/admin/buzon_export.php', 'admin-buzon-export');
+$router->map('GET', '/admin/egresados', '_app/controllers/admin/egresados_index.php', 'admin-egresados-index');
+$router->map('GET', '/admin/egresados/show', '_app/controllers/admin/egresados_show.php', 'admin-egresados-show');
+$router->map('POST', '/admin/egresados/delete', '_app/controllers/admin/egresados_delete.php', 'admin-egresados-delete');
+$router->map('GET', '/admin/egresados/export', '_app/controllers/admin/egresados_export.php', 'admin-egresados-export');
 $router->map('GET', '/admin/logout', '_app/controllers/admin/logout.php', 'admin-logout');
 
 // Public site: academic offer pages (current canonical URLs + aliases).
@@ -89,6 +94,7 @@ $router->map('GET', '/reglamentos', '_app/pages/reglamentos.php', 'reglamentos')
 $router->map('GET', '/buzon-del-rector', '_app/pages/buzon-del-rector.php', 'buzon-del-rector');
 $router->map('GET', '/buzon-del-rector/gracias', '_app/pages/buzon-del-rector-gracias.php', 'buzon-del-rector-gracias');
 $router->map('GET', '/dejanos-saber-de-ti', '_app/pages/dejanos-saber-de-ti.php', 'dejanos-saber-de-ti');
+$router->map('GET', '/dejanos-saber-de-ti/gracias', '_app/pages/dejanos-saber-de-ti-gracias.php', 'dejanos-saber-de-ti-gracias');
 $router->map('GET', '/comunidad/alumnos', '_app/pages/comunidad-alumnos.php', 'comunidad-alumnos');
 $router->map('GET', '/comunidad/alumnos/', ['redirect' => '/comunidad/alumnos'], 'comunidad-alumnos-legacy');
 $router->map('GET', '/egresados/', '_app/pages/comunidad-egresados.php', 'comunidad-egresados');

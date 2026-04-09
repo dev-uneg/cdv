@@ -9,6 +9,7 @@ $adminNavItems = [
     ['href' => '/admin/panel', 'label' => 'Panel', 'icon' => 'layout-grid', 'prefix' => '/admin/panel'],
     ['href' => '/admin/contacto', 'label' => 'Contacto', 'icon' => 'users', 'prefix' => '/admin/contacto'],
     ['href' => '/admin/buzon-rector', 'label' => 'Buzón', 'icon' => 'mailbox', 'prefix' => '/admin/buzon-rector'],
+    ['href' => '/admin/egresados', 'label' => 'Egresados', 'icon' => 'graduation-cap', 'prefix' => '/admin/egresados'],
     ['href' => '/admin/reports', 'label' => 'Reportes', 'icon' => 'file-text', 'prefix' => '/admin/reports'],
     ['href' => '/admin/attacks/report-fecha', 'label' => 'Ataques', 'icon' => 'shield-alert', 'prefix' => '/admin/attacks'],
     ['href' => '/admin/pipedrive-owner-ids', 'label' => 'Owner IDs', 'icon' => 'id-card', 'prefix' => '/admin/pipedrive-owner-ids'],

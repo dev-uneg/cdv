@@ -19,6 +19,7 @@ if (!admin_is_async_request()) {
 $dbError = '';
 $contactoCount = 0;
 $buzonCount = 0;
+$egresadosCount = 0;
 $reportsCount = 0;
 $todaySuspiciousClicks = 0;
 $daysWithSuspiciousClicks = 0;
@@ -29,6 +30,7 @@ try {
     $pdo = leads_db();
     $contactoCount = (int) $pdo->query('SELECT COUNT(*) FROM contacto_leads')->fetchColumn();
     $buzonCount = (int) $pdo->query('SELECT COUNT(*) FROM buzon_rector_messages')->fetchColumn();
+    $egresadosCount = (int) $pdo->query('SELECT COUNT(*) FROM egresados_registros')->fetchColumn();
     $reportsCount = (int) $pdo->query("SELECT COUNT(DISTINCT DATE_FORMAT(created_at, '%Y-%m')) FROM contacto_leads")->fetchColumn();
 } catch (Throwable $e) {
     $dbError = 'No se pudo conectar a la base de datos. Configura _app/config/db.local.php o variables de entorno DB_.';

@@ -23,7 +23,7 @@ $base = $base === '.' ? '' : $base;
       $headerTitleIcon = 'layout-dashboard';
       $headerTitleIconClass = 'h-7 w-7 text-slate-700';
       $headerTitle = 'Panel de Formularios';
-      $headerSubtitle = 'Administra solo Contacto y Buzón del Rector.';
+      $headerSubtitle = 'Administra Contacto, Buzón y Egresados ISEC.';
       $headerActionsHtml = '<a class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100" href="' . htmlspecialchars($base, ENT_QUOTES, 'UTF-8') . '/admin/logout"><i data-lucide="log-out" class="h-4 w-4"></i>Salir</a>';
       require __DIR__ . '/partials/page-header.php';
     ?>
@@ -57,6 +57,15 @@ $base = $base === '.' ? '' : $base;
         <h2 class="mt-4 text-lg font-semibold text-slate-900">Buzón del Rector</h2>
         <p class="mt-1 text-sm text-slate-600">Mensajes enviados desde el formulario de buzón.</p>
         <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo (int) $buzonCount; ?></p>
+      </a>
+
+      <a href="<?php echo $base; ?>/admin/egresados" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
+        <div class="flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-700 text-white">
+          <i data-lucide="graduation-cap" class="h-6 w-6"></i>
+        </div>
+        <h2 class="mt-4 text-lg font-semibold text-slate-900">Egresados ISEC</h2>
+        <p class="mt-1 text-sm text-slate-600">Registros enviados desde “Déjanos saber de ti”.</p>
+        <p class="mt-4 text-2xl font-bold text-slate-800"><?php echo (int) $egresadosCount; ?></p>
       </a>
 
       <a href="<?php echo $base; ?>/admin/reports" class="group rounded-2xl border border-slate-200 bg-white p-6 shadow-sm transition hover:-translate-y-1 hover:shadow-md">
