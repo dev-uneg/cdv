@@ -16,7 +16,7 @@ $scrollDepthRate = $summary['page_views'] > 0
   <title>Reporte Engagement | <?php echo htmlspecialchars($monthLabel, ENT_QUOTES, 'UTF-8'); ?></title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
-  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=4" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
+  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=4" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <style>
     @font-face {
@@ -51,25 +51,31 @@ $scrollDepthRate = $summary['page_views'] > 0
   </style>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
-  <main class="mx-auto w-full max-w-7xl px-4 py-10">
-    <section class="flex flex-wrap items-start justify-between gap-4">
-      <div>
-        <p class="inline-flex items-center rounded-full bg-teal-100 px-3 py-1 text-xs font-semibold text-teal-800">Métricas Web · Engagement</p>
-        <h1 class="mt-3 text-3xl font-semibold text-[#0b2c65]">Reporte Mensual de Engagement</h1>
-        <p class="mt-1 text-sm text-slate-600"><?php echo htmlspecialchars($monthLabel, ENT_QUOTES, 'UTF-8'); ?> · <?php echo htmlspecialchars($periodLabel, ENT_QUOTES, 'UTF-8'); ?></p>
-      </div>
-      <div class="flex flex-wrap items-center gap-2">
-        <form method="get" action="<?php echo $base; ?>/admin/reports/engagement-mensual" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
-          <label for="ym" class="font-semibold text-slate-600">Periodo</label>
-          <input id="ym" name="ym" type="month" value="<?php echo htmlspecialchars($ym, ENT_QUOTES, 'UTF-8'); ?>" class="rounded-md border border-slate-200 px-2 py-1 text-slate-700">
-          <button type="submit" class="rounded-md bg-[#0b2c65] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#092653]">Ver</button>
-        </form>
-        <a href="<?php echo $base; ?>/admin/reports" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
-          <i data-lucide="file-text" class="h-4 w-4"></i>
-          Reportes
-        </a>
-      </div>
-    </section>
+  <?php require __DIR__ . '/../partials/sidebar.php'; ?>
+  <main class="w-full px-4 py-10 lg:pl-[17rem] lg:pr-6">
+    <?php
+      ob_start();
+    ?>
+    <form method="get" action="<?php echo $base; ?>/admin/reports/engagement-mensual" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2 text-sm">
+      <label for="ym" class="font-semibold text-slate-600">Periodo</label>
+      <input id="ym" name="ym" type="month" value="<?php echo htmlspecialchars($ym, ENT_QUOTES, 'UTF-8'); ?>" class="rounded-md border border-slate-200 px-2 py-1 text-slate-700">
+      <button type="submit" class="rounded-md bg-[#0b2c65] px-3 py-1.5 text-xs font-semibold text-white hover:bg-[#092653]">Ver</button>
+    </form>
+    <a href="<?php echo $base; ?>/admin/reports" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
+      <i data-lucide="file-text" class="h-4 w-4"></i>
+      Reportes
+    </a>
+    <?php
+      $headerActionsHtml = (string) ob_get_clean();
+      $headerBadgeIcon = 'activity';
+      $headerBadgeText = 'Métricas Web · Engagement';
+      $headerBadgeClass = 'bg-teal-100 text-teal-800';
+      $headerTitleIcon = 'line-chart';
+      $headerTitleIconClass = 'h-7 w-7 text-teal-700';
+      $headerTitle = 'Reporte Mensual de Engagement';
+      $headerSubtitle = $monthLabel . ' · ' . $periodLabel;
+      require __DIR__ . '/../partials/page-header.php';
+    ?>
 
     <?php if ($dbError !== ''): ?>
       <section class="mt-6 rounded-2xl border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-800">

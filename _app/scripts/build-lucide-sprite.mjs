@@ -16,6 +16,24 @@ if (!fs.existsSync(iconsDir)) {
 }
 
 const iconNames = new Set();
+const extraIcons = [
+  // Icons referenced dynamically via PHP variables in shared admin header partial.
+  'activity',
+  'bar-chart-3',
+  'file-chart-column',
+  'file-user',
+  'inbox',
+  'layout-dashboard',
+  'line-chart',
+  'mail-search',
+  'mailbox',
+  'message-square-text',
+  'plug-zap',
+  'shield-alert',
+  'shield-check',
+  'triangle-alert',
+  'user-round-search',
+];
 
 const walk = (dir) => {
   for (const entry of fs.readdirSync(dir, { withFileTypes: true })) {
@@ -40,6 +58,10 @@ for (const root of searchRoots) {
   if (fs.existsSync(root)) {
     walk(root);
   }
+}
+
+for (const iconName of extraIcons) {
+  iconNames.add(iconName);
 }
 
 const sortedIcons = [...iconNames].sort();

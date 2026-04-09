@@ -11,41 +11,45 @@ $base = $base === '.' ? '' : $base;
   <title>Contacto | Admin CDV</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
-  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
+  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
-  <main class="mx-auto w-full max-w-7xl px-4 py-10">
-    <section class="flex flex-wrap items-center justify-between gap-4">
-      <div>
-        <h1 class="text-2xl font-semibold text-slate-900">Formulario de Contacto</h1>
-        <p class="mt-1 text-sm text-slate-500">Total: <?php echo (int) $total; ?> registros</p>
+  <?php require __DIR__ . '/partials/sidebar.php'; ?>
+  <main class="w-full px-4 py-10 lg:pl-[17rem] lg:pr-6">
+    <?php
+      ob_start();
+    ?>
+    <form method="get" action="<?php echo $base; ?>/admin/contacto" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
+      <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
+        <label class="text-xs font-semibold text-slate-500">Desde</label>
+        <input type="date" name="from" value="<?php echo htmlspecialchars($dateFrom, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
+        <span class="text-slate-300">|</span>
+        <label class="text-xs font-semibold text-slate-500">Hasta</label>
+        <input type="date" name="to" value="<?php echo htmlspecialchars($dateTo, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
       </div>
-      <div class="flex flex-wrap items-center gap-3">
-        <form method="get" action="<?php echo $base; ?>/admin/contacto" class="flex flex-wrap items-center gap-2 text-sm text-slate-600">
-          <div class="flex flex-wrap items-center gap-2 rounded-xl border border-slate-200 bg-white px-3 py-2">
-            <label class="text-xs font-semibold text-slate-500">Desde</label>
-            <input type="date" name="from" value="<?php echo htmlspecialchars($dateFrom, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
-            <span class="text-slate-300">|</span>
-            <label class="text-xs font-semibold text-slate-500">Hasta</label>
-            <input type="date" name="to" value="<?php echo htmlspecialchars($dateTo, ENT_QUOTES, 'UTF-8'); ?>" class="text-xs text-slate-700 outline-none">
-          </div>
-          <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-slate-900 p-2 text-white hover:bg-slate-800" aria-label="Filtrar">
-            <i data-lucide="filter" class="h-4 w-4"></i>
-          </button>
-          <input type="hidden" name="per_page" value="<?php echo (int) $perPage; ?>">
-          <input type="hidden" name="page" value="1">
-        </form>
-        <a class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300 <?php echo $hasDateFilter ? '' : 'pointer-events-none opacity-40'; ?>" href="<?php echo $base; ?>/admin/contacto/export?from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>" aria-label="Exportar CSV">
-          <i data-lucide="download" class="h-4 w-4"></i>
-        </a>
-        <a class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-slate-300" href="<?php echo $base; ?>/admin/panel">
-          <i data-lucide="layout-grid" class="h-4 w-4"></i> Panel
-        </a>
-        <a class="inline-flex items-center justify-center rounded-lg border border-slate-200 bg-white p-2 text-slate-600 hover:border-slate-300" href="<?php echo $base; ?>/admin/logout" aria-label="Salir">
-          <i data-lucide="log-out" class="h-4 w-4"></i>
-        </a>
-      </div>
-    </section>
+      <button type="submit" class="inline-flex items-center justify-center rounded-lg bg-slate-900 p-2 text-white hover:bg-slate-800" aria-label="Filtrar">
+        <i data-lucide="filter" class="h-4 w-4"></i>
+      </button>
+      <input type="hidden" name="per_page" value="<?php echo (int) $perPage; ?>">
+      <input type="hidden" name="page" value="1">
+    </form>
+    <a class="inline-flex items-center justify-center rounded-lg border border-slate-300 bg-white p-2 text-slate-600 hover:bg-slate-100 <?php echo $hasDateFilter ? '' : 'pointer-events-none opacity-40'; ?>" href="<?php echo $base; ?>/admin/contacto/export?from=<?php echo urlencode($dateFrom); ?>&to=<?php echo urlencode($dateTo); ?>" aria-label="Exportar CSV">
+      <i data-lucide="download" class="h-4 w-4"></i>
+    </a>
+    <a class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100" href="<?php echo $base; ?>/admin/panel">
+      <i data-lucide="layout-grid" class="h-4 w-4"></i> Panel
+    </a>
+    <?php
+      $headerActionsHtml = (string) ob_get_clean();
+      $headerBadgeIcon = 'users';
+      $headerBadgeText = 'Leads · Contacto';
+      $headerBadgeClass = 'bg-emerald-100 text-emerald-800';
+      $headerTitleIcon = 'inbox';
+      $headerTitleIconClass = 'h-7 w-7 text-emerald-700';
+      $headerTitle = 'Formulario de Contacto';
+      $headerSubtitle = 'Total: ' . (int) $total . ' registros';
+      require __DIR__ . '/partials/page-header.php';
+    ?>
 
     <?php if ($dbError !== ''): ?>
       <section class="mt-6 rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">

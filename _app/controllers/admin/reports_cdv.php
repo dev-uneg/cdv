@@ -3,11 +3,19 @@ declare(strict_types=1);
 
 session_start();
 require __DIR__ . '/../../helpers/admin_auth.php';
+require __DIR__ . '/../../helpers/admin_async.php';
 require __DIR__ . '/../../helpers/leads_db.php';
 
 admin_require_auth();
 
 $base = admin_base_path();
+
+if (!admin_is_async_request()) {
+    $pageTitle = 'Reporte CDV | Performance';
+    require __DIR__ . '/../../pages/admin/partials/async-shell.php';
+    exit;
+}
+
 $dbError = '';
 
 $tz = new DateTimeZone('America/Mexico_City');
@@ -251,4 +259,7 @@ try {
     $dbError = 'No se pudo construir el reporte con datos de la base de datos.';
 }
 
+ob_start();
 require __DIR__ . '/../../pages/admin/reports/cdv-mensual.php';
+$fullPageHtml = (string) ob_get_clean();
+echo admin_extract_body_html($fullPageHtml);

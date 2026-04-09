@@ -281,6 +281,9 @@ function contacto_db_insert(array $data): ?int
         if ($pagePathRaw !== '') {
             $pagePathRaw = substr($pagePathRaw, 0, 255);
         }
+        if ($pagePathRaw !== '' && page_path_is_dev_noise($pagePathRaw)) {
+            $pagePathRaw = '';
+        }
         $pagePath = $pagePathRaw !== '' ? $pagePathRaw : null;
 
         $stmt = $pdo->prepare('INSERT INTO contacto_leads (
@@ -390,6 +393,9 @@ function whatsapp_click_db_insert(array $data): ?int
         $pagePath = trim((string) ($data['page_path'] ?? ''));
         if ($pagePath !== '' && strpos($pagePath, '/') !== 0) {
             $pagePath = '/' . ltrim($pagePath, '/');
+        }
+        if ($pagePath !== '' && page_path_is_dev_noise($pagePath)) {
+            return null;
         }
         $targetUrl = trim((string) ($data['target_url'] ?? ''));
         $deviceType = trim((string) ($data['device_type'] ?? ''));
@@ -505,6 +511,24 @@ function engagement_normalize_page_path(?string $value): string
     return substr($pagePath, 0, 255);
 }
 
+function page_path_is_dev_noise(?string $value): bool
+{
+    $path = engagement_normalize_page_path((string) $value);
+    $lower = strtolower($path);
+
+    if (str_starts_with($lower, '/cdv/')) {
+        return true;
+    }
+    if (str_contains($lower, '/home-des')) {
+        return true;
+    }
+    if (str_contains($lower, '/page_des/')) {
+        return true;
+    }
+
+    return false;
+}
+
 function engagement_hash_nullable(?string $value): ?string
 {
     $raw = trim((string) $value);
@@ -601,6 +625,9 @@ function engagement_event_db_insert(array $data): ?int
         }
 
         $pagePath = engagement_normalize_page_path((string) ($data['page_path'] ?? '/'));
+        if (page_path_is_dev_noise($pagePath)) {
+            return null;
+        }
         if (preg_match('~^/[A-Za-z0-9/_\\-\\.]*$~', $pagePath) !== 1) {
             return null;
         }
@@ -684,6 +711,9 @@ function engagement_rebuild_daily_range(string $fromDay, string $toDay): void
             FROM web_engagement_events
             WHERE created_day BETWEEN :from_day AND :to_day
               AND is_bot = 0
+              AND page_path NOT LIKE '/cdv/%'
+              AND page_path NOT LIKE '%/home-des%'
+              AND page_path NOT LIKE '%/page_des/%'
             GROUP BY created_day, page_path"
         );
         $stmtInsert->execute([

@@ -3,11 +3,19 @@ declare(strict_types=1);
 
 session_start();
 require __DIR__ . '/../../helpers/admin_auth.php';
+require __DIR__ . '/../../helpers/admin_async.php';
 require __DIR__ . '/../../helpers/leads_db.php';
 
 admin_require_auth();
 
 $base = admin_base_path();
+
+if (!admin_is_async_request()) {
+    $pageTitle = 'Reportes | CDV';
+    require __DIR__ . '/../../pages/admin/partials/async-shell.php';
+    exit;
+}
+
 $dbError = '';
 $rows = [];
 $tz = new DateTimeZone('America/Mexico_City');
@@ -29,6 +37,9 @@ try {
             DATE_FORMAT(day_key, '%Y-%m') AS ym,
             SUM(page_views) AS page_views_total
          FROM web_engagement_daily
+         WHERE page_path NOT LIKE '/cdv/%'
+           AND page_path NOT LIKE '%/home-des%'
+           AND page_path NOT LIKE '%/page_des/%'
          GROUP BY ym"
     )->fetchAll(PDO::FETCH_ASSOC);
     $engagementByYm = [];
@@ -98,4 +109,7 @@ try {
     $dbError = 'No se pudo cargar el listado de reportes.';
 }
 
+ob_start();
 require __DIR__ . '/../../pages/admin/reports/index.php';
+$fullPageHtml = (string) ob_get_clean();
+echo admin_extract_body_html($fullPageHtml);

@@ -9,27 +9,22 @@ declare(strict_types=1);
   <title>Incidente WhatsApp Tracking | 07 Abril 2026</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
-  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
+  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
 </head>
-<body class="min-h-screen bg-slate-100 text-slate-900">
-  <main class="mx-auto w-full max-w-7xl px-4 py-10">
-    <section class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-      <div class="flex flex-wrap items-start justify-between gap-4">
-        <div>
-          <p class="inline-flex items-center gap-2 rounded-full bg-rose-100 px-3 py-1 text-xs font-semibold text-rose-800">
-            <i data-lucide="shield-alert" class="h-3.5 w-3.5"></i>
-            Reporte Estatico de Incidencia
-          </p>
-          <h1 class="mt-3 text-3xl font-semibold text-slate-900">Incidente de Tráfico Malicioso en Endpoint de WhatsApp</h1>
-          <p class="mt-2 text-sm text-slate-600">Fecha del incidente: martes 07 de abril de 2026.</p>
-          <p class="mt-1 text-sm text-slate-600">Este documento es estatico y no consulta base de datos en tiempo real.</p>
-        </div>
-        <a href="<?php echo $base; ?>/admin/attacks/report-fecha" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100">
-          <i data-lucide="arrow-left" class="h-4 w-4"></i>
-          Volver a reportes
-        </a>
-      </div>
-    </section>
+<body class="min-h-screen bg-slate-50 text-slate-900">
+  <?php require __DIR__ . '/../partials/sidebar.php'; ?>
+  <main class="w-full px-4 py-10 lg:pl-[17rem] lg:pr-6">
+    <?php
+      $headerBadgeIcon = 'shield-alert';
+      $headerBadgeText = 'Reporte Estático de Incidencia';
+      $headerBadgeClass = 'bg-rose-100 text-rose-800';
+      $headerTitleIcon = 'triangle-alert';
+      $headerTitleIconClass = 'h-7 w-7 text-rose-700';
+      $headerTitle = 'Incidente de Tráfico Malicioso en Endpoint de WhatsApp';
+      $headerSubtitle = 'Fecha del incidente: martes 07 de abril de 2026. Este documento es estático y no consulta base de datos en tiempo real.';
+      $headerActionsHtml = '<a href="' . htmlspecialchars($base, ENT_QUOTES, 'UTF-8') . '/admin/attacks/report-fecha" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"><i data-lucide="arrow-left" class="h-4 w-4"></i>Volver a reportes</a>';
+      require __DIR__ . '/../partials/page-header.php';
+    ?>
 
     <section class="mt-6 grid grid-cols-1 gap-6 xl:grid-cols-3">
       <article class="xl:col-span-2 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">

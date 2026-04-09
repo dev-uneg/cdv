@@ -11,27 +11,22 @@ $base = $base === '.' ? '' : $base;
   <title>Pipedrive Owner IDs | CDV Admin</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
-  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
+  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
-  <main class="mx-auto w-full max-w-6xl px-4 py-10">
-    <section class="flex flex-wrap items-center justify-between gap-4">
-      <div>
-        <p class="text-xs font-semibold uppercase tracking-wide text-slate-500">Integraciones</p>
-        <h1 class="mt-1 text-3xl font-semibold text-slate-900">Pipedrive Owner IDs</h1>
-        <p class="mt-2 text-sm text-slate-600">Consulta usuarios activos de Pipedrive para saber qué <code>owner_id</code> usar al crear leads.</p>
-      </div>
-      <div class="flex items-center gap-2">
-        <a href="<?php echo htmlspecialchars((string) $base, ENT_QUOTES, 'UTF-8'); ?>/admin/panel" class="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:border-slate-300">
-          <i data-lucide="layout-grid" class="h-4 w-4"></i>
-          Panel
-        </a>
-        <button id="reloadBtn" type="button" class="inline-flex items-center gap-2 rounded-lg bg-emerald-700 px-4 py-2 text-sm font-semibold text-white hover:bg-emerald-800">
-          <i data-lucide="refresh-cw" class="h-4 w-4"></i>
-          Cargar usuarios
-        </button>
-      </div>
-    </section>
+  <?php require __DIR__ . '/partials/sidebar.php'; ?>
+  <main class="w-full px-4 py-10 lg:pl-[17rem] lg:pr-6">
+    <?php
+      $headerBadgeIcon = 'plug-zap';
+      $headerBadgeText = 'Integraciones · CRM';
+      $headerBadgeClass = 'bg-indigo-100 text-indigo-800';
+      $headerTitleIcon = 'id-card';
+      $headerTitleIconClass = 'h-7 w-7 text-indigo-700';
+      $headerTitle = 'Pipedrive Owner IDs';
+      $headerSubtitleHtml = 'Consulta usuarios activos de Pipedrive para saber qué <code>owner_id</code> usar al crear leads.';
+      $headerActionsHtml = '<a href="' . htmlspecialchars((string) $base, ENT_QUOTES, 'UTF-8') . '/admin/panel" class="inline-flex items-center gap-2 rounded-lg border border-slate-300 bg-white px-3 py-2 text-sm font-semibold text-slate-700 hover:bg-slate-100"><i data-lucide="layout-grid" class="h-4 w-4"></i>Panel</a><button id="reloadBtn" type="button" class="inline-flex items-center gap-2 rounded-lg bg-indigo-700 px-4 py-2 text-sm font-semibold text-white hover:bg-indigo-800"><i data-lucide="refresh-cw" class="h-4 w-4"></i>Cargar usuarios</button>';
+      require __DIR__ . '/partials/page-header.php';
+    ?>
 
     <section class="mt-6 rounded-2xl border border-slate-200 bg-white p-4 shadow-sm">
       <p id="status" class="text-sm text-slate-600">Cargando usuarios de Pipedrive...</p>

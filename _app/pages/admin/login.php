@@ -11,7 +11,7 @@ $base = $base === '.' ? '' : $base;
   <title>Acceso Admin | CDV</title>
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/output.css">
   <link rel="stylesheet" href="<?php echo $base; ?>/_assets/admin-fonts.css">
-  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg"></script>
+  <script defer src="<?php echo $base; ?>/_assets/lucide-loader.js?v=2" data-lucide-sprite="<?php echo $base; ?>/_assets/lucide-sprite.svg?v=20260409"></script>
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900">
   <main class="mx-auto flex min-h-screen max-w-5xl items-center justify-center px-4 py-10">

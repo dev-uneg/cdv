@@ -3,11 +3,19 @@ declare(strict_types=1);
 
 session_start();
 require __DIR__ . '/../../helpers/admin_auth.php';
+require __DIR__ . '/../../helpers/admin_async.php';
 require __DIR__ . '/../../helpers/leads_db.php';
 
 admin_require_auth();
 
 $base = admin_base_path();
+
+if (!admin_is_async_request()) {
+    $pageTitle = 'Reporte Engagement | CDV';
+    require __DIR__ . '/../../pages/admin/partials/async-shell.php';
+    exit;
+}
+
 $dbError = '';
 
 $tz = new DateTimeZone('America/Mexico_City');
@@ -48,7 +56,7 @@ $topPages = [];
 try {
     $pdo = leads_db();
     engagement_rebuild_daily_range($monthStartDate, $monthEndDate);
-    $excludeDevPagesWhere = "AND page_path NOT LIKE '/home-des%' AND page_path NOT LIKE '%/page_des/%'";
+    $excludeDevPagesWhere = "AND page_path NOT LIKE '/cdv/%' AND page_path NOT LIKE '%/home-des%' AND page_path NOT LIKE '%/page_des/%'";
 
     $summaryStmt = $pdo->prepare(
         'SELECT
@@ -142,4 +150,7 @@ try {
     $dbError = 'No se pudo construir el reporte de engagement.';
 }
 
+ob_start();
 require __DIR__ . '/../../pages/admin/reports/engagement-mensual.php';
+$fullPageHtml = (string) ob_get_clean();
+echo admin_extract_body_html($fullPageHtml);

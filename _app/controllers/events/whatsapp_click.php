@@ -113,6 +113,10 @@ if (!$isSourceTrusted || !$isPagePathValid || !$isTargetAllowed || $isPayloadSus
     http_response_code(204);
     exit;
 }
+if (page_path_is_dev_noise($pagePath)) {
+    http_response_code(204);
+    exit;
+}
 
 if (whatsapp_click_is_rate_limited($ip, 60, 60)) {
     http_response_code(429);
