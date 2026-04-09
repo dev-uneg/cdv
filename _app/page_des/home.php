@@ -533,7 +533,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <div class="fixed inset-0 z-[80] invisible pointer-events-none" id="desktopMenuSidebar" aria-hidden="true">
     <button class="absolute inset-0 bg-slate-950/35 opacity-0 backdrop-blur-sm transition duration-300" type="button" id="menuBackdrop" aria-label="Cerrar menu"></button>
-    <aside class="absolute right-0 top-0 flex h-full w-[min(32vw,420px)] min-w-[320px] translate-x-full flex-col gap-5 border-l border-white/20 bg-slate-900/65 px-6 py-6 backdrop-blur-2xl transition duration-300" id="menuPanel" aria-label="Menu principal">
+    <aside class="absolute right-0 top-0 flex h-full w-[min(32vw,420px)] min-w-[320px] translate-x-full flex-col gap-5 border-l border-white/20 px-6 py-6 backdrop-blur-2xl transition duration-300" id="menuPanel" aria-label="Menu principal">
       <div class="flex items-center justify-between border-b border-white/20 pb-4">
         <a class="text-[12px] uppercase tracking-[0.2em] text-slate-300 transition hover:text-white" href="<?= htmlspecialchars($baseUrl, ENT_QUOTES, 'UTF-8') ?>/contacto/">Admisiones</a>
         <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-white/10" type="button" id="menuCloseBtn" aria-label="Cerrar menu">
