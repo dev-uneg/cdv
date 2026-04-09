@@ -34,13 +34,15 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
   <link rel="icon" type="image/png" href="<?= $baseUrl ?>/_imgs/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bellefair&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Questrial&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= $baseUrl ?>/_assets/output.css" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script
     defer
     src="<?= $baseUrl ?>/_assets/lucide-loader.js?v=<?= htmlspecialchars($lucideLoaderVersion, ENT_QUOTES, 'UTF-8') ?>"
     data-lucide-sprite="<?= htmlspecialchars($baseUrl . '/_assets/lucide-sprite.svg?v=' . $lucideSpriteVersion, ENT_QUOTES, 'UTF-8') ?>"
   ></script>
+  <script defer src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <style>
     html,
     body {
@@ -66,7 +68,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
       padding-bottom: 0.1em;
     }
     .oferta-title-chewy {
-      font-family: "Bellefair", serif;
+      font-family: "Chewy", cursive;
       letter-spacing: 0.01em;
       line-height: 1.08;
       font-weight: 400;
@@ -179,13 +181,13 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 </head>
 <body class="min-h-screen bg-slate-50 text-slate-900 flex flex-col">
 <main class="flex-1">
-  <section class="relative h-screen w-full overflow-hidden">
+  <section class="relative h-screen w-full overflow-hidden" data-aos="zoom-out" data-aos-duration="900">
     <video class="hero-video-filter absolute inset-0 h-full w-full object-cover" autoplay muted loop playsinline>
       <source src="<?= htmlspecialchars($heroVideoSrc, ENT_QUOTES, 'UTF-8') ?>" type="video/mp4">
     </video>
     <div class="hero-overlay-soft absolute inset-0"></div>
 
-    <header class="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-9 pt-6">
+    <header class="absolute inset-x-0 top-0 z-30 flex items-start justify-between px-9 pt-6" data-aos="fade-down" data-aos-delay="150">
       <div class="pointer-events-none absolute left-1/2 top-6 -translate-x-1/2">
         <a class="pointer-events-auto" href="<?= htmlspecialchars($baseUrl, ENT_QUOTES, 'UTF-8') ?>/">
           <img class="h-auto w-[164px] max-w-[20vw]" src="<?= htmlspecialchars($logoSrc, ENT_QUOTES, 'UTF-8') ?>" alt="Colegio del Valle">
@@ -201,18 +203,18 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <section id="oferta" class="pt-20 pb-20 md:pt-24 md:pb-20">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <h2 class="oferta-title-base oferta-title-chewy oferta-c12">Colegio en Colonia del Valle</h2>
         <p class="mt-6 text-lg text-slate-600">Formacion bilingüe, valores y excelencia académica desde preescolar.</p>
       </div>
       <div class="mt-16 md:mt-20">
-        <div class="text-left">
+        <div class="text-left" data-aos="fade-right">
           <p class="text-[15px] font-semibold uppercase tracking-[0.25em] text-slate-500">Oferta educativa</p>
           <h3 class="oferta-title-chewy mt-2 text-2xl text-[#345995] md:text-4xl">Un recorrido académico por etapas</h3>
           <p class="mt-3 max-w-3xl text-[15px] text-slate-600 md:text-base">Cada nivel está diseñado para impulsar aprendizaje, autonomía y crecimiento integral.</p>
         </div>
         <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/kinder">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/kinder" data-aos="zoom-in-up" data-aos-delay="0">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/kinder-960.webp" alt="Kinder" loading="eager" fetchpriority="high" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -225,7 +227,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/pre-first">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/pre-first" data-aos="zoom-in-up" data-aos-delay="70">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/pre-first.webp" alt="Pre-First" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -238,7 +240,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/primaria">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/primaria" data-aos="zoom-in-up" data-aos-delay="140">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/primaria.webp" alt="Primaria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -251,7 +253,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/secundaria">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/secundaria" data-aos="zoom-in-up" data-aos-delay="210">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/secundaria.webp" alt="Secundaria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -264,7 +266,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/preparatoria">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/preparatoria" data-aos="zoom-in-up" data-aos-delay="280">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/preparatoria.webp" alt="Preparatoria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -281,8 +283,8 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
     </div>
   </section>
 
-  <section class="py-16 md:py-20 bg-[#03CEA4] text-white">
-    <div class="max-w-[1400px] mx-auto px-6 text-center">
+  <section class="py-16 md:py-20 bg-[#03CEA4] text-white" data-aos="fade-up">
+    <div class="max-w-[1400px] mx-auto px-6 text-center" data-aos="fade-up" data-aos-delay="80">
       <h2 class="oferta-title-chewy text-3xl md:text-5xl tracking-tight">
         Nos preparamos todos los días para distinguirnos entre los mejores colegios privados en CDMX
       </h2>
@@ -295,28 +297,36 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <section id="diferenciadores" class="py-20 md:py-24 bg-slate-50">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <p class="text-[12px] uppercase tracking-[0.28em] text-slate-500">Lo que nos diferencia</p>
         <h2 class="oferta-title-chewy mt-3 text-3xl md:text-4xl tracking-tight text-[#E40066]">Una formación completa para cada etapa</h2>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <i data-lucide="languages" class="h-7 w-7 text-cyan-700"></i>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="0">
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#345995] bg-[#345995]/15 text-[#345995]">
+            <i data-lucide="languages" class="h-7 w-7"></i>
+          </span>
           <h3 class="mt-4 text-xl font-semibold text-slate-900">Modelo bilingüe</h3>
           <p class="mt-3 text-[15px] leading-relaxed text-slate-600">Inmersión progresiva en inglés para fortalecer comunicación, comprensión y pensamiento global.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <i data-lucide="heart-handshake" class="h-7 w-7 text-cyan-700"></i>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="80">
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#E40066] bg-[#E40066]/15 text-[#E40066]">
+            <i data-lucide="heart-handshake" class="h-7 w-7"></i>
+          </span>
           <h3 class="mt-4 text-xl font-semibold text-slate-900">Acompañamiento cercano</h3>
           <p class="mt-3 text-[15px] leading-relaxed text-slate-600">Seguimiento académico y socioemocional con comunicación constante entre colegio y familia.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <i data-lucide="shield-check" class="h-7 w-7 text-cyan-700"></i>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="160">
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#03CEA4] bg-[#03CEA4]/15 text-[#03CEA4]">
+            <i data-lucide="shield-check" class="h-7 w-7"></i>
+          </span>
           <h3 class="mt-4 text-xl font-semibold text-slate-900">Entorno seguro</h3>
           <p class="mt-3 text-[15px] leading-relaxed text-slate-600">Protocolos, supervisión y cultura de respeto para una experiencia escolar confiable.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm">
-          <i data-lucide="brain-circuit" class="h-7 w-7 text-cyan-700"></i>
+        <article class="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm" data-aos="fade-up" data-aos-delay="240">
+          <span class="inline-flex h-14 w-14 items-center justify-center rounded-full border-2 border-[#FB4D3D] bg-[#FB4D3D]/15 text-[#FB4D3D]">
+            <i data-lucide="brain-circuit" class="h-7 w-7"></i>
+          </span>
           <h3 class="mt-4 text-xl font-semibold text-slate-900">Innovación y tecnología</h3>
           <p class="mt-3 text-[15px] leading-relaxed text-slate-600">Aprendizaje activo con herramientas digitales y proyectos que preparan para el futuro.</p>
         </article>
@@ -327,32 +337,32 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
   <section id="admisiones-proceso" class="py-20 md:py-24 bg-white">
     <div class="max-w-[1400px] mx-auto px-6">
       <div class="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-        <div>
+        <div data-aos="fade-right">
           <p class="text-[12px] uppercase tracking-[0.28em] text-slate-500">Admisiones</p>
           <h2 class="oferta-title-chewy mt-3 text-3xl md:text-4xl tracking-tight text-[#03CEA4]">Proceso de inscripción en 4 pasos</h2>
         </div>
-        <a class="cta-pulse inline-flex w-fit items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-slate-800" href="<?= $baseUrl ?>/contacto/">
+        <a class="cta-pulse inline-flex w-fit items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-slate-800" href="<?= $baseUrl ?>/contacto/" data-aos="fade-left" data-aos-delay="120">
           <i data-lucide="arrow-right" class="h-4 w-4"></i>
           <span>Iniciar proceso</span>
         </a>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6" data-aos="fade-up" data-aos-delay="0">
           <p class="text-[15px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Paso 1</p>
           <h3 class="mt-3 text-lg font-semibold text-slate-900">Solicitud de informes</h3>
           <p class="mt-2 text-[15px] text-slate-600">Completa el formulario para conocer costos, horarios y disponibilidad.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6" data-aos="fade-up" data-aos-delay="80">
           <p class="text-[15px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Paso 2</p>
           <h3 class="mt-3 text-lg font-semibold text-slate-900">Entrevista y recorrido</h3>
           <p class="mt-2 text-[15px] text-slate-600">Agenda visita para conocer instalaciones, modelo educativo y equipo docente.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6" data-aos="fade-up" data-aos-delay="160">
           <p class="text-[15px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Paso 3</p>
           <h3 class="mt-3 text-lg font-semibold text-slate-900">Evaluación diagnóstica</h3>
           <p class="mt-2 text-[15px] text-slate-600">Aplicamos evaluación acorde al nivel para ubicar mejor al aspirante.</p>
         </article>
-        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6">
+        <article class="rounded-3xl border border-slate-200 bg-slate-50 p-6" data-aos="fade-up" data-aos-delay="240">
           <p class="text-[15px] font-semibold uppercase tracking-[0.2em] text-cyan-700">Paso 4</p>
           <h3 class="mt-3 text-lg font-semibold text-slate-900">Inscripción y bienvenida</h3>
           <p class="mt-2 text-[15px] text-slate-600">Entrega de documentos, confirmación de lugar e integración al ciclo escolar.</p>
@@ -363,27 +373,27 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <section id="logros" class="py-16 bg-[#FB4D3D] text-white">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <p class="text-[12px] uppercase tracking-[0.28em] text-white">Resultados que respaldan</p>
         <h2 class="oferta-title-chewy mt-3 text-4xl md:text-5xl tracking-tight">Logros y resultados de nuestra comunidad</h2>
       </div>
       <div class="mt-10 grid gap-5 sm:grid-cols-2 xl:grid-cols-4">
-        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center">
+        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center" data-aos="zoom-in" data-aos-delay="0">
           <i data-lucide="calendar-check-2" class="mx-auto mb-3 h-7 w-7 text-white/90"></i>
           <p class="text-3xl font-bold text-white">40+</p>
           <p class="mt-2 text-[12px] uppercase tracking-[0.2em] text-white/70">Años de trayectoria</p>
         </article>
-        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center">
+        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center" data-aos="zoom-in" data-aos-delay="80">
           <i data-lucide="languages" class="mx-auto mb-3 h-7 w-7 text-white/90"></i>
           <p class="text-3xl font-bold text-white">Bilingüe</p>
           <p class="mt-2 text-[12px] uppercase tracking-[0.2em] text-white/70">Formación desde etapas iniciales</p>
         </article>
-        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center">
+        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center" data-aos="zoom-in" data-aos-delay="160">
           <i data-lucide="graduation-cap" class="mx-auto mb-3 h-7 w-7 text-white/90"></i>
           <p class="text-3xl font-bold text-white">UNAM</p>
           <p class="mt-2 text-[12px] uppercase tracking-[0.2em] text-white/70">Clave 1172 en Preparatoria</p>
         </article>
-        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center">
+        <article class="rounded-3xl border border-white/15 bg-white/5 p-6 text-center" data-aos="zoom-in" data-aos-delay="240">
           <i data-lucide="sparkles" class="mx-auto mb-3 h-7 w-7 text-white/90"></i>
           <p class="text-3xl font-bold text-white">Integral</p>
           <p class="mt-2 text-[12px] uppercase tracking-[0.2em] text-white/70">Enfoque académico y socioemocional</p>
@@ -394,7 +404,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <section id="testimonios" class="py-16 md:py-20 bg-slate-50 overflow-hidden">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <p class="text-[12px] uppercase tracking-[0.28em] text-slate-500">Confianza de las familias</p>
         <h2 class="oferta-title-chewy mt-3 text-4xl md:text-5xl tracking-tight text-[#FB4D3D]">Testimonios de nuestra comunidad</h2>
         <p class="mt-3 text-[12px] uppercase tracking-[0.2em] text-slate-500">Historias reales de acompañamiento y crecimiento</p>
@@ -433,7 +443,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
           ],
         ];
       ?>
-      <div class="testimonial-marquee mt-10">
+      <div class="testimonial-marquee mt-10" data-aos="fade-up" data-aos-delay="120">
         <div class="testimonial-track gap-5">
           <?php for ($loop = 0; $loop < 2; $loop++): ?>
             <?php foreach ($testimonials as $item): ?>
@@ -469,29 +479,29 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
   <section id="comunidad" class="py-16 bg-[#EAC435] text-slate-900">
     <div class="max-w-[1400px] mx-auto px-6">
       <div class="flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
-        <div>
+        <div data-aos="fade-up">
           <p class="text-[12px] uppercase tracking-[0.3em] text-slate-900/70">Enlaces de interés</p>
           <h2 class="oferta-title-chewy mt-3 text-4xl md:text-5xl">Recursos para la comunidad</h2>
         </div>
       </div>
       <div class="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
-        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="<?= $baseUrl ?>/formas-de-pago">
+        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="<?= $baseUrl ?>/formas-de-pago" data-aos="fade-up" data-aos-delay="0">
           <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_13_ISEC_Forma-de-pago_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
           <p class="text-[12px] uppercase tracking-[0.2em] text-slate-900">Formas de pago</p>
         </a>
-        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://uneg.academic.lat/" target="_blank" rel="noopener">
+        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://uneg.academic.lat/" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="70">
           <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_14_ISEC_Portal_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
           <p class="text-[12px] uppercase tracking-[0.2em] text-slate-900">Portal escolar</p>
         </a>
-        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://login.microsoftonline.com/" target="_blank" rel="noopener">
+        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://login.microsoftonline.com/" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="140">
           <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_15_ISEC_Office-365_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
           <p class="text-[12px] uppercase tracking-[0.2em] text-slate-900">Office 365</p>
         </a>
-        <div class="rounded-2xl bg-black/5 p-5 text-center">
+        <div class="rounded-2xl bg-black/5 p-5 text-center" data-aos="fade-up" data-aos-delay="210">
           <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_16_ISEC_Mesa-ayuda_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
           <p class="text-[12px] uppercase tracking-[0.2em] text-slate-900">Mesa de ayuda</p>
         </div>
-        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener">
+        <a class="rounded-2xl bg-black/5 p-5 text-center transition hover:bg-black/10" href="https://impreweb.ddns.net:48110/PMPWeb/" target="_blank" rel="noopener" data-aos="fade-up" data-aos-delay="280">
           <img class="mx-auto mb-3 h-24 w-24 object-contain" src="<?= $baseUrl ?>/_imgs/home/imgi_17_ISEC_Kiosko_172x154.webp" alt="" aria-hidden="true" loading="lazy" />
           <p class="text-[12px] uppercase tracking-[0.2em] text-slate-900">Kiosko</p>
         </a>
@@ -501,7 +511,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
 
   <section id="noticias" class="py-16 bg-white">
     <div class="max-w-[1400px] mx-auto px-6">
-      <div class="text-center">
+      <div class="text-center" data-aos="fade-up">
         <p class="text-[12px] uppercase tracking-[0.3em] text-slate-500">Blog escolar</p>
         <h2 class="oferta-title-chewy mt-3 text-4xl md:text-5xl tracking-tight text-[#345995]">Ultimas noticias</h2>
         <p class="mt-3 text-slate-600">Ideas y recursos actuales para la comunidad educativa.</p>
@@ -513,7 +523,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
       ?>
       <div class="mt-10 grid gap-6 md:grid-cols-3">
         <?php foreach ($newsPosts as $post): ?>
-          <article class="rounded-3xl border border-slate-200 overflow-hidden bg-white">
+          <article class="rounded-3xl border border-slate-200 overflow-hidden bg-white" data-aos="fade-up">
             <div class="aspect-[4/3] bg-slate-100 overflow-hidden">
               <img class="h-full w-full object-cover" src="<?= $baseUrl ?>/_imgs/noticias/<?= htmlspecialchars($post['hero']) ?>" alt="<?= htmlspecialchars($post['title']) ?>" loading="lazy" />
             </div>
@@ -657,6 +667,18 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
         }
       });
     })();
+  </script>
+  <script>
+    window.addEventListener('load', () => {
+      if (!window.AOS) return;
+      window.AOS.init({
+        duration: 800,
+        easing: 'ease-out-cubic',
+        once: false,
+        mirror: true,
+        offset: 60,
+      });
+    });
   </script>
 
 <?php require __DIR__ . '/partials/footer.php'; ?>
