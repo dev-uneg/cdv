@@ -136,16 +136,26 @@ if ($errorMessage === '') {
       var working = selected && selected.value === 'si';
 
       empleoInputs.forEach(function (input) {
-        input.required = !!working;
-        if (!working && input.value.trim() === '') {
-          input.value = 'No aplica';
+        if (working) {
+          input.disabled = false;
+          input.required = true;
+          if (input.value.trim().toLowerCase() === 'no aplica') {
+            input.value = '';
+          }
+          return;
         }
+
+        input.value = 'No aplica';
+        input.required = false;
+        input.disabled = true;
       });
     }
 
     radios.forEach(function (radio) {
       radio.addEventListener('change', syncTrabajoState);
     });
+
+    syncTrabajoState();
   })();
 </script>
 
