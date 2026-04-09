@@ -48,6 +48,7 @@ $topPages = [];
 try {
     $pdo = leads_db();
     engagement_rebuild_daily_range($monthStartDate, $monthEndDate);
+    $excludeDevPagesWhere = "AND page_path NOT LIKE '/home-des%' AND page_path NOT LIKE '%/page_des/%'";
 
     $summaryStmt = $pdo->prepare(
         'SELECT
@@ -59,7 +60,8 @@ try {
             COALESCE(SUM(time_on_page_samples), 0) AS time_samples,
             COUNT(DISTINCT page_path) AS pages_tracked
          FROM web_engagement_daily
-         WHERE day_key BETWEEN :from_day AND :to_day'
+         WHERE day_key BETWEEN :from_day AND :to_day
+           ' . $excludeDevPagesWhere
     );
     $summaryStmt->execute([
         ':from_day' => $monthStartDate,
@@ -81,6 +83,7 @@ try {
             SUM(engaged_10s) AS engaged_10s
          FROM web_engagement_daily
          WHERE day_key BETWEEN :from_day AND :to_day
+           ' . $excludeDevPagesWhere . '
          GROUP BY day_key
          ORDER BY day_key ASC'
     );
@@ -114,6 +117,7 @@ try {
             ROUND(AVG(NULLIF(avg_time_on_page_ms, 0))) AS avg_time_ms
          FROM web_engagement_daily
          WHERE day_key BETWEEN :from_day AND :to_day
+           ' . $excludeDevPagesWhere . '
          GROUP BY page_path
          ORDER BY page_views DESC
          LIMIT 12'
