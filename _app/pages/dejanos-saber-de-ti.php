@@ -28,7 +28,7 @@ if ($errorMessage === '') {
         Por favor, ayúdanos con tu registro.
       </p>
       <p class="mt-3 text-sm font-semibold uppercase tracking-[0.2em] text-slate-500">Egresados CDV</p>
-      <p class="mt-2 text-sm text-slate-500">Los campos con * son obligatorios.</p>
+      <p class="mt-2 text-sm text-slate-500">Los campos con <span class="font-semibold text-rose-600">*</span> son obligatorios.</p>
     </div>
 
     <form class="mt-10 rounded-[32px] border border-slate-200 bg-white p-8 shadow-sm" action="<?= $baseUrl ?>/api/egresados-registro" method="post">
@@ -40,26 +40,26 @@ if ($errorMessage === '') {
 
       <div class="grid gap-6 md:grid-cols-3">
         <label class="text-sm text-slate-600">
-          Nombre *
+          Nombre <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="nombre" required />
         </label>
         <label class="text-sm text-slate-600">
-          Apellido Paterno *
+          Apellido Paterno <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="apellido_paterno" required />
         </label>
         <label class="text-sm text-slate-600">
-          Apellido Materno *
+          Apellido Materno <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="apellido_materno" required />
         </label>
       </div>
 
       <div class="mt-6 grid gap-6 md:grid-cols-2">
         <label class="text-sm text-slate-600">
-          Generación *
+          Generación <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="generacion" placeholder="Ej. 2012-2016" required />
         </label>
         <label class="text-sm text-slate-600">
-          Nivel de egreso *
+          Nivel de egreso <span class="font-semibold text-rose-600">*</span>
           <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="nivel_egreso" required>
             <option value="" selected>Por favor, seleccione una opción</option>
             <option value="Licenciatura">Licenciatura</option>
@@ -74,33 +74,33 @@ if ($errorMessage === '') {
 
       <div class="mt-6 grid gap-6 md:grid-cols-2">
         <label class="text-sm text-slate-600">
-          Año de ingreso *
+          Año de ingreso <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="number" min="1950" max="2100" name="anio_ingreso" required />
         </label>
         <label class="text-sm text-slate-600">
-          Año de egreso *
+          Año de egreso <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="number" min="1950" max="2100" name="anio_egreso" required />
         </label>
       </div>
 
       <div class="mt-6 grid gap-6 md:grid-cols-2">
         <label class="text-sm text-slate-600">
-          Carrera de egreso *
+          Carrera de egreso <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="carrera_egreso" required />
         </label>
         <label class="text-sm text-slate-600">
-          Teléfono *
+          Teléfono <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="telefono" required />
         </label>
       </div>
 
       <div class="mt-6 grid gap-6 md:grid-cols-2">
         <label class="text-sm text-slate-600">
-          Correo electrónico *
+          Correo electrónico <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="email" name="email" required />
         </label>
         <fieldset class="text-sm text-slate-600">
-          <legend class="mb-2">¿Actualmente estás trabajando? *</legend>
+          <legend class="mb-2">¿Actualmente estás trabajando? <span class="font-semibold text-rose-600">*</span></legend>
           <div class="flex flex-wrap items-center gap-4">
             <label class="inline-flex items-center gap-2">
               <input type="radio" name="trabaja_actualmente" value="si" required>
@@ -116,11 +116,11 @@ if ($errorMessage === '') {
 
       <div class="mt-6 grid gap-6 md:grid-cols-2" data-empleo-fields>
         <label class="text-sm text-slate-600">
-          Empresa *
+          Empresa <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="empresa" data-empleo-input />
         </label>
         <label class="text-sm text-slate-600">
-          Cargo actual *
+          Cargo actual <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="cargo_actual" data-empleo-input />
         </label>
       </div>
