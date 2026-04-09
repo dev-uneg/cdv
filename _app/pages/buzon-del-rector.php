@@ -53,11 +53,11 @@ if ($errorMessage === '') {
         </label>
         <label class="text-sm text-slate-600">
           Telefono de contacto
-          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="teléfono" placeholder="55 0000 0000" />
+          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="telefono" placeholder="55 0000 0000" />
         </label>
         <label class="text-sm text-slate-600">
           Relacion con el colegio
-          <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="relación" required>
+          <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="relacion" required>
             <option value="" selected>Selecciona una opción</option>
             <option value="madre-padre">Madre o padre de familia</option>
             <option value="alumno">Alumno(a)</option>

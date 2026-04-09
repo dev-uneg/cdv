@@ -90,7 +90,7 @@ if ($errorMessage === '') {
             <option value="Pre First">Pre First</option>
             <option value="Primaria">Primaria</option>
             <option value="Secundaria">Secundaria</option>
-            <option value="Prepa">Prepa</option>
+            <option value="Preparatoria">Preparatoria</option>
           </select>
           <i class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-lg text-slate-500" data-lucide="chevron-down"></i>
         </div>

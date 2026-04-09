@@ -18,7 +18,7 @@ $sourcePage = $sourcePage ?? 'Sitio web CDV';
       <option value="Pre First" <?= $defaultInterest === 'Pre First' ? 'selected' : '' ?>>Pre First</option>
       <option value="Primaria" <?= $defaultInterest === 'Primaria' ? 'selected' : '' ?>>Primaria</option>
       <option value="Secundaria" <?= $defaultInterest === 'Secundaria' ? 'selected' : '' ?>>Secundaria</option>
-      <option value="Prepa" <?= $defaultInterest === 'Prepa' ? 'selected' : '' ?>>Prepa</option>
+      <option value="Preparatoria" <?= in_array($defaultInterest, ['Preparatoria', 'Prepa', 'prepa'], true) ? 'selected' : '' ?>>Preparatoria</option>
     </select>
     <i class="pointer-events-none absolute right-4 top-1/2 -translate-y-1/2 text-lg text-slate-500" data-lucide="chevron-down"></i>
   </div>

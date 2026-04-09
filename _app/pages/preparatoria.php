@@ -3,7 +3,7 @@ $pageTitle = 'Preparatoria | Colegio del Valle';
 $pageDescription = 'Preparatoria en Colegio del Valle: clave UNAM, excelencia académica y orientacion vocacional.';
 $activePage = 'preparatoria';
 require __DIR__ . '/partials/header.php';
-$defaultInterest = 'Prepa';
+$defaultInterest = 'Preparatoria';
 $sourcePage = 'Pagina Preparatoria CDV';
 $turnstileConfig = [];
 $turnstileConfigPath = __DIR__ . '/../config/turnstile.local.php';

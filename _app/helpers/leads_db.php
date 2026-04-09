@@ -264,6 +264,21 @@ function leads_db_datetime($value): string
     return date('Y-m-d H:i:s', $timestamp);
 }
 
+function leads_interest_normalize(?string $value): string
+{
+    $raw = trim((string) $value);
+    if ($raw === '') {
+        return '';
+    }
+
+    $normalized = mb_strtolower($raw, 'UTF-8');
+    if ($normalized === 'prepa' || $normalized === 'preparatoria') {
+        return 'Preparatoria';
+    }
+
+    return $raw;
+}
+
 function contacto_db_insert(array $data): ?int
 {
     try {
@@ -297,7 +312,7 @@ function contacto_db_insert(array $data): ?int
             ':full_name' => $data['full_name'] ?? '',
             ':email' => $data['email'] ?? '',
             ':phone' => $data['phone'] ?? '',
-            ':interest' => $data['interest'] ?? '',
+            ':interest' => leads_interest_normalize((string) ($data['interest'] ?? '')),
             ':source' => $data['source'] ?? null,
             ':message' => $data['message'] ?? null,
             ':channel' => $data['channel'] ?? null,

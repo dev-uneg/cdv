@@ -20,6 +20,31 @@ function buzon_clean(string $value): string
     return trim(str_replace(["\r", "\n"], ' ', $value));
 }
 
+function buzon_debug_missing_fields(array $input): array
+{
+    $missing = [];
+    if (buzon_clean((string) ($input['nombre'] ?? '')) === '') {
+        $missing[] = 'nombre';
+    }
+    if (trim((string) ($input['email'] ?? '')) === '') {
+        $missing[] = 'email';
+    }
+    if (buzon_clean((string) (($input['relacion'] ?? $input['relación'] ?? ''))) === '') {
+        $missing[] = 'relacion';
+    }
+    if (buzon_clean((string) ($input['asunto'] ?? '')) === '') {
+        $missing[] = 'asunto';
+    }
+    if (trim((string) ($input['mensaje'] ?? '')) === '') {
+        $missing[] = 'mensaje';
+    }
+    if (!isset($input['aviso'])) {
+        $missing[] = 'aviso';
+    }
+
+    return $missing;
+}
+
 function buzon_turnstile_verify(string $secret, string $response, string $remoteIp = ''): array
 {
     $endpoint = 'https://challenges.cloudflare.com/turnstile/v0/siteverify';
@@ -102,14 +127,20 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
 
 $nombre = buzon_clean((string) ($_POST['nombre'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
-$telefono = buzon_clean((string) ($_POST['telefono'] ?? ''));
-$relacion = buzon_clean((string) ($_POST['relacion'] ?? ''));
+$telefono = buzon_clean((string) (($_POST['telefono'] ?? $_POST['teléfono'] ?? '')));
+$relacion = buzon_clean((string) (($_POST['relacion'] ?? $_POST['relación'] ?? '')));
 $asunto = buzon_clean((string) ($_POST['asunto'] ?? ''));
 $mensaje = trim((string) ($_POST['mensaje'] ?? ''));
 $avisoAceptado = isset($_POST['aviso']);
 
 if ($nombre === '' || $email === '' || $relacion === '' || $asunto === '' || $mensaje === '' || !$avisoAceptado) {
-    buzon_redirect(false, 'Faltan campos obligatorios.');
+    $missingFields = buzon_debug_missing_fields($_POST);
+    $debugMessage = 'Faltan campos obligatorios';
+    if ($missingFields !== []) {
+        $debugMessage .= ' [debug: ' . implode(', ', $missingFields) . ']';
+    }
+    $debugMessage .= '.';
+    buzon_redirect(false, $debugMessage);
 }
 
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {

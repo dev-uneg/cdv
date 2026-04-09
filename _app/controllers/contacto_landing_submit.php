@@ -128,7 +128,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
 $fullName = trim((string) ($_POST['full_name'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $phone = trim((string) ($_POST['phone'] ?? ''));
-$interest = trim((string) ($_POST['interest'] ?? ''));
+$interest = leads_interest_normalize(trim((string) ($_POST['interest'] ?? '')));
 $source = trim((string) ($_POST['source'] ?? ''));
 $message = trim((string) ($_POST['message'] ?? ''));
 $channel = trim((string) ($_POST['channel'] ?? 'Sitio web'));
