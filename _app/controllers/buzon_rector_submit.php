@@ -96,29 +96,44 @@ function buzon_webhook_post(string $url, array $payload): array
         CURLOPT_POST => true,
         CURLOPT_HTTPHEADER => ['Content-Type: application/json', 'Accept: application/json'],
         CURLOPT_POSTFIELDS => json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES),
-        CURLOPT_TIMEOUT => 12,
+        CURLOPT_CONNECTTIMEOUT => 8,
+        CURLOPT_TIMEOUT => 30,
     ]);
 
     $raw = curl_exec($ch);
     if ($raw === false) {
+        $errno = curl_errno($ch);
         $error = curl_error($ch);
         curl_close($ch);
-        return ['ok' => false, 'error' => 'cURL: ' . buzon_clean($error)];
+        return [
+            'ok' => false,
+            'error' => 'cURL: ' . buzon_clean($error),
+            'phase' => 'webhook_http',
+            'retryable_timeout' => $errno === 28,
+        ];
     }
 
     $status = (int) curl_getinfo($ch, CURLINFO_HTTP_CODE);
     curl_close($ch);
 
     if ($status < 200 || $status >= 300) {
-        return ['ok' => false, 'error' => 'HTTP ' . $status . ' body=' . buzon_clean((string) $raw)];
+        return [
+            'ok' => false,
+            'error' => 'HTTP ' . $status . ' body=' . buzon_clean((string) $raw),
+            'phase' => 'webhook_http_status',
+        ];
     }
 
     $decoded = json_decode((string) $raw, true);
     if (is_array($decoded) && isset($decoded['ok']) && !$decoded['ok']) {
-        return ['ok' => false, 'error' => buzon_clean((string) ($decoded['error'] ?? 'Webhook retorno ok=false'))];
+        return [
+            'ok' => false,
+            'error' => buzon_clean((string) ($decoded['error'] ?? 'Webhook retorno ok=false')),
+            'phase' => (string) ($decoded['phase'] ?? 'relay_application'),
+        ];
     }
 
-    return ['ok' => true, 'error' => ''];
+    return ['ok' => true, 'error' => '', 'phase' => 'ok'];
 }
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -201,10 +216,15 @@ $payload = [
 ];
 
 $webhookResult = buzon_webhook_post($webhookUrl, $payload);
+if (!($webhookResult['ok'] ?? false) && !empty($webhookResult['retryable_timeout'])) {
+    usleep(400000); // 0.4s backoff for transient network timeout
+    $webhookResult = buzon_webhook_post($webhookUrl, $payload);
+}
 if (!($webhookResult['ok'] ?? false)) {
     $error = (string) ($webhookResult['error'] ?? 'Error desconocido en webhook');
+    $phase = (string) ($webhookResult['phase'] ?? 'unknown');
     error_log('[buzon_rector_submit] webhook failed: ' . $error);
-    buzon_redirect(false, 'No se pudo enviar el correo del buzon: ' . $error);
+    buzon_redirect(false, 'No se pudo enviar el correo del buzón [fase=' . $phase . ']: ' . $error);
 }
 
 buzon_redirect(true);

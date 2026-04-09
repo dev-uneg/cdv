@@ -1,6 +1,13 @@
 <?php
 declare(strict_types=1);
 
+/**
+ * Relay de correo del Buzón del Rector.
+ * Recibe POST, valida y envía email por SMTP.
+ * Subir en: /web/delvalle.qodexia.site/public_html/buzon-cdv-relay-mailer.php
+ * URL: https://delvalle.qodexia.site/buzon-cdv-relay-mailer.php
+ */
+
 header('Content-Type: application/json; charset=UTF-8');
 
 if (($_SERVER['REQUEST_METHOD'] ?? 'GET') !== 'POST') {
@@ -91,7 +98,7 @@ $recipients = [
 
 if ($smtpPassword === '' || $smtpPassword === 'PON_AQUI_TU_APP_PASSWORD') {
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => 'Configura smtpPassword en buzon-cdv-relay-mailer.php']);
+    echo json_encode(['ok' => false, 'phase' => 'relay_config', 'error' => 'Configura smtpPassword en buzon-cdv-relay-mailer.php']);
     exit;
 }
 
@@ -144,6 +151,8 @@ try {
         : \PHPMailer\PHPMailer\PHPMailer::ENCRYPTION_STARTTLS;
     $mail->Username = $smtpUsername;
     $mail->Password = $smtpPassword;
+    $mail->Timeout = 30;
+    $mail->SMTPKeepAlive = false;
     $mail->CharSet = 'UTF-8';
     $mail->setFrom($fromEmail, $fromName);
     $mail->addReplyTo($email, $nombre);
@@ -161,10 +170,10 @@ try {
     $mail->isHTML(true);
     $mail->send();
 
-    echo json_encode(['ok' => true]);
+    echo json_encode(['ok' => true, 'phase' => 'ok']);
     exit;
 } catch (\PHPMailer\PHPMailer\Exception $e) {
     http_response_code(500);
-    echo json_encode(['ok' => false, 'error' => $clean($e->getMessage())]);
+    echo json_encode(['ok' => false, 'phase' => 'smtp_send', 'error' => $clean($e->getMessage())]);
     exit;
 }
