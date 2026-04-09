@@ -187,10 +187,7 @@ function leads_db_init(PDO $pdo): void
         apellido_paterno VARCHAR(120) NOT NULL,
         apellido_materno VARCHAR(120) NOT NULL,
         generacion VARCHAR(80) NOT NULL,
-        anio_ingreso SMALLINT UNSIGNED NOT NULL,
-        anio_egreso SMALLINT UNSIGNED NOT NULL,
         nivel_egreso VARCHAR(120) NOT NULL,
-        carrera_egreso VARCHAR(190) NOT NULL,
         telefono VARCHAR(60) NOT NULL,
         email VARCHAR(190) NOT NULL,
         trabaja_actualmente TINYINT(1) NOT NULL DEFAULT 0,
@@ -283,6 +280,15 @@ function leads_db_init(PDO $pdo): void
     }
     if (!leads_db_index_exists($pdo, 'egresados_registros', 'egresados_registros_day_nivel_idx')) {
         $pdo->exec('CREATE INDEX egresados_registros_day_nivel_idx ON egresados_registros (created_day, nivel_egreso)');
+    }
+    if (leads_db_column_exists($pdo, 'egresados_registros', 'anio_ingreso')) {
+        $pdo->exec('ALTER TABLE egresados_registros DROP COLUMN anio_ingreso');
+    }
+    if (leads_db_column_exists($pdo, 'egresados_registros', 'anio_egreso')) {
+        $pdo->exec('ALTER TABLE egresados_registros DROP COLUMN anio_egreso');
+    }
+    if (leads_db_column_exists($pdo, 'egresados_registros', 'carrera_egreso')) {
+        $pdo->exec('ALTER TABLE egresados_registros DROP COLUMN carrera_egreso');
     }
 }
 
@@ -436,12 +442,10 @@ function egresados_db_insert(array $data): ?int
         $pdo = leads_db();
         $createdAt = leads_db_datetime($data['created_at'] ?? null);
         $stmt = $pdo->prepare('INSERT INTO egresados_registros (
-            nombre, apellido_paterno, apellido_materno, generacion, anio_ingreso, anio_egreso,
-            nivel_egreso, carrera_egreso, telefono, email, trabaja_actualmente, empresa, cargo_actual,
+            nombre, apellido_paterno, apellido_materno, generacion, nivel_egreso, telefono, email, trabaja_actualmente, empresa, cargo_actual,
             aviso_aceptado, ip, user_agent, created_at, created_day
         ) VALUES (
-            :nombre, :apellido_paterno, :apellido_materno, :generacion, :anio_ingreso, :anio_egreso,
-            :nivel_egreso, :carrera_egreso, :telefono, :email, :trabaja_actualmente, :empresa, :cargo_actual,
+            :nombre, :apellido_paterno, :apellido_materno, :generacion, :nivel_egreso, :telefono, :email, :trabaja_actualmente, :empresa, :cargo_actual,
             :aviso_aceptado, :ip, :user_agent, :created_at, :created_day
         )');
         $stmt->execute([
@@ -449,10 +453,7 @@ function egresados_db_insert(array $data): ?int
             ':apellido_paterno' => trim((string) ($data['apellido_paterno'] ?? '')),
             ':apellido_materno' => trim((string) ($data['apellido_materno'] ?? '')),
             ':generacion' => trim((string) ($data['generacion'] ?? '')),
-            ':anio_ingreso' => (int) ($data['anio_ingreso'] ?? 0),
-            ':anio_egreso' => (int) ($data['anio_egreso'] ?? 0),
             ':nivel_egreso' => trim((string) ($data['nivel_egreso'] ?? '')),
-            ':carrera_egreso' => trim((string) ($data['carrera_egreso'] ?? '')),
             ':telefono' => trim((string) ($data['telefono'] ?? '')),
             ':email' => trim((string) ($data['email'] ?? '')),
             ':trabaja_actualmente' => !empty($data['trabaja_actualmente']) ? 1 : 0,

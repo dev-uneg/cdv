@@ -27,10 +27,7 @@ $nombre = egresados_clean((string) ($_POST['nombre'] ?? ''));
 $apellidoPaterno = egresados_clean((string) ($_POST['apellido_paterno'] ?? ''));
 $apellidoMaterno = egresados_clean((string) ($_POST['apellido_materno'] ?? ''));
 $generacion = egresados_clean((string) ($_POST['generacion'] ?? ''));
-$anioIngreso = (int) ($_POST['anio_ingreso'] ?? 0);
-$anioEgreso = (int) ($_POST['anio_egreso'] ?? 0);
 $nivelEgreso = egresados_clean((string) ($_POST['nivel_egreso'] ?? ''));
-$carreraEgreso = egresados_clean((string) ($_POST['carrera_egreso'] ?? ''));
 $telefono = egresados_clean((string) ($_POST['telefono'] ?? ''));
 $email = trim((string) ($_POST['email'] ?? ''));
 $trabajaRaw = strtolower(trim((string) ($_POST['trabaja_actualmente'] ?? '')));
@@ -39,18 +36,11 @@ $empresa = egresados_clean((string) ($_POST['empresa'] ?? ''));
 $cargoActual = egresados_clean((string) ($_POST['cargo_actual'] ?? ''));
 $avisoAceptado = isset($_POST['aviso']);
 
-$currentYear = (int) date('Y') + 1;
 if (
     $nombre === '' || $apellidoPaterno === '' || $apellidoMaterno === '' || $generacion === '' ||
-    $anioIngreso < 1950 || $anioIngreso > $currentYear ||
-    $anioEgreso < 1950 || $anioEgreso > $currentYear ||
-    $nivelEgreso === '' || $carreraEgreso === '' || $telefono === '' || !$avisoAceptado
+    $nivelEgreso === '' || $telefono === '' || !$avisoAceptado
 ) {
     egresados_redirect(false, 'Faltan campos obligatorios.');
-}
-
-if ($anioIngreso > $anioEgreso) {
-    egresados_redirect(false, 'El año de ingreso no puede ser mayor al año de egreso.');
 }
 
 if (!in_array($trabajaRaw, ['si', 'no'], true)) {
@@ -79,10 +69,7 @@ $saved = egresados_db_insert([
     'apellido_paterno' => $apellidoPaterno,
     'apellido_materno' => $apellidoMaterno,
     'generacion' => $generacion,
-    'anio_ingreso' => $anioIngreso,
-    'anio_egreso' => $anioEgreso,
     'nivel_egreso' => $nivelEgreso,
-    'carrera_egreso' => $carreraEgreso,
     'telefono' => $telefono,
     'email' => $email,
     'trabaja_actualmente' => $trabajaActualmente,

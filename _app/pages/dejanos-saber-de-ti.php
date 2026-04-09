@@ -62,32 +62,15 @@ if ($errorMessage === '') {
           Nivel de egreso <span class="font-semibold text-rose-600">*</span>
           <select class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" name="nivel_egreso" required>
             <option value="" selected>Por favor, seleccione una opción</option>
-            <option value="Licenciatura">Licenciatura</option>
-            <option value="Maestría">Maestría</option>
-            <option value="Doctorado">Doctorado</option>
-            <option value="Especialidad">Especialidad</option>
-            <option value="Diplomado">Diplomado</option>
+            <option value="Primaria">Primaria</option>
+            <option value="Secundaria">Secundaria</option>
+            <option value="Preparatoria">Preparatoria</option>
             <option value="Otro">Otro</option>
           </select>
         </label>
       </div>
 
       <div class="mt-6 grid gap-6 md:grid-cols-2">
-        <label class="text-sm text-slate-600">
-          Año de ingreso <span class="font-semibold text-rose-600">*</span>
-          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="number" min="1950" max="2100" name="anio_ingreso" required />
-        </label>
-        <label class="text-sm text-slate-600">
-          Año de egreso <span class="font-semibold text-rose-600">*</span>
-          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="number" min="1950" max="2100" name="anio_egreso" required />
-        </label>
-      </div>
-
-      <div class="mt-6 grid gap-6 md:grid-cols-2">
-        <label class="text-sm text-slate-600">
-          Carrera de egreso <span class="font-semibold text-rose-600">*</span>
-          <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="text" name="carrera_egreso" required />
-        </label>
         <label class="text-sm text-slate-600">
           Teléfono <span class="font-semibold text-rose-600">*</span>
           <input class="mt-2 w-full rounded-2xl border border-slate-200 px-4 py-3 text-sm text-slate-700" type="tel" name="telefono" required />
