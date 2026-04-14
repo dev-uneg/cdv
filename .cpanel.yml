@@ -8,3 +8,5 @@ deployment:
     - /bin/cp -R vendor $DEPLOYPATH
     - /bin/cp index.php $DEPLOYPATH
     - /bin/cp .htaccess $DEPLOYPATH
+    - /bin/cp robots.txt $DEPLOYPATH
+    - /bin/cp sitemap.xml $DEPLOYPATH
