@@ -4,4 +4,4 @@ Disallow: /admin
 Disallow: /api
 Disallow: /desarrollo
 
-Sitemap: https://coledelvalle.edu.mx/sitemap.xml
+Sitemap: https://coldelvalle.edu.mx/sitemap.xml
