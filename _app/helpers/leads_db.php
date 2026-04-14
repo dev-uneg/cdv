@@ -617,7 +617,7 @@ function page_path_is_dev_noise(?string $value): bool
     if (str_contains($lower, '/home-des')) {
         return true;
     }
-    if (str_contains($lower, '/page_des/')) {
+    if (str_contains($lower, '/pages_des/')) {
         return true;
     }
 
@@ -808,7 +808,7 @@ function engagement_rebuild_daily_range(string $fromDay, string $toDay): void
               AND is_bot = 0
               AND page_path NOT LIKE '/cdv/%'
               AND page_path NOT LIKE '%/home-des%'
-              AND page_path NOT LIKE '%/page_des/%'
+              AND page_path NOT LIKE '%/pages_des/%'
             GROUP BY created_day, page_path"
         );
         $stmtInsert->execute([

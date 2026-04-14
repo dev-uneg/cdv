@@ -11,23 +11,16 @@ define('BASE_URL', $basePath);
 
 // Public site: core landing and institutional pages.
 $router->map('GET', '/', '_app/pages/home.php', 'home');
-$router->map('GET', '/home-des/', '_app/page_des/home.php', 'home-des');
-$router->map('GET', '/home-des', ['redirect' => '/home-des/'], 'home-des-legacy');
 $router->map('GET', '/nosotros/', '_app/pages/nosotros.php', 'nosotros');
-$router->map('GET', '/nosotros', ['redirect' => '/nosotros/'], 'nosotros-legacy');
 $router->map('GET', '/servicios', '_app/pages/servicios.php', 'servicios');
 
 // Public site: LP General and thank-you flow.
 $router->map('GET', '/lp-general', '_app/pages/lp-general.php', 'lp-general');
-$router->map('GET', '/lp-general/', ['redirect' => '/lp-general'], 'lp-general-legacy-slash');
 $router->map('GET', '/lp-general/gracias', '_app/pages/lp-general-gracias.php', 'lp-general-gracias');
-$router->map('GET', '/lp-general/gracias/', ['redirect' => '/lp-general/gracias'], 'lp-general-gracias-legacy-slash');
 
 // Public site: contact, privacy and generic thank-you page.
 $router->map('GET', '/contacto/', '_app/pages/contacto.php', 'contacto');
-$router->map('GET', '/contacto', ['redirect' => '/contacto/'], 'contacto-legacy');
 $router->map('GET', '/aviso-de-privacidad/', '_app/pages/aviso-de-privacidad.php', 'aviso-de-privacidad');
-$router->map('GET', '/aviso-de-privacidad', ['redirect' => '/aviso-de-privacidad/'], 'aviso-de-privacidad-legacy');
 $router->map('GET', '/gracias', '_app/pages/gracias.php', 'gracias');
 
 // Public API endpoints: lead capture and event tracking.
@@ -39,7 +32,6 @@ $router->map('POST', '/api/events/whatsapp-click', '_app/controllers/events/what
 $router->map('POST', '/api/events/engagement', '_app/controllers/events/engagement.php', 'api-events-engagement');
 // Admin
 $router->map('GET|POST', '/admin/login', '_app/controllers/admin/login.php', 'admin-login');
-$router->map('GET', '/admin', ['redirect' => '/admin/login'], 'admin-root');
 $router->map('GET', '/admin/panel', '_app/controllers/admin/panel.php', 'admin-panel');
 $router->map('GET', '/admin/reports', '_app/controllers/admin/reports_index.php', 'admin-reports-index');
 $router->map('GET', '/admin/reports/cdv-mensual', '_app/controllers/admin/reports_cdv.php', 'admin-reports-cdv-mensual');
@@ -72,16 +64,8 @@ $router->map('GET', '/oferta-academica/primaria/', '_app/pages/primaria.php', 'p
 $router->map('GET', '/oferta-educativa/secundaria', '_app/pages/secundaria.php', 'secundaria');
 $router->map('GET', '/oferta-educativa/preparatoria', '_app/pages/preparatoria.php', 'preparatoria');
 
-// Legacy slugs: redirect permanently to the new prefixed URLs.
-$router->map('GET', '/kinder', ['redirect' => '/oferta-educativa/kinder'], 'kinder-legacy');
-$router->map('GET', '/pre-first', ['redirect' => '/oferta-educativa/pre-first'], 'pre-first-legacy');
-$router->map('GET', '/primaria', ['redirect' => '/oferta-educativa/primaria'], 'primaria-legacy');
-$router->map('GET', '/secundaria', ['redirect' => '/oferta-educativa/secundaria'], 'secundaria-legacy');
-$router->map('GET', '/preparatoria', ['redirect' => '/oferta-educativa/preparatoria'], 'preparatoria-legacy');
-
 // News module: listing and dynamic article routes.
 $router->map('GET', '/noticias/', '_app/pages/noticias/index.php', 'noticias');
-$router->map('GET', '/noticias', ['redirect' => '/noticias/'], 'noticias-legacy');
 $newsRoutes = include __DIR__ . '/pages/noticias/routes.php';
 foreach ($newsRoutes as $slug => $file) {
     $router->map('GET', '/noticias/' . $slug, $file, 'noticias-' . $slug);
@@ -96,31 +80,27 @@ $router->map('GET', '/buzon-del-rector/gracias', '_app/pages/buzon-del-rector-gr
 $router->map('GET', '/dejanos-saber-de-ti', '_app/pages/dejanos-saber-de-ti.php', 'dejanos-saber-de-ti');
 $router->map('GET', '/dejanos-saber-de-ti/gracias', '_app/pages/dejanos-saber-de-ti-gracias.php', 'dejanos-saber-de-ti-gracias');
 $router->map('GET', '/comunidad/alumnos', '_app/pages/comunidad-alumnos.php', 'comunidad-alumnos');
-$router->map('GET', '/comunidad/alumnos/', ['redirect' => '/comunidad/alumnos'], 'comunidad-alumnos-legacy');
 $router->map('GET', '/egresados/', '_app/pages/comunidad-egresados.php', 'comunidad-egresados');
-$router->map('GET', '/comunidad/egresados', ['redirect' => '/egresados/'], 'comunidad-egresados-legacy');
-$router->map('GET', '/comunidad/egresados/', ['redirect' => '/egresados/'], 'comunidad-egresados-legacy-slash');
-$router->map('GET', '/egresados', ['redirect' => '/egresados/'], 'egresados-legacy');
 $router->map('GET', '/comunidad/docentes/', '_app/pages/comunidad-docentes.php', 'comunidad-docentes');
-$router->map('GET', '/comunidad/docentes', ['redirect' => '/comunidad/docentes/'], 'comunidad-docentes-legacy');
 $router->map('GET', '/talleres-vespertinos/', '_app/pages/comunidad-talleres.php', 'comunidad-talleres');
-$router->map('GET', '/comunidad/talleres', ['redirect' => '/talleres-vespertinos/'], 'comunidad-talleres-legacy');
-$router->map('GET', '/comunidad/talleres/', ['redirect' => '/talleres-vespertinos/'], 'comunidad-talleres-legacy-slash');
-$router->map('GET', '/talleres-vespertinos', ['redirect' => '/talleres-vespertinos/'], 'talleres-vespertinos-legacy');
 $router->map('GET', '/comunidad/alumnos/calendarios-academicos/', '_app/pages/comunidad-calendario-academico.php', 'comunidad-calendario');
-$router->map('GET', '/comunidad/calendario-academico', ['redirect' => '/comunidad/alumnos/calendarios-academicos/'], 'comunidad-calendario-legacy');
-$router->map('GET', '/comunidad/calendario-academico/', ['redirect' => '/comunidad/alumnos/calendarios-academicos/'], 'comunidad-calendario-legacy-slash');
-$router->map('GET', '/comunidad/alumnos/calendarios-academicos', ['redirect' => '/comunidad/alumnos/calendarios-academicos/'], 'comunidad-calendario-new-noslash');
 $router->map('GET', '/ixu/', '_app/pages/ixu.php', 'ixu');
-$router->map('GET', '/ixu', ['redirect' => '/ixu/'], 'ixu-legacy');
 
-// Router execution: resolve redirects, dispatch target controller/page, fallback 404.
+// Development site (pages_des): canonical prefix is /desarrollo.
+$router->map('GET', '/desarrollo/', '_app/pages_des/home.php', 'home-des');
+$router->map('GET', '/desarrollo/nosotros/', '_app/pages_des/nosotros.php', 'home-des-nosotros');
+$router->map('GET', '/desarrollo/oferta-academica/', '_app/pages_des/servicios.php', 'home-des-oferta-academica');
+$router->map('GET', '/desarrollo/contacto/', '_app/pages_des/contacto.php', 'home-des-contacto');
+$router->map('GET', '/desarrollo/ixu/', '_app/pages_des/ixu.php', 'home-des-ixu');
+$router->map('GET', '/desarrollo/noticias/', '_app/pages_des/noticias.php', 'home-des-noticias');
+$router->map('GET', '/desarrollo/oferta-educativa/kinder', '_app/pages_des/kinder.php', 'home-des-kinder');
+$router->map('GET', '/desarrollo/oferta-educativa/pre-first', '_app/pages_des/pre-first.php', 'home-des-pre-first');
+$router->map('GET', '/desarrollo/oferta-educativa/primaria', '_app/pages_des/primaria.php', 'home-des-primaria');
+$router->map('GET', '/desarrollo/oferta-educativa/secundaria', '_app/pages_des/secundaria.php', 'home-des-secundaria');
+$router->map('GET', '/desarrollo/oferta-educativa/preparatoria', '_app/pages_des/preparatoria.php', 'home-des-preparatoria');
+
+// Router execution: dispatch target controller/page, fallback 404.
 $match = $router->match();
-if ($match && is_array($match['target']) && isset($match['target']['redirect'])) {
-    header('Location: ' . $basePath . $match['target']['redirect'], true, 301);
-    exit;
-}
-
 if ($match && is_string($match['target'])) {
     require __DIR__ . '/../' . $match['target'];
     exit;

@@ -1,22 +1,7 @@
 <?php
 $baseUrl = defined('BASE_URL') ? BASE_URL : '';
 $menuItems = require __DIR__ . '/partials/menu-items.php';
-$menuSubItems = [
-  'Oferta Academica' => [
-    ['label' => 'Kinder', 'href' => '/oferta-educativa/kinder'],
-    ['label' => 'Pre First', 'href' => '/oferta-educativa/pre-first'],
-    ['label' => 'Primaria', 'href' => '/oferta-educativa/primaria'],
-    ['label' => 'Secundaria', 'href' => '/oferta-educativa/secundaria'],
-    ['label' => 'Preparatoria', 'href' => '/oferta-educativa/preparatoria'],
-  ],
-  'Comunidad' => [
-    ['label' => 'Alumnos', 'href' => '/comunidad/alumnos'],
-    ['label' => 'Egresados', 'href' => '/egresados/'],
-    ['label' => 'Docentes', 'href' => '/comunidad/docentes/'],
-    ['label' => 'Talleres Vespertinos', 'href' => '/talleres-vespertinos/'],
-    ['label' => 'Calendarios Academicos', 'href' => '/comunidad/alumnos/calendarios-academicos/'],
-  ],
-];
+$menuSubItems = require __DIR__ . '/partials/des-menu-subitems.php';
 $logoSrc = $baseUrl . '/logo-blanco-cdv.png';
 $heroVideoSrc = $baseUrl . '/8342243-hd_1920_1080_25fps.mp4';
 $assetsPath = dirname(__DIR__, 2) . '/_assets';
@@ -34,7 +19,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
   <link rel="icon" type="image/png" href="<?= $baseUrl ?>/_imgs/favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Chewy&family=Questrial&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Questrial&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="<?= $baseUrl ?>/_assets/output.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css" />
   <script
@@ -68,7 +53,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
       padding-bottom: 0.1em;
     }
     .oferta-title-chewy {
-      font-family: "Chewy", cursive;
+      font-family: "Lilita One", cursive;
       letter-spacing: 0.01em;
       line-height: 1.08;
       font-weight: 400;
@@ -159,22 +144,103 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
       .testimonial-track {
         animation: none;
       }
+      .cta-pulse,
+      .cta-ripple::before,
+      .cta-ripple::after {
+        animation: none;
+      }
     }
     .cta-pulse {
       animation: cta-elegant-pulse 2.8s ease-in-out infinite;
-      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
+      box-shadow: 0 12px 30px rgba(11, 79, 108, 0.38);
     }
     .cta-pulse:hover {
       animation-play-state: paused;
     }
+    .cta-admisiones {
+      background: linear-gradient(135deg, #0b4f6c 0%, #1d4ed8 100%);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.26);
+    }
+    .cta-admisiones:hover {
+      filter: brightness(1.06);
+    }
+    .cta-ripple {
+      position: relative;
+      isolation: isolate;
+      z-index: 0;
+    }
+    .cta-ripple::before,
+    .cta-ripple::after {
+      content: "";
+      position: absolute;
+      inset: -10px;
+      border-radius: 9999px;
+      border: 2px solid rgba(37, 99, 235, 0.4);
+      transform: scale(0.9);
+      opacity: 0;
+      pointer-events: none;
+      z-index: -1;
+      animation: cta-water-ripple 2.6s ease-out infinite;
+    }
+    .cta-ripple::after {
+      animation-delay: 1.3s;
+    }
+    .cta-ripple:hover::before,
+    .cta-ripple:hover::after {
+      animation-play-state: paused;
+      opacity: 0.18;
+    }
+    .menu-quick-btn {
+      display: inline-flex;
+      width: fit-content;
+      align-items: center;
+      gap: 0.45rem;
+      border-radius: 9999px;
+      padding: 0.5rem 0.95rem;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: #fff;
+      transition: filter 0.2s ease, transform 0.2s ease;
+    }
+    .menu-quick-btn:hover {
+      filter: brightness(1.06);
+      transform: translateY(-1px);
+    }
+    .menu-quick-btn:focus-visible {
+      outline: 2px solid rgba(255, 255, 255, 0.7);
+      outline-offset: 2px;
+    }
+    .menu-quick-btn-tienda {
+      background: linear-gradient(135deg, #2563eb 0%, #345995 100%);
+    }
+    .menu-quick-btn-quejas {
+      background: linear-gradient(135deg, #d2a226 0%, #b7861d 100%);
+    }
     @keyframes cta-elegant-pulse {
       0%, 100% {
         transform: scale(1);
-        box-shadow: 0 10px 26px rgba(15, 23, 42, 0.25);
+        box-shadow: 0 12px 30px rgba(11, 79, 108, 0.38);
       }
       50% {
         transform: scale(1.035);
-        box-shadow: 0 14px 34px rgba(15, 23, 42, 0.34);
+        box-shadow: 0 16px 40px rgba(30, 64, 175, 0.45);
+      }
+    }
+    @keyframes cta-water-ripple {
+      0% {
+        transform: scale(0.88);
+        opacity: 0.55;
+      }
+      75% {
+        transform: scale(1.38);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1.42);
+        opacity: 0;
       }
     }
   </style>
@@ -214,7 +280,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
           <p class="mt-3 max-w-3xl text-[15px] text-slate-600 md:text-base">Cada nivel está diseñado para impulsar aprendizaje, autonomía y crecimiento integral.</p>
         </div>
         <div class="mt-6 grid gap-5 md:grid-cols-2 xl:grid-cols-5">
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/kinder" data-aos="zoom-in-up" data-aos-delay="0">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/desarrollo/oferta-educativa/kinder" data-aos="zoom-in-up" data-aos-delay="0">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/kinder-960.webp" alt="Kinder" loading="eager" fetchpriority="high" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -227,7 +293,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/pre-first" data-aos="zoom-in-up" data-aos-delay="70">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/desarrollo/oferta-educativa/pre-first" data-aos="zoom-in-up" data-aos-delay="70">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/pre-first.webp" alt="Pre-First" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -240,7 +306,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/primaria" data-aos="zoom-in-up" data-aos-delay="140">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/desarrollo/oferta-educativa/primaria" data-aos="zoom-in-up" data-aos-delay="140">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/primaria.webp" alt="Primaria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -253,7 +319,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/secundaria" data-aos="zoom-in-up" data-aos-delay="210">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/desarrollo/oferta-educativa/secundaria" data-aos="zoom-in-up" data-aos-delay="210">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/secundaria.webp" alt="Secundaria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -266,7 +332,7 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
             </div>
           </a>
 
-          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/oferta-educativa/preparatoria" data-aos="zoom-in-up" data-aos-delay="280">
+          <a class="group overflow-hidden rounded-3xl border border-slate-200 bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl" href="<?= $baseUrl ?>/desarrollo/oferta-educativa/preparatoria" data-aos="zoom-in-up" data-aos-delay="280">
             <div class="relative h-48 overflow-hidden">
               <img class="h-full w-full object-cover transition duration-500 " src="<?= $baseUrl ?>/_imgs/home/preparatoria.webp" alt="Preparatoria" loading="lazy" />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-900/60 via-slate-900/10 to-transparent"></div>
@@ -341,9 +407,10 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
           <p class="text-[12px] uppercase tracking-[0.28em] text-slate-500">Admisiones</p>
           <h2 class="oferta-title-chewy mt-3 text-3xl md:text-4xl tracking-tight text-[#03CEA4]">Proceso de inscripción en 4 pasos</h2>
         </div>
-        <a class="cta-pulse inline-flex w-fit items-center gap-2 rounded-full bg-slate-900 px-7 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-slate-800" href="<?= $baseUrl ?>/contacto/" data-aos="fade-left" data-aos-delay="120">
-          <i data-lucide="arrow-right" class="h-4 w-4"></i>
+        <a class="cta-pulse cta-ripple cta-admisiones inline-flex w-fit items-center gap-2 rounded-full px-7 py-3 text-[12px] font-semibold uppercase tracking-[0.2em] transition" href="<?= $baseUrl ?>/contacto/" data-aos="fade-left" data-aos-delay="120">
+          <i data-lucide="rocket" class="h-4 w-4"></i>
           <span>Iniciar proceso</span>
+          <i data-lucide="chevrons-right" class="h-4 w-4"></i>
         </a>
       </div>
       <div class="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -544,8 +611,11 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
   <div class="fixed inset-0 z-[80] invisible pointer-events-none" id="desktopMenuSidebar" aria-hidden="true">
     <button class="absolute inset-0 bg-slate-950/35 opacity-0 backdrop-blur-sm transition duration-300" type="button" id="menuBackdrop" aria-label="Cerrar menu"></button>
     <aside class="absolute right-0 top-0 flex h-full w-[min(32vw,420px)] min-w-[320px] translate-x-full flex-col gap-5 border-l border-white/20 px-6 py-6 backdrop-blur-2xl transition duration-300" id="menuPanel" aria-label="Menu principal">
-      <div class="flex items-center justify-between border-b border-white/20 pb-4">
-        <a class="text-[12px] uppercase tracking-[0.2em] text-slate-300 transition hover:text-white" href="<?= htmlspecialchars($baseUrl, ENT_QUOTES, 'UTF-8') ?>/contacto/">Admisiones</a>
+      <div class="flex items-center justify-between gap-3 border-b border-white/20 pb-4">
+        <a class="menu-quick-btn menu-quick-btn-tienda !px-4 !py-2" href="<?= htmlspecialchars($baseUrl, ENT_QUOTES, 'UTF-8') ?>/desarrollo/contacto/">
+          <i data-lucide="user" class="h-3.5 w-3.5"></i>
+          <span>Admisiones</span>
+        </a>
         <button class="inline-flex h-9 w-9 items-center justify-center rounded-full border border-white/30 text-white transition hover:bg-white/10" type="button" id="menuCloseBtn" aria-label="Cerrar menu">
           <i data-lucide="x" class="h-5 w-5"></i>
         </button>
@@ -577,15 +647,21 @@ $lucideLoaderVersion = file_exists($lucideLoaderPath) ? (string) filemtime($luci
           <?php endforeach; ?>
         </ul>
       </nav>
-      <div class="mt-auto border-t border-white/15 pt-4 text-[11px] uppercase tracking-[0.08em] text-slate-200">
+      <div class="mt-auto mb-3 flex flex-col gap-2">
+        <button class="menu-quick-btn menu-quick-btn-tienda" type="button">
+          <i data-lucide="shopping-bag" class="h-3.5 w-3.5"></i>
+          <span>Tienda oficial CDV</span>
+        </button>
+        <button class="menu-quick-btn menu-quick-btn-quejas" type="button">
+          <i data-lucide="message-square" class="h-3.5 w-3.5"></i>
+          <span>Quejas y sugerencias</span>
+        </button>
+      </div>
+      <div class="border-t border-white/15 pt-4 text-[11px] uppercase tracking-[0.08em] text-slate-200">
         <div class="space-y-2.5">
           <p class="flex items-center gap-2">
             <i data-lucide="phone" class="h-3.5 w-3.5 text-white/90"></i>
             <span>Admisiones: <a class="text-white transition hover:text-cyan-200" href="tel:+525550631500">55 5063 1500</a> - Opcion 1</span>
-          </p>
-          <p class="flex items-center gap-2">
-            <i data-lucide="message-circle" class="h-3.5 w-3.5 text-white/90"></i>
-            <span>WhatsApp: <a class="text-white transition hover:text-cyan-200" href="https://wa.me/525571137882" target="_blank" rel="noopener">55 7113 7882</a></span>
           </p>
           <div class="flex items-start gap-2">
             <i data-lucide="credit-card" class="mt-0.5 h-3.5 w-3.5 text-white/90"></i>

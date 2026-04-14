@@ -39,7 +39,7 @@ try {
          FROM web_engagement_daily
          WHERE page_path NOT LIKE '/cdv/%'
            AND page_path NOT LIKE '%/home-des%'
-           AND page_path NOT LIKE '%/page_des/%'
+           AND page_path NOT LIKE '%/pages_des/%'
          GROUP BY ym"
     )->fetchAll(PDO::FETCH_ASSOC);
     $engagementByYm = [];

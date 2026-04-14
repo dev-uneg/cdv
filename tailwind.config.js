@@ -2,7 +2,7 @@
 module.exports = {
   content: [
     './_app/pages/**/*.php',
-    './_app/page_des/**/*.php',
+    './_app/pages_des/**/*.php',
     './index.php'
   ],
   theme: {

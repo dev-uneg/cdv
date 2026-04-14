@@ -56,7 +56,7 @@ $topPages = [];
 try {
     $pdo = leads_db();
     engagement_rebuild_daily_range($monthStartDate, $monthEndDate);
-    $excludeDevPagesWhere = "AND page_path NOT LIKE '/cdv/%' AND page_path NOT LIKE '%/home-des%' AND page_path NOT LIKE '%/page_des/%'";
+    $excludeDevPagesWhere = "AND page_path NOT LIKE '/cdv/%' AND page_path NOT LIKE '%/home-des%' AND page_path NOT LIKE '%/pages_des/%'";
 
     $summaryStmt = $pdo->prepare(
         'SELECT

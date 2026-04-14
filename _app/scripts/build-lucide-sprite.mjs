@@ -6,7 +6,7 @@ const iconsDir = path.join(projectRoot, 'node_modules', 'lucide-static', 'icons'
 const outputPath = path.join(projectRoot, '_assets', 'lucide-sprite.svg');
 const searchRoots = [
   path.join(projectRoot, '_app', 'pages'),
-  path.join(projectRoot, '_app', 'page_des'),
+  path.join(projectRoot, '_app', 'pages_des'),
 ];
 const iconPattern = /data-lucide="([a-z0-9-]+)"/g;
 
@@ -20,17 +20,23 @@ const extraIcons = [
   // Icons referenced dynamically via PHP variables in shared admin header partial.
   'activity',
   'bar-chart-3',
+  'book-check',
+  'book-open',
   'file-chart-column',
   'file-user',
+  'graduation-cap',
   'inbox',
   'layout-dashboard',
+  'languages',
   'line-chart',
   'mail-search',
   'mailbox',
   'message-square-text',
+  'play',
   'plug-zap',
   'shield-alert',
   'shield-check',
+  'sparkles',
   'triangle-alert',
   'user-round-search',
 ];
